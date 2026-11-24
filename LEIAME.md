@@ -149,4 +149,5 @@ Faltam dados que não estão no pacote: transferências por município de outros
 - Página: https://claude.ai/artifact/8J71B5CLcUCRGfEWUG7arn (privada até ser compartilhada).
 - `painel/gerar_dados_painel.py` gera `painel/dados/*.json` (base municipal com RGI, RGINT e bioma; pirâmides 2010 × 2022; regressões; R² da idade). `painel/index.html` é o código da página.
 - Desigualdade e Shapley são recalculados na página para o recorte filtrado. Com o Brasil inteiro, reproduzem os números do passo E.
+- Mapa: `painel/gerar_malha.mjs` projeta a malha do IBGE (Albers) em caminhos SVG (`painel/dados/malha.json`).
 - Pirâmides: 0–9 e 75+ agregados, porque as tabelas de 2010 por sexo não separam 0–4 e 5–9.

@@ -25,3 +25,7 @@ mkdir -p data/ibge/sidra10297
 mkdir -p data/ibge/biomas
 [ -s data/ibge/biomas/Bioma_Predominante_por_Municipio_2024.csv ] || curl -sS -o data/ibge/biomas/Bioma_Predominante_por_Municipio_2024.csv \
   "https://geoftp.ibge.gov.br/informacoes_ambientais/estudos_ambientais/biomas/documentos/Bioma_Predominante_por_Municipio_2024.csv"
+# Malha municipal do IBGE (API de malhas v3, qualidade mínima) — mapa do painel
+mkdir -p data/ibge/malha
+[ -s data/ibge/malha/br_mun_minima.json ] || curl -sS --max-time 300 -H 'Accept: application/json' -o data/ibge/malha/br_mun_minima.json \
+  "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/json&qualidade=minima&intrarregiao=municipio"
