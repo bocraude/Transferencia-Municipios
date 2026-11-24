@@ -27,6 +27,7 @@ TOKENS = """
   --color-ok:#6cc08b; --color-warn:#e0a83a; --color-bad:#ec7b66; --cds-chart-muted:#56605c; --cds-chart-grid:#2a312e; --cds-chart-axis:#3c4541;
   --cds-chart-reference:#8f9a96; --cds-text-secondary:#a3ada9; --cds-surface-popover:#242a29; --cds-border:#3a4340; --cds-shadow-popover:0 4px 16px rgba(0,0,0,.5);
   --s0:#6ea8e8; --s1:#f0a35e; --s2:#a993e6; --s3:#5cc3b6; --s4:#e57aa8; color-scheme: dark; } }
+[hidden] { display:none !important; }
 html, body { margin:0; background:var(--color-bg); color:var(--color-fg); font-family:var(--font-anthropic-sans); font-size:14px; }
 #dash-root { max-width:1200px; margin:0 auto; padding-block:24px 40px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
 .dash-select { font:inherit; font-size:var(--cds-font-size-body); color:var(--color-fg); background-color:var(--color-bg); border:1px solid var(--color-border-line); border-radius:var(--cds-radius); padding:6px 8px; }

@@ -12,6 +12,7 @@
 .tm-muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 .tm-filtros { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); align-items: end; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); }
 .tm-filtros label, .tm-ctrl label { display: grid; gap: 4px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); min-width: 0; }
+#f-contagem { align-self: center; }
 .tm-filtros select, .tm-ctrl select { min-width: 9rem; max-width: 100%; }
 .tm-btn { font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
 .tm-btn:hover { border-color: var(--color-fg-muted); }
@@ -20,10 +21,20 @@
 .tm-kpi { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: 4px; align-content: start; }
 .tm-kpi .v { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; }
 .tm-kpi .l { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tm-top { display: grid; gap: var(--cds-gap-sm); }
+.tm-marca { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.tm-pagehead { display: grid; gap: var(--cds-gap-sm); }
+.tm-paginas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-md); }
+.tm-paginas button { text-align: left; font: inherit; color: var(--color-fg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); cursor: pointer; display: grid; gap: 4px; }
+.tm-paginas button:hover { border-color: var(--color-fg-muted); }
+.tm-paginas button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.tm-paginas b { font-weight: var(--cds-font-weight-medium); }
+.tm-paginas span { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.4; }
 .tm-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--color-border-line); }
 .tm-tab { font: inherit; font-size: var(--cds-font-size-body); padding: 8px 12px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--color-fg-muted); cursor: pointer; }
 .tm-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
 .tm-sec { display: grid; gap: var(--cds-gap-lg); }
+.tm-sec[hidden], .tm [hidden] { display: none; }
 .tm-ctrl { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); align-items: end; }
 .tm-ctrl input[type="search"], .tm-ctrl input[type="text"] { font: inherit; font-size: var(--cds-font-size-body); padding: 6px 10px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); min-width: 0; width: min(22rem, 100%); }
 .tm-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-lg); }
@@ -65,10 +76,18 @@
 </style>
 
 <div class="tm">
-  <header class="tm-head" id="cabecalho">
-    <h1 id="titulo">Transferências federais e renda municipal</h1>
-    <p class="tm-take" id="sintese">Nos <b data-draw="t_n" data-source="resumo" data-field="n" data-row="0">—</b> municípios do recorte, BPC, Bolsa Família, seguro-desemprego e aposentadorias somam <b data-draw="t_dep" data-source="resumo" data-field="dep" data-row="0">—</b> da renda e reduzem o Gini entre unidades de <b data-draw="t_g0" data-source="desig" data-field="sem" data-where="indice=gini">—</b> para <b data-draw="t_g1" data-source="desig" data-field="com" data-where="indice=gini">—</b>. Pela decomposição de Shapley, <b data-draw="t_top" data-source="shapley" data-field="rotulo" data-row="0">—</b> responde por <b data-draw="t_toppct" data-source="shapley" data-field="pct" data-row="0">—</b> dessa queda.</p>
-    <p class="tm-muted">Censo 2022 e registros administrativos de 2022 (valores mensais). Resultados contábeis, sem interpretação causal. Os filtros abaixo valem para todas as abas.</p>
+  <header class="tm-top" id="topo">
+    <p class="tm-marca">Transferências federais e renda municipal · Brasil, 2022</p>
+    <nav class="tm-tabs" role="tablist" aria-label="Páginas">
+    <button class="tm-tab" role="tab" aria-selected="true" data-tab="inicio">Visão geral</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="renda">PIB × renda</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="regioes">Peso por região</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="mapa">Mapa</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="desigualdade">Desigualdade</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="atrito">Atrito × atração</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="idade">Estrutura etária</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="piramide">Pirâmides 2010 × 2022</button>
+    </nav>
   </header>
 
   <div class="tm-filtros" id="filtros" role="group" aria-label="Filtros">
@@ -93,8 +112,17 @@
         <option value="">Todas</option><option value="atrito">Atrito</option><option value="atração">Atração</option><option value="intermediário">Intermediário</option><option value="não envelhecido">Não envelhecido</option>
       </select></label>
     <button type="button" class="tm-btn" id="f-limpar">Limpar filtros</button>
+    <span class="tm-muted" id="f-contagem"><b data-draw="f_n" data-source="resumo" data-field="n" data-row="0">—</b> municípios no recorte</span>
   </div>
 
+
+  <!-- ===== Visão geral ===== -->
+  <section class="tm-sec" id="inicio" role="tabpanel">
+    <div class="tm-pagehead">
+    <h1 id="titulo">Transferências federais e renda municipal</h1>
+    <p class="tm-take" id="sintese">Nos <b data-draw="t_n" data-source="resumo" data-field="n" data-row="0">—</b> municípios do recorte, BPC, Bolsa Família, seguro-desemprego e aposentadorias somam <b data-draw="t_dep" data-source="resumo" data-field="dep" data-row="0">—</b> da renda e reduzem o Gini entre unidades de <b data-draw="t_g0" data-source="desig" data-field="sem" data-where="indice=gini">—</b> para <b data-draw="t_g1" data-source="desig" data-field="com" data-where="indice=gini">—</b>. Pela decomposição de Shapley, <b data-draw="t_top" data-source="shapley" data-field="rotulo" data-row="0">—</b> responde por <b data-draw="t_toppct" data-source="shapley" data-field="pct" data-row="0">—</b> dessa queda.</p>
+    <p class="tm-muted">Censo 2022 e registros administrativos de 2022 (valores mensais). Resultados contábeis, sem interpretação causal. Os filtros acima valem para todas as páginas.</p>
+    </div>
   <div class="tm-kpis" id="indicadores">
     <div class="tm-kpi" id="kpi-mun"><span class="l">Municípios no recorte</span><span class="v" data-draw="k_n" data-source="resumo" data-field="n" data-row="0">—</span><span class="l">de 5.561 com dados</span></div>
     <div class="tm-kpi" id="kpi-pop"><span class="l">População (milhões)</span><span class="v" data-draw="k_pop" data-source="resumo" data-field="pop_mi" data-row="0">—</span><span class="l">Censo 2022</span></div>
@@ -103,17 +131,93 @@
     <div class="tm-kpi" id="kpi-tipos"><span class="l">Envelhecidos por atrito / atração</span><span class="v"><span data-draw="k_atr" data-source="resumo" data-field="n_atrito" data-row="0">—</span> / <span data-draw="k_atc" data-source="resumo" data-field="n_atracao" data-row="0">—</span></span><span class="l">municípios</span></div>
   </div>
 
-  <nav class="tm-tabs" role="tablist" aria-label="Seções">
-    <button class="tm-tab" role="tab" aria-selected="true" data-tab="regioes">Peso por região</button>
-    <button class="tm-tab" role="tab" aria-selected="false" data-tab="mapa">Mapa</button>
-    <button class="tm-tab" role="tab" aria-selected="false" data-tab="desigualdade">Desigualdade</button>
-    <button class="tm-tab" role="tab" aria-selected="false" data-tab="atrito">Atrito × atração</button>
-    <button class="tm-tab" role="tab" aria-selected="false" data-tab="idade">Estrutura etária</button>
-    <button class="tm-tab" role="tab" aria-selected="false" data-tab="piramide">Pirâmides 2010 × 2022</button>
-  </nav>
+    <h2 id="h-paginas">Páginas</h2>
+    <div class="tm-paginas" id="paginas">
+      <button type="button" data-goto="renda"><b>PIB × renda</b><span>Do PIB e da massa salarial formal à renda das famílias, sem e com transferências: níveis e desigualdade.</span></button>
+      <button type="button" data-goto="regioes"><b>Peso por região</b><span>Quanto cada benefício pesa na renda, por UF, região imediata, intermediária, bioma ou semiárido.</span></button>
+      <button type="button" data-goto="mapa"><b>Mapa</b><span>Mapa coroplético dos municípios para cada transferência, renda e indicador demográfico.</span></button>
+      <button type="button" data-goto="desigualdade"><b>Desigualdade</b><span>Gini, Atkinson e Theil sem e com transferências e a contribuição de cada benefício (Shapley).</span></button>
+      <button type="button" data-goto="atrito"><b>Atrito × atração</b><span>Municípios envelhecidos pela saída de jovens ou pela chegada de idosos, e a lista completa.</span></button>
+      <button type="button" data-goto="idade"><b>Estrutura etária</b><span>Quanto a idade explica da dependência e os coeficientes das regressões.</span></button>
+      <button type="button" data-goto="piramide"><b>Pirâmides 2010 × 2022</b><span>Pirâmide etária de cada município ou do recorte nos dois Censos.</span></button>
+    </div>
+  </section>
+
+  <!-- ===== PIB x renda ===== -->
+  <section class="tm-sec" id="renda" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-renda">Da produção à renda das famílias</h1>
+      <p>Quatro medidas por habitante, do que o município produz ao que as famílias recebem: PIB, massa salarial do emprego formal (RAIS), renda sem transferências e renda com transferências. A desigualdade entre municípios cai a cada degrau: o PIB e os salários formais são muito concentrados; a renda das famílias, menos; e as transferências reduzem ainda mais a distância.</p>
+    </div>
+    <div class="tm-ctrl">
+      <label>Renda sem transferências
+        <select class="dash-select" id="p2-medida" data-param="medida">
+          <option value="orig">Renda do Censo − benefícios (original)</option><option value="hib">Renda do trabalho do Censo (híbrida)</option>
+        </select></label>
+      <label>Ponderação
+        <select class="dash-select" id="p2-pond" data-param="pond">
+          <option value="1">Pela população</option><option value="0">Cada unidade pesa igual</option>
+        </select></label>
+      <label>Unidade de análise
+        <select class="dash-select" id="p2-unid" data-param="unidade">
+          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option>
+        </select></label>
+      <label>Índice
+        <select class="dash-select" id="esc-indice">
+          <option value="gini">Gini</option><option value="atk05">Atkinson ε = 0,5</option><option value="atk1">Atkinson ε = 1</option><option value="atk2">Atkinson ε = 2</option><option value="theil">Theil-T</option>
+        </select></label>
+    </div>
+    <div class="tm-legend" id="leg-medidas">
+      <span><i class="tm-sw" data-cor="2"></i>PIB</span><span><i class="tm-sw" data-cor="1"></i>Massa salarial RAIS</span><span><i class="tm-sw" data-cor="4"></i>Renda sem transferências</span><span><i class="tm-sw" data-cor="0"></i>Renda com transferências</span>
+    </div>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-escada">
+        <h2 id="h-escada">Desigualdade entre unidades em cada degrau</h2>
+        <div class="tm-chart" id="graf-escada" data-draw="r_escada" data-source="escada"></div>
+        <p class="tm-muted">Ao lado de cada barra, a variação em relação ao degrau anterior.</p>
+      </div>
+      <div class="tm-card" id="card-niveis">
+        <h2 id="h-niveis">Valor médio por habitante (R$/mês)</h2>
+        <div class="tm-chart" id="graf-niveis" data-draw="r_niveis" data-source="escada"></div>
+        <p class="tm-muted">PIB anual dividido por 12. A massa salarial da RAIS é registrada no local de trabalho, não no de moradia.</p>
+      </div>
+    </div>
+    <div class="tm-card" id="card-lorenz">
+      <h2 id="h-lorenz">Curvas de Lorenz entre unidades</h2>
+      <div class="tm-chart" id="graf-lorenz" data-draw="r_lorenz" data-source="lorenz"></div>
+      <p class="tm-muted">Unidades ordenadas da menor para a maior renda por habitante em cada medida. Eixo x: parcela acumulada da população (ou das unidades, sem ponderação); eixo y: parcela acumulada do valor. Quanto mais perto da diagonal, menor a desigualdade.</p>
+    </div>
+    <div class="tm-tablewrap" id="tab-escada-wrap">
+      <table id="tab-escada" data-source="escada" data-row-key="medida">
+        <thead><tr><th data-field="rotulo">Medida</th><th class="n" data-field="media_pc">R$/hab./mês</th><th class="n" data-field="gini">Gini</th><th class="n" data-field="atk05">Atkinson 0,5</th><th class="n" data-field="atk1">Atkinson 1</th><th class="n" data-field="atk2">Atkinson 2</th><th class="n" data-field="theil">Theil-T</th><th class="n" data-field="unidades">Unidades</th></tr></thead>
+        <tbody data-draw="r_tabela"></tbody>
+      </table>
+    </div>
+    <div class="tm-card" id="card-rgrupos">
+      <h2 id="h-rgrupos">Cada grupo em relação à média do recorte (= 100)</h2>
+      <div class="tm-ctrl">
+        <label>Agregar por
+          <select class="dash-select" id="p2-nivel" data-param="nivel">
+            <option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
+          </select></label>
+      </div>
+      <div class="tm-chart" id="graf-rgrupos" data-draw="r_grupos" data-source="renda_grupos"></div>
+      <p class="tm-muted">Valor por habitante do grupo ÷ valor por habitante do recorte × 100. Mostra até 30 grupos, ordenados pela renda com transferências; a tabela lista todos.</p>
+      <div class="tm-tablewrap">
+        <table id="tab-rgrupos" data-source="renda_grupos" data-row-key="grupo">
+          <thead><tr><th data-field="grupo">Grupo</th><th class="n" data-field="pop">População</th><th class="n" data-field="pib_pc">PIB (R$/hab./mês)</th><th class="n" data-field="massa_pc">Massa salarial</th><th class="n" data-field="sem_pc">Renda sem transf.</th><th class="n" data-field="com_pc">Renda com transf.</th><th class="n" data-field="i_pib">PIB (=100)</th><th class="n" data-field="i_massa">Salários (=100)</th><th class="n" data-field="i_sem">Sem transf. (=100)</th><th class="n" data-field="i_com">Com transf. (=100)</th></tr></thead>
+          <tbody data-draw="r_tabgrupos"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== Peso das transferências por agregação ===== -->
-  <section class="tm-sec" id="regioes" role="tabpanel">
+  <section class="tm-sec" id="regioes" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-regioes">Peso das transferências por região</h1>
+      <p>Participação de cada benefício na renda domiciliar, somando os municípios do recorte em cada grupo.</p>
+    </div>
     <div class="tm-ctrl">
       <label>Agregar por
         <select class="dash-select" id="p-nivel" data-param="nivel">
@@ -148,6 +252,10 @@
 
   <!-- ===== Mapa ===== -->
   <section class="tm-sec" id="mapa" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-mapa">Mapa dos municípios</h1>
+      <p>Escolha a variável. Clique num município para ver a pirâmide etária dele.</p>
+    </div>
     <div class="tm-ctrl">
       <label>Variável no mapa
         <select class="dash-select" id="p-mapvar" data-param="mapvar">
@@ -178,12 +286,16 @@
       <h2 id="h-mapa">Mapa dos municípios: <span data-draw="m_titulo">—</span></h2>
       <div class="tm-maplegend" id="leg-mapa" data-draw="m_legenda" data-source="mapa_val"></div>
       <div class="tm-map" id="graf-mapa" data-draw="m_mapa" data-source="malha mapa_val"></div>
-      <p class="tm-muted">Com filtros ativos, o mapa enquadra os municípios do recorte; os demais ficam em cinza-claro. As cores seguem os quintis ou septis do recorte (ou uma escala centrada em zero para resíduos e migração). Role ou faça pinça para aproximar e arraste para mover. Clique num município para abrir a pirâmide dele na aba <i>Pirâmides</i>.</p>
+      <p class="tm-muted">Com filtros ativos, o mapa enquadra os municípios do recorte; os demais ficam em cinza-claro. As cores seguem os quintis ou septis do recorte (ou uma escala centrada em zero para resíduos e migração). Role ou faça pinça para aproximar e arraste para mover. Clique num município para abrir a pirâmide dele na página <i>Pirâmides</i>.</p>
     </div>
   </section>
 
   <!-- ===== Desigualdade ===== -->
   <section class="tm-sec" id="desigualdade" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-desig">Quanto as transferências reduzem a desigualdade</h1>
+      <p>Desigualdade da renda por habitante entre municípios (ou regiões), sem e com os cinco benefícios, e a contribuição de cada um. Resultado contábil: o efeito direto dos valores pagos.</p>
+    </div>
     <div class="tm-ctrl">
       <label>Renda própria (sem transferências)
         <select class="dash-select" id="p-medida" data-param="medida">
@@ -221,6 +333,9 @@
 
   <!-- ===== Atrito x atração ===== -->
   <section class="tm-sec" id="atrito" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-atrito">Envelhecimento por atrito × atração</h1>
+    </div>
     <p>Municípios mais envelhecidos que a média do Brasil são classificados por migração líquida de coorte (2010→2022). <b>Atrito</b>: saída líquida de jovens acima de 10% (20–29 anos em 2010 → 32–41 em 2022). <b>Atração</b>: ganho líquido de idosos acima de 5% (50–59 → 62–71). Use o filtro <i>Tipologia etária</i> no topo para isolar um grupo.</p>
     <div class="tm-grid2">
       <div class="tm-card" id="card-disp">
@@ -269,6 +384,10 @@
 
   <!-- ===== Estrutura etária ===== -->
   <section class="tm-sec" id="idade" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-idade">Estrutura etária e dependência</h1>
+      <p>Quanto da dependência das transferências a idade da população explica, e o que sobra explicado pela migração.</p>
+    </div>
     <div class="tm-grid2">
       <div class="tm-card" id="card-r2">
         <h2 id="h-r2">Quanto da dependência a estrutura etária explica</h2>
@@ -279,7 +398,7 @@
         <h2 id="h-obsprev">Dependência observada × prevista pela idade</h2>
         <div class="tm-legend"><span><i class="tm-sw" data-cor="muted"></i>Prevista pela idade</span><span><i class="tm-sw" data-cor="0"></i>Observada</span></div>
         <div class="tm-chart" id="graf-obsprev" data-draw="i_obsprev" data-source="grupos"></div>
-        <p class="tm-muted">Médias ponderadas pela população, nos grupos escolhidos em <i>Agregar por</i> (aba Peso por região). Mostra os 30 grupos com maior diferença.</p>
+        <p class="tm-muted">Médias ponderadas pela população, nos grupos escolhidos em <i>Agregar por</i> (página Peso por região). Mostra os 30 grupos com maior diferença.</p>
       </div>
     </div>
     <div class="tm-card" id="card-coef">
@@ -308,6 +427,10 @@
 
   <!-- ===== Pirâmides ===== -->
   <section class="tm-sec" id="piramide" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-pir">Pirâmides etárias 2010 × 2022</h1>
+      <p>Composição por sexo e idade de um município ou da soma do recorte, nos dois Censos.</p>
+    </div>
     <div class="tm-ctrl">
       <label>Município (vazio = todos os municípios do recorte)
         <input type="text" id="busca-pir" list="lista-mun" placeholder="Digite o nome do município" autocomplete="off"></label>
@@ -342,6 +465,7 @@
       <li><b>Regiões imediatas e intermediárias</b>: divisão do IBGE de 2017, lida dos agregados por setor do Censo 2022. <b>Bioma</b>: bioma predominante por município (IBGE, 2024). <b>Semiárido</b>: 1.477 municípios (Res. Condel/Sudene 150/2021 + 50 mantidos).</li>
       <li><b>Migração por coorte</b>: razão entre a coorte de 2022 e a de 2010, dividida pela razão nacional (desconta a mortalidade média), em log. Quatro municípios criados após 2010 ficam sem esse índice.</li>
       <li><b>Pirâmides</b>: grupos 0–9 e 75+ agregados porque as tabelas de 2010 por sexo não trazem 0–4 e 5–9 separadamente. Homens de 2010 = total − mulheres. A delimitação urbano/rural mudou entre os Censos.</li>
+      <li><b>PIB × renda</b>: PIB municipal (anual, dividido por 12) e massa salarial mensal do emprego formal (RAIS) da planilha do projeto. O PIB e a RAIS são medidos no local de produção ou de trabalho; a renda do Censo, no domicílio.</li>
       <li><b>Mapa</b>: malha municipal do IBGE (API de malhas, qualidade mínima), em projeção cônica equivalente de Albers. Os contornos são simplificados, então municípios muito pequenos podem aparecer como poucos pixels.</li>
       <li>Cinco municípios sem dados de aposentadoria ficam fora (5.561 de 5.570).</li>
     </ul>
@@ -419,6 +543,66 @@ dash.calc('mapa_val', { inputs: ['sel'], title: 'Valor de cada município no map
     const valor = (m) => (BEN[v] ? m[BEN[v]] / m.renda : v === 'renda_pc' ? m.renda / m.pop : m[v]);
     const limpo = (x) => (typeof x === 'number' && !isFinite(x) ? null : x ?? null);   // cobertura infinita (sem residente rural elegível) vira sem dado
     return sel.map((m) => ({ cod: m.cod, nome: m.nome, uf: m.uf, valor: limpo(valor(m)) }));
+  } });
+
+dash.calc('escada', { inputs: ['sel'], title: 'PIB, salários e renda: níveis e desigualdade',
+  description: 'Para PIB (anual ÷ 12), massa salarial RAIS, renda sem e com transferências: valor médio por habitante e Gini, Atkinson (ε = 0,5; 1; 2) e Theil-T entre as unidades escolhidas.',
+  fn: (sel) => {
+    const p = dash.params(); const unid = p.unidade || 'mun'; const pond = (p.pond ?? '1') !== '0';
+    const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
+    const sem = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
+    const MED = [['pib', 'PIB', (m) => m.pib_mes], ['massa', 'Massa salarial RAIS', (m) => m.massa_sal],
+      ['sem', 'Renda sem transferências', sem], ['com', 'Renda com transferências', (m) => sem(m) + T(m)]];
+    const grupos = unid === 'mun' ? sel.map((m) => [m]) : d3.groups(sel, (m) => m[unid]).map((g) => g[1]);
+    const u = grupos.map((ms) => { const o = { pop: d3.sum(ms, (m) => m.pop) }; MED.forEach(([k, , f]) => { o[k] = d3.sum(ms, f); }); return o; })
+      .filter((g) => g.pop > 0 && MED.every(([k]) => g[k] > 0));
+    if (u.length < 2) return [];
+    const w = u.map((g) => (pond ? g.pop : 1)); const W = d3.sum(w);
+    const gini = (y) => { const o = d3.range(y.length).sort((a, b) => y[a] - y[b]); const Y = d3.sum(y.map((v, i) => v * w[i]));
+      let cw = 0, cy = 0, g = 0; for (const i of o) { const nw = cw + w[i] / W, ny = cy + y[i] * w[i] / Y; g += (nw - cw) * (ny + cy); cw = nw; cy = ny; } return 1 - g; };
+    const atk = (y, e) => { const m = d3.sum(y.map((v, i) => v * w[i])) / W;
+      if (e === 1) return 1 - Math.exp(d3.sum(y.map((v, i) => w[i] * Math.log(v))) / W) / m;
+      return 1 - Math.pow(d3.sum(y.map((v, i) => w[i] * Math.pow(v, 1 - e))) / W, 1 / (1 - e)) / m; };
+    const theil = (y) => { const m = d3.sum(y.map((v, i) => v * w[i])) / W; return d3.sum(y.map((v, i) => (w[i] / W) * (v / m) * Math.log(v / m))); };
+    const popTot = d3.sum(u, (g) => g.pop);
+    return MED.map(([medida, rotulo]) => { const y = u.map((g) => g[medida] / g.pop);
+      return { medida, rotulo, media_pc: d3.sum(u, (g) => g[medida]) / popTot, gini: gini(y), atk05: atk(y, 0.5), atk1: atk(y, 1), atk2: atk(y, 2), theil: theil(y), unidades: u.length }; });
+  } });
+
+dash.calc('lorenz', { inputs: ['sel'], title: 'Curvas de Lorenz das quatro medidas',
+  description: 'Parcela acumulada da população (ou das unidades) e do valor, com as unidades ordenadas pelo valor por habitante em cada medida; até 200 pontos por curva.',
+  fn: (sel) => {
+    const p = dash.params(); const unid = p.unidade || 'mun'; const pond = (p.pond ?? '1') !== '0';
+    const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
+    const sem = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
+    const MED = [['pib', (m) => m.pib_mes], ['massa', (m) => m.massa_sal], ['sem', sem], ['com', (m) => sem(m) + T(m)]];
+    const grupos = unid === 'mun' ? sel.map((m) => [m]) : d3.groups(sel, (m) => m[unid]).map((g) => g[1]);
+    const u = grupos.map((ms) => { const o = { pop: d3.sum(ms, (m) => m.pop) }; MED.forEach(([k, f]) => { o[k] = d3.sum(ms, f); }); return o; })
+      .filter((g) => g.pop > 0 && MED.every(([k]) => g[k] > 0));
+    if (u.length < 2) return [];
+    const out = [];
+    MED.forEach(([medida]) => {
+      const o = u.slice().sort((a, b) => a[medida] / a.pop - b[medida] / b.pop);
+      const W = d3.sum(o, (g) => (pond ? g.pop : 1)), V = d3.sum(o, (g) => (pond ? g[medida] : g[medida] / g.pop));
+      const passo = Math.max(1, Math.floor(o.length / 200)); let cw = 0, cv = 0;
+      out.push({ medida, p: 0, l: 0 });
+      o.forEach((g, i) => { cw += (pond ? g.pop : 1) / W; cv += (pond ? g[medida] : g[medida] / g.pop) / V; if (i % passo === 0 || i === o.length - 1) out.push({ medida, p: cw, l: cv }); });
+    });
+    return out;
+  } });
+
+dash.calc('renda_grupos', { inputs: ['sel'], title: 'PIB, salários e renda por grupo',
+  description: 'Valor por habitante de cada medida no grupo e índice em relação ao recorte (= 100).',
+  fn: (sel) => {
+    const p = dash.params(); const nivel = p.nivel || 'uf';
+    const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
+    const sem = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
+    const tot = (ms) => { const pop = d3.sum(ms, (m) => m.pop); return { pop, pib: d3.sum(ms, (m) => m.pib_mes) / pop, massa: d3.sum(ms, (m) => m.massa_sal) / pop,
+      sem: d3.sum(ms, sem) / pop, com: d3.sum(ms, (m) => sem(m) + T(m)) / pop }; };
+    const b = tot(sel);
+    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => { const t = tot(ms);
+      return { grupo, pop: t.pop, pib_pc: t.pib, massa_pc: t.massa, sem_pc: t.sem, com_pc: t.com,
+        i_pib: 100 * t.pib / b.pib, i_massa: 100 * t.massa / b.massa, i_sem: 100 * t.sem / b.sem, i_com: 100 * t.com / b.com }; });
   } });
 
 dash.calc('sel', { inputs: ['municipios'], title: 'Municípios no recorte',
@@ -585,8 +769,12 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
     if (link) dash.setLink(id);
   };
   tabs.forEach((t) => t.addEventListener('click', () => abrir(t.dataset.tab, true)));
-  TM.abrirAba = (id) => { abrir(id, true); document.querySelectorAll('#' + id).forEach((sec) => sec.scrollIntoView({ block: 'start' })); };
+  TM.abrirAba = (id) => { abrir(id, true); document.querySelectorAll('#topo').forEach((t) => t.scrollIntoView({ block: 'start' })); };
   const h = (location.hash || '').slice(1); if (h) abrir(h, false);
+  window.addEventListener('hashchange', () => { const n = (location.hash || '').slice(1); if (n) abrir(n, false); });
+  const irPara = (id) => { abrir(id, true); document.querySelectorAll('#topo').forEach((t) => t.scrollIntoView({ block: 'start' })); };
+  tabs.forEach((t) => t.addEventListener('click', () => document.querySelectorAll('#topo').forEach((x) => x.scrollIntoView({ block: 'start' }))));
+  document.querySelectorAll('[data-goto]').forEach((b) => b.addEventListener('click', () => irPara(b.dataset.goto)));
   let antes = null;
   window.addEventListener('beforeprint', () => { if (antes) return; antes = [...document.querySelectorAll('.tm-sec')].map((s) => [s, s.hidden]); antes.forEach(([s]) => { s.hidden = false; }); });
   window.addEventListener('afterprint', () => { if (!antes) return; antes.forEach(([s, v]) => { s.hidden = v; }); antes = null; });
@@ -595,6 +783,7 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
   document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#mapa-reenquadrar').forEach((b) => b.addEventListener('click', () => dash.draw('m_mapa')));
+  document.querySelectorAll('#esc-indice').forEach((s) => s.addEventListener('change', () => dash.draw('r_escada')));
   document.querySelectorAll('#reg-modelo').forEach((s) => s.addEventListener('change', () => { dash.draw('i_coef'); dash.draw('i_tabcoef'); }));
   const sem = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const achar = (txt, aproximado) => {
@@ -639,6 +828,7 @@ dash.draw('t_g1', um('desig', 'com', (v) => TM.dec(v), (d) => d.indice === 'gini
 dash.draw('t_top', um('shapley', 'rotulo', (v) => v ?? '—'));
 dash.draw('t_toppct', um('shapley', 'pct', (v) => TM.pct(v, 0)));
 dash.draw('k_n', um('resumo', 'n', (v) => TM.num(v)));
+dash.draw('f_n', um('resumo', 'n', (v) => TM.num(v)));
 dash.draw('k_pop', um('resumo', 'pop_mi', (v) => TM.num(v, 1)));
 dash.draw('k_dep', um('resumo', 'dep', (v) => TM.pct(v)));
 dash.draw('k_red', um('desig', 'reducao', (v) => TM.pct(v), (d) => d.indice === 'gini'));
@@ -701,6 +891,101 @@ dash.draw('k_atc', um('resumo', 'n_atracao', (v) => TM.num(v)));
     }));
   });
 })();
+</script>
+
+<script>
+/* ---------- página: PIB x renda ---------- */
+TM.MEDCOR = { pib: 2, massa: 1, sem: 4, com: 0 };
+dash.draw('r_escada', (el) => {
+  const r = dash.data('escada'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data; if (!rows.length) { el.textContent = 'O recorte precisa de pelo menos duas unidades.'; return; }
+  const sel = document.querySelector('#esc-indice'); const k = (sel && sel.value) || 'gini'; const nomeIdx = sel ? sel.options[sel.selectedIndex].text : 'Gini';
+  const W = el.clientWidth || 500, rh = 44;
+  const ml = d3.max(rows, (d) => TM.textW(d.rotulo, el)) + 12, mr = TM.textW('0,000  −00%', el) + 16, H = rows.length * rh + 28;
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d[k])]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', `${nomeIdx} de cada medida de renda`);
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70))); const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.dec(d, 2));
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 6})`);
+  g.append('text').attr('x', ml - 10).attr('y', (rh - 12) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.rotulo);
+  g.append('rect').attr('x', x(0)).attr('height', rh - 12).attr('width', (d) => x(d[k]) - x(0)).style('fill', (d) => TM.cor(TM.MEDCOR[d.medida]))
+    .on('pointermove', (ev, d) => tip.show(ev, [[d.rotulo], [nomeIdx, TM.dec(d[k])], ['Unidades', TM.num(d.unidades)]])).on('pointerleave', () => tip.hide());
+  g.append('text').attr('x', (d) => x(d[k]) + 6).attr('y', (rh - 12) / 2).attr('dy', '0.35em').attr('class', 'lbl-strong').text((d) => TM.dec(d[k]));
+  g.append('text').attr('x', (d) => x(d[k]) + 6 + TM.textW(TM.dec(d[k]), el) + 8).attr('y', (rh - 12) / 2).attr('dy', '0.35em')
+    .text((d, i) => (i === 0 ? '' : `${d[k] <= rows[i - 1][k] ? '−' : '+'}${TM.pct(Math.abs(d[k] / rows[i - 1][k] - 1), 0)}`));
+});
+dash.draw('r_niveis', (el) => {
+  const r = dash.data('escada'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data; if (!rows.length) { el.textContent = 'O recorte precisa de pelo menos duas unidades.'; return; }
+  const W = el.clientWidth || 500, rh = 44;
+  const ml = d3.max(rows, (d) => TM.textW(d.rotulo, el)) + 12, mr = TM.textW('R$ 0.000', el) + 12, H = rows.length * rh + 28;
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d.media_pc)]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Valor médio por habitante de cada medida');
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 80))); const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.num(d));
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 6})`);
+  g.append('text').attr('x', ml - 10).attr('y', (rh - 12) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.rotulo);
+  g.append('rect').attr('x', x(0)).attr('height', rh - 12).attr('width', (d) => x(d.media_pc) - x(0)).style('fill', (d) => TM.cor(TM.MEDCOR[d.medida]));
+  g.append('text').attr('x', (d) => x(d.media_pc) + 6).attr('y', (rh - 12) / 2).attr('dy', '0.35em').attr('class', 'lbl-strong').text((d) => 'R$ ' + TM.num(d.media_pc));
+});
+dash.draw('r_lorenz', (el) => {
+  const r = dash.data('lorenz'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  if (!r.data.length) { el.textContent = 'O recorte precisa de pelo menos duas unidades.'; return; }
+  const Wd = el.clientWidth || 500, S = Math.min(Wd, 520), m = { l: 44, r: 12, t: 10, b: 34 };
+  const x = d3.scaleLinear().domain([0, 1]).range([m.l, S - m.r]), y = d3.scaleLinear().domain([0, 1]).range([S - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('width', S).attr('style', 'max-width:100%').attr('viewBox', `0 0 ${S} ${S}`).attr('role', 'img').attr('aria-label', 'Curvas de Lorenz das quatro medidas');
+  const tk = [0, 0.25, 0.5, 0.75, 1]; const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('.v').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', m.t).attr('y2', S - m.b);
+  gr.selectAll('.h').data(tk).join('line').attr('x1', m.l).attr('x2', S - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d));
+  gr.selectAll('.tx').data(tk).join('text').attr('x', (d) => x(d)).attr('y', S - m.b + 16).attr('text-anchor', 'middle').text((d) => TM.pct(d, 0));
+  gr.selectAll('.ty').data(tk).join('text').attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.35em').attr('text-anchor', 'end').text((d) => TM.pct(d, 0));
+  svg.append('line').attr('x1', x(0)).attr('y1', y(0)).attr('x2', x(1)).attr('y2', y(1)).style('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 3');
+  const linha = d3.line().x((d) => x(d.p)).y((d) => y(d.l));
+  d3.groups(r.data, (d) => d.medida).forEach(([medida, pts]) => svg.append('path').attr('d', linha(pts)).style('fill', 'none').style('stroke', TM.cor(TM.MEDCOR[medida])).attr('stroke-width', 2.2));
+  const tip = TM.tip(el); const ROT = { pib: 'PIB', massa: 'Massa salarial RAIS', sem: 'Renda sem transferências', com: 'Renda com transferências' };
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', S - m.l - m.r).attr('height', S - m.t - m.b).style('fill', 'transparent')
+    .on('pointermove', (ev) => {
+      const [px] = d3.pointer(ev, svg.node()); const pv = Math.max(0, Math.min(1, x.invert(px)));
+      const lin = d3.groups(r.data, (d) => d.medida).map(([medida, pts]) => { const i = d3.bisector((d) => d.p).left(pts, pv); const d = pts[Math.min(i, pts.length - 1)]; return [ROT[medida], TM.pct(d.l)]; });
+      tip.show(ev, [[`${TM.pct(pv, 0)} mais pobres têm:`], ...lin]);
+    }).on('pointerleave', () => tip.hide());
+});
+dash.draw('r_tabela', (tb) => {
+  const r = dash.data('escada'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...r.data.map((d) => { const tr = linhaTabela([[d.rotulo], ['R$ ' + TM.num(d.media_pc), 'n'], [TM.dec(d.gini), 'n'], [TM.dec(d.atk05), 'n'], [TM.dec(d.atk1), 'n'], [TM.dec(d.atk2), 'n'], [TM.dec(d.theil), 'n'], [TM.num(d.unidades), 'n']]); tr.dataset.key = d.medida; return tr; }));
+});
+dash.draw('r_grupos', (el) => {
+  const r = dash.data('renda_grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data.slice().sort((a, b) => b.i_com - a.i_com).slice(0, 30);
+  if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+  const W = el.clientWidth || 600, rh = 22, K = [['i_pib', 'pib', 'PIB'], ['i_massa', 'massa', 'Massa salarial'], ['i_sem', 'sem', 'Sem transferências'], ['i_com', 'com', 'Com transferências']];
+  const ml = Math.min(W * 0.4, d3.max(rows, (d) => TM.textW(String(d.grupo), el)) + 12), mr = 16, H = rows.length * rh + 28;
+  const vmax = d3.max(rows, (d) => d3.max(K, ([k]) => d[k])), vmin = d3.min(rows, (d) => d3.min(K, ([k]) => d[k]));
+  const x = d3.scaleLog().domain([Math.min(50, vmin * 0.9), Math.max(200, vmax * 1.1)]).range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Índice de cada medida por grupo, recorte = 100');
+  const tk = [10, 25, 50, 100, 200, 400, 800, 1600].filter((t) => t >= x.domain()[0] && t <= x.domain()[1]); const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.num(d));
+  svg.append('line').attr('x1', x(100)).attr('x2', x(100)).attr('y1', 0).attr('y2', H - 22).style('stroke', 'var(--cds-chart-reference)').attr('stroke-width', 1.5);
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + rh / 2})`);
+  g.append('text').attr('x', ml - 10).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.grupo);
+  g.append('line').attr('x1', (d) => x(d3.min(K, ([k]) => d[k]))).attr('x2', (d) => x(d3.max(K, ([k]) => d[k]))).style('stroke', 'var(--cds-chart-grid)').attr('stroke-width', 2);
+  K.forEach(([k, med]) => g.append('circle').attr('cx', (d) => x(d[k])).attr('r', 4.5).style('fill', TM.cor(TM.MEDCOR[med])));
+  g.append('rect').attr('x', 0).attr('y', -rh / 2).attr('width', W).attr('height', rh).style('fill', 'transparent')
+    .on('pointermove', (ev, d) => tip.show(ev, [[String(d.grupo)], ...K.map(([k, , rot]) => [rot, TM.num(d[k])])])).on('pointerleave', () => tip.hide());
+});
+dash.draw('r_tabgrupos', (tb) => {
+  const r = dash.data('renda_grupos'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...r.data.slice().sort((a, b) => b.i_com - a.i_com).map((d) => { const tr = linhaTabela([[d.grupo], [TM.num(d.pop), 'n'], [TM.num(d.pib_pc), 'n'], [TM.num(d.massa_pc), 'n'], [TM.num(d.sem_pc), 'n'], [TM.num(d.com_pc), 'n'], [TM.num(d.i_pib), 'n'], [TM.num(d.i_massa), 'n'], [TM.num(d.i_sem), 'n'], [TM.num(d.i_com), 'n']]); tr.dataset.key = encodeURIComponent(d.grupo); return tr; }));
+});
 </script>
 
 <script>

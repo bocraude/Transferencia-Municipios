@@ -39,7 +39,8 @@ m = pd.DataFrame({
     'mig_jovem_mulher': d.mig_jovem_mulher.round(4), 'mig_jovem_homem': d.mig_jovem_homem.round(4),
     'mig_jovem_urb': d.mig_jovem_urb.round(4), 'mig_jovem_rur': d.mig_jovem_rur.round(4),
     'sh_60m': d.sh_60m.round(4), 'rural_10': d.rural_sh_10.round(4), 'rural_22': d.rural_sh_22.round(4),
-    'cobertura_rural': d.cobertura_rural_22.round(3)})
+    'cobertura_rural': d.cobertura_rural_22.round(3),
+    'pib_mes': (d.pib / 12).round(0), 'massa_sal': d.massa_salarial.round(0)})   # PIB anual ÷ 12, para comparar com valores mensais
 assert m.rgi.notna().all() and m.bioma.notna().all()
 m['tipo'] = m.tipo.fillna('sem dados de migração'); m['tipo_situacao'] = m.tipo_situacao.fillna('sem dados de migração')
 m = m.astype({c: 'float' for c in m.columns[8:] if pd.api.types.is_numeric_dtype(m[c])})
