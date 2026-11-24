@@ -319,7 +319,7 @@
         <h2 id="h-pir">Estrutura etária: <span data-draw="p_nome" data-source="pirsum" data-field="nome" data-row="0">—</span></h2>
         <div class="tm-legend"><span><i class="tm-sw" data-cor="0"></i>Homens 2022</span><span><i class="tm-sw" data-cor="1"></i>Mulheres 2022</span><span><i class="tm-sw ring"></i>Contorno de 2010</span></div>
         <div class="tm-chart" id="graf-pir" data-draw="p_grafico" data-source="pir"></div>
-        <p class="tm-muted">Percentual da população total de cada ano em cada grupo de idade e sexo. Censo 2010 (SIDRA 1378) e Censo 2022 (SIDRA 10089).</p>
+        <p class="tm-muted">Percentual da população total de cada ano em cada grupo de idade e sexo. O grupo 0–9 aparece dividido por 2 para ficar comparável aos grupos de 5 anos; 75+ é aberto. Censo 2010 (SIDRA 1378) e Censo 2022 (SIDRA 10089).</p>
       </div>
       <div class="tm-card" id="card-pirsum">
         <h2 id="h-pirsum">Mudança entre os Censos</h2>
@@ -530,7 +530,9 @@ dash.calc('pir', { inputs: ['piramides', 'sel'], title: 'Pirâmide etária 2010 
     const s = (k) => d3.sum(rows, (r) => r[k]);
     const t10 = d3.sum(G, (g) => s('h10_' + g) + s('m10_' + g)), t22 = d3.sum(G, (g) => s('h22_' + g) + s('m22_' + g));
     if (!t10 || !t22) return [];
-    return G.map((g) => ({ grupo: g === '75m' ? '75+' : g.replace('_', '–'), h10: s('h10_' + g) / t10, m10: s('m10_' + g) / t10, h22: s('h22_' + g) / t22, m22: s('m22_' + g) / t22 }));
+    // 0–9 cobre 10 anos: dividido por 2 para ficar comparável aos grupos de 5 anos
+    const k = (g) => (g === '0_9' ? 0.5 : 1);
+    return G.map((g) => ({ grupo: g === '75m' ? '75+' : g === '0_9' ? '0–9 ÷2' : g.replace('_', '–'), h10: k(g) * s('h10_' + g) / t10, m10: k(g) * s('m10_' + g) / t10, h22: k(g) * s('h22_' + g) / t22, m22: k(g) * s('m22_' + g) / t22 }));
   } });
 
 dash.calc('pirsum', { inputs: ['piramides', 'sel', 'municipios'], title: 'Recorte da pirâmide',
@@ -1008,13 +1010,13 @@ dash.draw('p_grafico', (el) => {
   const r = dash.data('pir'); if (r.status !== 'ok') { TM.estado(el, r); return; }
   el.classList.remove('dash-skeleton'); el.replaceChildren();
   const rows = r.data.slice().reverse(); if (!rows.length) { el.textContent = 'Sem dados de 2010 para este recorte (município criado após 2010).'; return; }
-  const W = el.clientWidth || 500, rh = 20, H = rows.length * rh + 30, mid = W / 2, lab = TM.textW('75+', el) + 16;
+  const W = el.clientWidth || 500, rh = 20, top = 20, H = rows.length * rh + 30 + top, mid = W / 2, lab = TM.textW('0–9 ÷2', el) + 16;
   const mx = d3.max(rows, (d) => Math.max(d.h10, d.m10, d.h22, d.m22));
   const xr = d3.scaleLinear().domain([0, mx]).nice().range([0, mid - lab / 2 - 8]);
   const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Pirâmide etária 2022 com contorno de 2010');
-  const y = (i) => i * rh;
+  const y = (i) => top + i * rh;
   const tk = xr.ticks(3).filter((t) => t > 0); const gr = svg.append('g').attr('class', 'grid');
-  tk.forEach((t) => { [mid - lab / 2 - xr(t), mid + lab / 2 + xr(t)].forEach((xx) => { gr.append('line').attr('x1', xx).attr('x2', xx).attr('y1', 0).attr('y2', H - 24); gr.append('text').attr('x', xx).attr('y', H - 8).attr('text-anchor', 'middle').text(TM.pct(t, 0)); }); });
+  tk.forEach((t) => { [mid - lab / 2 - xr(t), mid + lab / 2 + xr(t)].forEach((xx) => { gr.append('line').attr('x1', xx).attr('x2', xx).attr('y1', top).attr('y2', H - 24); gr.append('text').attr('x', xx).attr('y', H - 8).attr('text-anchor', 'middle').text(TM.pct(t, 0)); }); });
   const tip = TM.tip(el);
   const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${y(i)})`);
   g.append('rect').attr('x', (d) => mid - lab / 2 - xr(d.h22)).attr('y', 2).attr('width', (d) => xr(d.h22)).attr('height', rh - 4).style('fill', TM.cor(0));
@@ -1022,8 +1024,8 @@ dash.draw('p_grafico', (el) => {
   g.append('text').attr('x', mid).attr('y', rh / 2).attr('dy', '0.35em').attr('text-anchor', 'middle').attr('class', 'lbl-strong').text((d) => d.grupo);
   const pts = (lado) => rows.flatMap((d, i) => { const v = lado === 'h' ? d.h10 : d.m10; const xx = lado === 'h' ? mid - lab / 2 - xr(v) : mid + lab / 2 + xr(v); return [[xx, y(i)], [xx, y(i) + rh]]; });
   ['h', 'm'].forEach((l) => svg.append('path').attr('d', d3.line()(pts(l))).style('fill', 'none').style('stroke', 'var(--color-fg)').attr('stroke-width', 1.5));
-  svg.append('text').attr('x', 4).attr('y', H - 8).text('Homens');
-  svg.append('text').attr('x', W - 4).attr('y', H - 8).attr('text-anchor', 'end').text('Mulheres');
+  svg.append('text').attr('x', mid - lab / 2 - 8).attr('y', 10).attr('text-anchor', 'end').attr('class', 'lbl-strong').text('Homens');
+  svg.append('text').attr('x', mid + lab / 2 + 8).attr('y', 10).attr('class', 'lbl-strong').text('Mulheres');
   g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rh).style('fill', 'transparent')
     .on('pointermove', (ev, d) => tip.show(ev, [[`${d.grupo} anos`], ['Homens 2010 → 2022', `${TM.pct(d.h10)} → ${TM.pct(d.h22)}`], ['Mulheres 2010 → 2022', `${TM.pct(d.m10)} → ${TM.pct(d.m22)}`]]))
     .on('pointerleave', () => tip.hide());
