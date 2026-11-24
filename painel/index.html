@@ -585,20 +585,38 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
     if (link) dash.setLink(id);
   };
   tabs.forEach((t) => t.addEventListener('click', () => abrir(t.dataset.tab, true)));
+  TM.abrirAba = (id) => { abrir(id, true); document.querySelectorAll('#' + id).forEach((sec) => sec.scrollIntoView({ block: 'start' })); };
   const h = (location.hash || '').slice(1); if (h) abrir(h, false);
   let antes = null;
   window.addEventListener('beforeprint', () => { if (antes) return; antes = [...document.querySelectorAll('.tm-sec')].map((s) => [s, s.hidden]); antes.forEach(([s]) => { s.hidden = false; }); });
   window.addEventListener('afterprint', () => { if (!antes) return; antes.forEach(([s, v]) => { s.hidden = v; }); antes = null; });
 
   document.querySelectorAll('#ord-grupos').forEach((s) => s.addEventListener('change', () => { dash.draw('g_barras'); dash.draw('g_tabela'); }));
-  document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => dash.draw('a_lista')));
-  document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => dash.draw('a_lista')));
+  document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
+  document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#mapa-reenquadrar').forEach((b) => b.addEventListener('click', () => dash.draw('m_mapa')));
   document.querySelectorAll('#reg-modelo').forEach((s) => s.addEventListener('change', () => { dash.draw('i_coef'); dash.draw('i_tabcoef'); }));
-  document.querySelectorAll('#busca-pir').forEach((inp) => inp.addEventListener('change', () => {
-    const cod = (TM.munPorRotulo || new Map()).get(inp.value.trim());
-    if (cod) dash.setParams({ mun: String(cod) });
-  }));
+  const sem = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const achar = (txt, aproximado) => {
+    const exato = (TM.munPorRotulo || new Map()).get(txt.trim()); if (exato) return exato;
+    if (!aproximado || !TM.munLista) return null;
+    const q = sem(txt.split('–')[0]); if (!q) return null;
+    const igual = TM.munLista.filter((m) => sem(m.nome) === q);
+    const comeca = igual.length ? igual : TM.munLista.filter((m) => sem(m.nome).startsWith(q));
+    const contem = comeca.length ? comeca : TM.munLista.filter((m) => sem(m.nome).includes(q));
+    return contem.length ? contem.sort((a, b) => b.pop - a.pop)[0].cod : null;   // empate: o mais populoso
+  };
+  document.querySelectorAll('#busca-pir').forEach((inp) => {
+    inp.addEventListener('input', () => { const cod = achar(inp.value, false); if (cod) dash.setParams({ mun: String(cod) }); });
+    inp.addEventListener('change', () => { const cod = achar(inp.value, true); if (cod) dash.setParams({ mun: String(cod) }); });
+  });
+  dash.onData(() => {
+    const mun = dash.params().mun; const r = dash.data('municipios');
+    document.querySelectorAll('#busca-pir').forEach((inp) => {
+      if (document.activeElement === inp || r.status !== 'ok') return;
+      const m = mun ? r.data.find((x) => x.cod === +mun) : null; inp.value = m ? `${m.nome} – ${m.uf}` : '';
+    });
+  });
   document.querySelectorAll('#pir-limpar').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('#busca-pir').forEach((i) => { i.value = ''; }); dash.setParams({ mun: null });
   }));
@@ -773,9 +791,13 @@ dash.draw('m_mapa', {
       const d = ev.target.__data__; if (!d || d.cod <= 1) { tip.hide(); return; }
       const r = vals.get(d.cod);
       if (!r) { tip.show(ev, [['Fora do recorte ou sem dados']]); return; }
-      tip.show(ev, [[`${r.nome} (${r.uf})`], [meta.rot, r.valor == null ? 'sem dado' : meta.fmt(r.valor)], ['Clique', 'abre a pirâmide']]);
+      tip.show(ev, [[`${r.nome} (${r.uf})`], [meta.rot, r.valor == null ? 'sem dado' : meta.fmt(r.valor)], ['Clique', 'abre a pirâmide etária']]);
     }).on('pointerleave', () => tip.hide())
-      .on('click', (ev) => { const d = ev.target.__data__; if (d && vals.has(d.cod)) dash.setParams({ mun: String(d.cod) }); });
+      .on('click', (ev) => {
+        const d = ev.target.__data__; if (!d || !vals.has(d.cod)) return;
+        dash.setParams({ mun: String(d.cod) });
+        if (TM.abrirAba) TM.abrirAba('piramide');
+      });
   }
 });
 </script>
@@ -1003,7 +1025,7 @@ dash.draw('p_lista', (dl) => {
   const r = dash.data('municipios'); if (r.status !== 'ok') { dl.replaceChildren(); return; }
   const mapa = new Map();
   dl.replaceChildren(...r.data.map((m) => { const rot = `${m.nome} – ${m.uf}`; mapa.set(rot, m.cod); const o = document.createElement('option'); o.value = rot; return o; }));
-  TM.munPorRotulo = mapa;
+  TM.munPorRotulo = mapa; TM.munLista = r.data;
 });
 dash.draw('p_nome', um('pirsum', 'nome', (v) => v ?? '—'));
 dash.draw('p_grafico', (el) => {
