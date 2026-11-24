@@ -64,6 +64,7 @@
 .tm-map .mun { stroke: var(--color-bg); stroke-width: 0.25px; vector-effect: non-scaling-stroke; }
 .tm-map .mun:hover { stroke: var(--color-fg); stroke-width: 1.2px; }
 .tm-map .ufs { fill: none; stroke: var(--color-fg-muted); stroke-width: 0.8px; vector-effect: non-scaling-stroke; pointer-events: none; }
+.tm-map .grp { fill: none; stroke: var(--color-fg); stroke-width: 0.9px; vector-effect: non-scaling-stroke; pointer-events: none; }
 .tm-map .pais { fill: none; stroke: var(--color-fg-muted); stroke-width: 1px; vector-effect: non-scaling-stroke; pointer-events: none; }
 .tm-maplegend { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; min-height: 1.5em; }
 .tm-maplegend .cls { display: inline-flex; align-items: center; gap: 4px; }
@@ -185,7 +186,7 @@
       <div class="tm-ctrl">
         <label>Agregar por
           <select class="dash-select" id="p3-nivel" data-param="nivel">
-            <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
+            <option value="mun">Município</option><option value="rgi">Região geográfica imediata</option><option value="rgint">Região geográfica intermediária</option><option value="uf">UF</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
           </select></label>
         <label>Mostrar
           <select class="dash-select" id="v-modo">
@@ -196,6 +197,12 @@
         <span><i class="tm-sw" data-cor="0"></i>Aposentadoria rural</span><span><i class="tm-sw" data-cor="1"></i>Bolsa Família</span><span><i class="tm-sw" data-cor="2"></i>BPC</span><span><i class="tm-sw" data-cor="3"></i>Aposentadoria urbana</span><span><i class="tm-sw" data-cor="4"></i>Seguro-desemprego</span>
       </div>
       <div class="tm-chart" id="graf-vgrupos" data-draw="v_grupos" data-source="valores_grupos"></div>
+      <h3 id="h-vhist">Distribuição do valor por habitante entre as unidades (R$/mês)</h3>
+      <div class="tm-ctrl"><label>Benefício
+        <select class="dash-select" id="hist-val">
+          <option value="total">Todas as transferências</option><option value="apos_rural">Aposentadoria rural</option><option value="bolsa">Bolsa Família</option><option value="bpc">BPC</option><option value="apos_urbana">Aposentadoria urbana</option><option value="seguro">Seguro-desemprego</option>
+        </select></label></div>
+      <div class="tm-chart" id="graf-vhist" data-draw="v_hist" data-source="valores_grupos"></div>
       <p class="tm-muted">Mostra até 30 grupos, do maior para o menor; a tabela lista todos.</p>
       <div class="tm-tablewrap">
         <table id="tab-vgrupos" data-source="valores_grupos" data-row-key="grupo">
@@ -262,10 +269,16 @@
       <div class="tm-ctrl">
         <label>Agregar por
           <select class="dash-select" id="p2-nivel" data-param="nivel">
-            <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
+            <option value="mun">Município</option><option value="rgi">Região geográfica imediata</option><option value="rgint">Região geográfica intermediária</option><option value="uf">UF</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
           </select></label>
       </div>
       <div class="tm-chart" id="graf-rgrupos" data-draw="r_grupos" data-source="renda_grupos"></div>
+      <h3 id="h-rhist">Distribuição entre as unidades (R$ por habitante por mês)</h3>
+      <div class="tm-ctrl"><label>Medida
+        <select class="dash-select" id="hist-renda">
+          <option value="com_pc">Renda com transferências</option><option value="sem_pc">Renda sem transferências</option><option value="massa_pc">Massa salarial RAIS</option><option value="pib_pc">PIB</option>
+        </select></label></div>
+      <div class="tm-chart" id="graf-rhist" data-draw="r_hist" data-source="renda_grupos"></div>
       <p class="tm-muted">Valor por habitante do grupo ÷ valor por habitante do recorte × 100. Mostra até 30 grupos, ordenados pela renda com transferências; a tabela lista todos.</p>
       <div class="tm-tablewrap">
         <table id="tab-rgrupos" data-source="renda_grupos" data-row-key="grupo">
@@ -285,7 +298,7 @@
     <div class="tm-ctrl">
       <label>Agregar por
         <select class="dash-select" id="p-nivel" data-param="nivel">
-          <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
+          <option value="mun">Município</option><option value="rgi">Região geográfica imediata</option><option value="rgint">Região geográfica intermediária</option><option value="uf">UF</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
         </select></label>
       <label>Ordenar por
         <select class="dash-select" id="ord-grupos">
@@ -304,6 +317,15 @@
       </div>
       <div class="tm-chart" id="graf-peso" data-draw="g_barras" data-source="grupos"></div>
     </div>
+    <div class="tm-card" id="card-ghist">
+      <h2 id="h-ghist">Distribuição entre as unidades</h2>
+      <div class="tm-ctrl"><label>Variável
+        <select class="dash-select" id="hist-peso">
+          <option value="dep">Todas as transferências ÷ renda</option><option value="sh_apos_rural">Aposentadoria rural ÷ renda</option><option value="sh_bolsa">Bolsa Família ÷ renda</option><option value="sh_bpc">BPC ÷ renda</option><option value="sh_apos_urbana">Aposentadoria urbana ÷ renda</option><option value="sh_seguro">Seguro-desemprego ÷ renda</option>
+        </select></label></div>
+      <div class="tm-chart" id="graf-ghist" data-draw="g_hist" data-source="grupos"></div>
+      <p class="tm-muted">Número de unidades (do nível escolhido em <i>Agregar por</i>) em cada faixa. Linha tracejada: mediana.</p>
+    </div>
     <div class="tm-tablewrap" id="tab-grupos-wrap">
       <table id="tab-grupos" data-source="grupos" data-row-key="grupo">
         <thead><tr>
@@ -317,8 +339,8 @@
   <!-- ===== Mapa ===== -->
   <section class="tm-sec" id="mapa" role="tabpanel" hidden>
     <div class="tm-pagehead">
-      <h1 id="t-mapa">Mapa dos municípios</h1>
-      <p>Escolha a variável. Clique num município para ver a pirâmide etária dele.</p>
+      <h1 id="t-mapa">Mapa por município ou região</h1>
+      <p>Escolha a variável e o recorte: município, região imediata, região intermediária, UF, grande região, bioma, semiárido ou tipologia. Clique num município para ver a pirâmide etária dele.</p>
     </div>
     <div class="tm-ctrl">
       <label>Variável no mapa
@@ -344,13 +366,34 @@
             <option value="mig_idoso">Migração idosa (50–59 → 62–71)</option>
           </optgroup>
         </select></label>
+      <label>Agregar por
+        <select class="dash-select" id="p4-nivel" data-param="nivel">
+          <option value="mun">Município</option><option value="rgi">Região geográfica imediata</option><option value="rgint">Região geográfica intermediária</option><option value="uf">UF</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
+        </select></label>
       <button type="button" class="tm-btn" id="mapa-reenquadrar">Reenquadrar</button>
     </div>
     <div class="tm-card" id="card-mapa">
-      <h2 id="h-mapa">Mapa dos municípios: <span data-draw="m_titulo">—</span></h2>
-      <div class="tm-maplegend" id="leg-mapa" data-draw="m_legenda" data-source="mapa_val"></div>
-      <div class="tm-map" id="graf-mapa" data-draw="m_mapa" data-source="malha mapa_val"></div>
-      <p class="tm-muted">Com filtros ativos, o mapa enquadra os municípios do recorte; os demais ficam em cinza-claro. As cores seguem os quintis ou septis do recorte (ou uma escala centrada em zero para resíduos e migração). Role ou faça pinça para aproximar e arraste para mover. Clique num município para abrir a pirâmide dele na página <i>Pirâmides</i>.</p>
+      <h2 id="h-mapa"><span data-draw="m_titulo">—</span></h2>
+      <div class="tm-maplegend" id="leg-mapa" data-draw="m_legenda" data-source="mapa_unid"></div>
+      <div class="tm-map" id="graf-mapa" data-draw="m_mapa" data-source="malha mapa_val mapa_unid"></div>
+      <p class="tm-muted">Em <i>Agregar por</i>, escolha pintar cada município ou cada região (imediata, intermediária, UF etc.); no agregado, participações e renda per capita são somas da unidade e as demais variáveis, médias ponderadas pela população. Com filtros ativos, o mapa enquadra o recorte; o resto fica em cinza-claro. As cores seguem os septis das unidades (ou uma escala centrada em zero para resíduos e migração). Role ou faça pinça para aproximar e arraste para mover. Clique num município para abrir a pirâmide dele na página <i>Pirâmides</i>.</p>
+    </div>
+      <div class="tm-grid2">
+      <div class="tm-card" id="card-mhist">
+        <h2 id="h-mhist">Distribuição entre as unidades</h2>
+        <div class="tm-chart" id="graf-mhist" data-draw="m_hist" data-source="mapa_unid"></div>
+        <p class="tm-muted">Número de unidades do recorte em cada faixa de valor, com as cores do mapa. Linha tracejada: mediana.</p>
+      </div>
+      <div class="tm-card" id="card-mtab">
+        <h2 id="h-mtab">Todas as unidades</h2>
+        <p class="tm-muted" data-draw="m_contagem">—</p>
+        <div class="tm-tablewrap">
+          <table id="tab-mapa" data-source="mapa_unid" data-row-key="grupo">
+            <thead><tr><th data-field="grupo">Unidade</th><th class="n" data-field="n">Municípios</th><th class="n" data-field="pop">População</th><th class="n" data-field="valor">Valor</th></tr></thead>
+            <tbody data-draw="m_tabela"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -608,14 +651,28 @@ dash.loader('malha', { description: 'O arquivo guarda {columns, rows} com o cont
   fn: ({ answer }) => ({ columns: answer.columns, meta: answer.meta, data: answer.rows.map((r) => Object.fromEntries(answer.columns.map((c, i) => [c, r[i]]))) }) });
 
 dash.calc('mapa_val', { inputs: ['sel'], title: 'Valor de cada município no mapa',
-  description: 'Para a variável escolhida no mapa: participação de cada benefício na renda (benefício ÷ renda), renda per capita (renda ÷ população) ou o próprio campo da base.',
+  description: 'Para a variável e o nível de agregação escolhidos: valor da unidade (município, região ou outro grupo) a que cada município pertence. Participações e renda per capita são somas da unidade (benefício ÷ renda; renda ÷ população); as demais variáveis, médias ponderadas pela população; a tipologia, a predominante em população.',
   fn: (sel) => {
-    const v = dash.params().mapvar || 'dep';
+    const p = dash.params(); const v = p.mapvar || 'dep';
+    const nivel = ['mun', 'rgi', 'rgint', 'uf', 'regiao', 'bioma', 'semiarido', 'tipo'].includes(p.nivel) ? p.nivel : 'uf';
+    const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
     const BEN = { sh_apos_rural: 'apos_rural', sh_bolsa: 'bolsa', sh_bpc: 'bpc', sh_apos_urbana: 'apos_urbana', sh_seguro: 'seguro' };
-    const valor = (m) => (BEN[v] ? m[BEN[v]] / m.renda : v === 'renda_pc' ? m.renda / m.pop : m[v]);
-    const limpo = (x) => (typeof x === 'number' && !isFinite(x) ? null : x ?? null);   // cobertura infinita (sem residente rural elegível) vira sem dado
-    return sel.map((m) => ({ cod: m.cod, nome: m.nome, uf: m.uf, valor: limpo(valor(m)) }));
+    const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
+    const agrega = (ms) => {
+      if (BEN[v]) return d3.sum(ms, (m) => m[BEN[v]]) / d3.sum(ms, (m) => m.renda);
+      if (v === 'dep') return d3.sum(ms, T) / d3.sum(ms, (m) => m.renda);
+      if (v === 'renda_pc') return d3.sum(ms, (m) => m.renda) / d3.sum(ms, (m) => m.pop);
+      if (v === 'tipo') { const c = d3.rollups(ms, (g) => d3.sum(g, (m) => m.pop), (m) => m.tipo).sort((a, b) => b[1] - a[1]); return c.length ? c[0][0] : null; }
+      const ok = ms.filter((m) => typeof m[v] === 'number' && isFinite(m[v]));   // cobertura infinita (sem residente rural elegível) fica de fora
+      const w = d3.sum(ok, (m) => m.pop); return w ? d3.sum(ok, (m) => m[v] * m.pop) / w : null;
+    };
+    const grupos = new Map(d3.groups(sel, chave).map(([g, ms]) => [g, { valor: agrega(ms), n: ms.length, pop: d3.sum(ms, (m) => m.pop) }]));
+    return sel.map((m) => { const g = grupos.get(chave(m)); return { cod: m.cod, nome: m.nome, uf: m.uf, grupo: chave(m), valor: g.valor, n: g.n, pop: g.pop }; });
   } });
+
+dash.calc('mapa_unid', { inputs: ['mapa_val'], title: 'Unidades do mapa',
+  description: 'Uma linha por unidade do nível de agregação escolhido: número de municípios, população e valor da variável do mapa.',
+  fn: (mapa_val) => [...d3.group(mapa_val, (r) => r.grupo).values()].map((rs) => ({ grupo: rs[0].grupo, n: rs[0].n, pop: rs[0].pop, valor: rs[0].valor })) });
 
 dash.calc('valores', { inputs: ['sel'], title: 'Valores pagos por benefício',
   description: 'Por benefício e no total: soma mensal no recorte (R$ de 2022), soma × 12, parcela nas transferências e na renda, valor por habitante do recorte e distribuição do valor por habitante entre os municípios (média simples, percentis 10, 25, 50, 75 e 90, mínimo e máximo).',
@@ -635,7 +692,7 @@ dash.calc('valores', { inputs: ['sel'], title: 'Valores pagos por benefício',
 dash.calc('valores_grupos', { inputs: ['sel'], title: 'Valores pagos por grupo',
   description: 'Soma mensal de cada benefício nos municípios de cada grupo (R$ de 2022), total e total por habitante.',
   fn: (sel) => {
-    const nv = dash.params().nivel; const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(nv) ? nv : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
+    const nv = dash.params().nivel; const nivel = ['mun', 'rgi', 'rgint', 'uf', 'regiao', 'bioma', 'semiarido', 'tipo'].includes(nv) ? nv : 'uf'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
     return d3.groups(sel, chave).map(([grupo, ms]) => {
       const s = (k) => d3.sum(ms, (m) => m[k]); const pop = s('pop');
       const o = { grupo, n: ms.length, pop, apos_rural: s('apos_rural'), bolsa: s('bolsa'), bpc: s('bpc'), apos_urbana: s('apos_urbana'), seguro: s('seguro') };
@@ -692,7 +749,7 @@ dash.calc('lorenz', { inputs: ['sel'], title: 'Curvas de Lorenz das quatro medid
 dash.calc('renda_grupos', { inputs: ['sel'], title: 'PIB, salários e renda por grupo',
   description: 'Valor por habitante de cada medida no grupo e índice em relação ao recorte (= 100).',
   fn: (sel) => {
-    const p = dash.params(); const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(p.nivel) ? p.nivel : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
+    const p = dash.params(); const nivel = ['mun', 'rgi', 'rgint', 'uf', 'regiao', 'bioma', 'semiarido', 'tipo'].includes(p.nivel) ? p.nivel : 'uf'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
     const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
     const sem = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
     const tot = (ms) => { const pop = d3.sum(ms, (m) => m.pop); return { pop, pib: d3.sum(ms, (m) => m.pib_mes) / pop, massa: d3.sum(ms, (m) => m.massa_sal) / pop,
@@ -723,7 +780,7 @@ dash.calc('resumo', { inputs: ['sel'], title: 'Resumo do recorte',
 dash.calc('grupos', { inputs: ['sel'], title: 'Transferências por grupo',
   description: 'Soma dos municípios do recorte por nível de agregação escolhido; peso de cada benefício na renda do grupo e dependência observada e prevista pela idade (médias ponderadas pela população).',
   fn: (sel) => {
-    const nv = dash.params().nivel; const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(nv) ? nv : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
+    const nv = dash.params().nivel; const nivel = ['mun', 'rgi', 'rgint', 'uf', 'regiao', 'bioma', 'semiarido', 'tipo'].includes(nv) ? nv : 'uf'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
     return d3.groups(sel, chave).map(([grupo, ms]) => {
       const s = (k) => d3.sum(ms, (m) => m[k]); const renda = s('renda'), pop = s('pop');
       const T = s('apos_rural') + s('bolsa') + s('bpc') + s('apos_urbana') + s('seguro');
@@ -886,6 +943,7 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
   document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#mapa-reenquadrar').forEach((b) => b.addEventListener('click', () => dash.draw('m_mapa')));
+  [['#hist-peso', 'g_hist'], ['#hist-val', 'v_hist'], ['#hist-renda', 'r_hist']].forEach(([id, d]) => document.querySelectorAll(id).forEach((s) => s.addEventListener('change', () => dash.draw(d))));
   document.querySelectorAll('#v-modo').forEach((s) => s.addEventListener('change', () => dash.draw('v_grupos')));
   document.querySelectorAll('#esc-indice').forEach((s) => s.addEventListener('change', () => dash.draw('r_escada')));
   document.querySelectorAll('#reg-modelo').forEach((s) => s.addEventListener('change', () => { dash.draw('i_coef'); dash.draw('i_tabcoef'); }));
@@ -1005,6 +1063,78 @@ dash.draw('k_atc', um('resumo', 'n_atracao', (v) => TM.num(v)));
     }));
   });
 })();
+</script>
+
+<script>
+/* ---------- histograma (todas as páginas) ---------- */
+TM.hist = (el, vals, o) => {
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const xs = vals.filter((v) => v != null && isFinite(v)).sort(d3.ascending);
+  if (xs.length < 2) { el.textContent = 'Poucas unidades para um histograma; escolha um nível mais detalhado em Agregar por.'; return; }
+  const W = el.clientWidth || 500, H = 220, m = { l: 40, r: 12, t: 14, b: 30 };
+  const lo = xs[0], hi = o.corte ? d3.quantileSorted(xs, 0.99) : xs[xs.length - 1];
+  const x = d3.scaleLinear().domain([lo, hi > lo ? hi : lo + 1]).nice().range([m.l, W - m.r]);
+  const nb = Math.max(5, Math.min(30, Math.ceil(Math.sqrt(xs.length)) + 2));
+  const bins = d3.bin().domain(x.domain()).thresholds(x.ticks(nb))(xs.map((v) => Math.min(v, x.domain()[1])));
+  const y = d3.scaleLinear().domain([0, d3.max(bins, (b) => b.length)]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', o.rotulo || 'Histograma');
+  const gr = svg.append('g').attr('class', 'grid'), yt = y.ticks(4), xt = x.ticks(Math.max(2, Math.floor(W / 90)));
+  gr.selectAll('.h').data(yt).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d));
+  gr.selectAll('.ty').data(yt).join('text').attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.35em').attr('text-anchor', 'end').text((d) => TM.num(d));
+  gr.selectAll('.tx').data(xt).join('text').attr('x', (d) => x(d)).attr('y', H - m.b + 16).attr('text-anchor', 'middle').text((d) => o.fmtEixo(d));
+  const tip = TM.tip(el);
+  svg.append('g').selectAll('rect').data(bins).join('rect').attr('x', (b) => x(b.x0) + 1).attr('width', (b) => Math.max(0, x(b.x1) - x(b.x0) - 1))
+    .attr('y', (b) => y(b.length)).attr('height', (b) => y(0) - y(b.length)).style('fill', (b) => (o.cor ? o.cor((b.x0 + b.x1) / 2) : TM.cor(0)) || TM.cor(0))
+    .on('pointermove', (ev, b) => tip.show(ev, [[`${o.fmt(b.x0)} a ${o.fmt(b.x1)}`], ['Unidades', TM.num(b.length)]])).on('pointerleave', () => tip.hide());
+  const med = d3.quantileSorted(xs, 0.5);
+  svg.append('line').attr('x1', x(med)).attr('x2', x(med)).attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--color-fg)').attr('stroke-dasharray', '4 3');
+  svg.append('text').attr('x', Math.min(x(med) + 4, W - m.r - 80)).attr('y', m.t + 2).attr('class', 'lbl-strong').text(`mediana ${o.fmt(med)}`);
+  if (o.corte && xs[xs.length - 1] > x.domain()[1]) svg.append('text').attr('x', W - m.r).attr('y', H - 2).attr('text-anchor', 'end').text('última faixa inclui valores acima');
+};
+dash.draw('m_hist', (el) => {
+  const r = dash.data('mapa_unid'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep; const e = TM.escalaMapa(r.data, meta);
+  if (meta.tipo === 'cat') {
+    el.classList.remove('dash-skeleton'); el.replaceChildren();
+    const cont = e.cats.map((c) => ({ c, n: r.data.filter((d) => d.valor === c).length })).filter((d) => d.n > 0);
+    const W = el.clientWidth || 500, rh = 30, ml = d3.max(cont, (d) => TM.textW(d.c, el)) + 12, H = cont.length * rh + 6;
+    const x = d3.scaleLinear().domain([0, d3.max(cont, (d) => d.n) || 1]).range([ml, W - 60]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Unidades por tipologia predominante');
+    const g = svg.selectAll('g').data(cont).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 3})`);
+    g.append('text').attr('x', ml - 8).attr('y', (rh - 8) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.c);
+    g.append('rect').attr('x', ml).attr('height', rh - 8).attr('width', (d) => x(d.n) - ml).style('fill', (d) => e.cor(d.c));
+    g.append('text').attr('x', (d) => x(d.n) + 6).attr('y', (rh - 8) / 2).attr('dy', '0.35em').text((d) => TM.num(d.n));
+    return;
+  }
+  TM.hist(el, r.data.map((d) => d.valor), { fmt: meta.fmt, fmtEixo: meta.fmt, cor: e.cor, corte: true, rotulo: `Histograma: ${meta.rot}` });
+});
+dash.draw('m_contagem', (el) => {
+  const r = dash.data('mapa_unid'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const NOME = { mun: 'municípios', rgi: 'regiões imediatas', rgint: 'regiões intermediárias', uf: 'UFs', regiao: 'grandes regiões', bioma: 'biomas', semiarido: 'grupos (semiárido e fora dele)', tipo: 'tipos' };
+  const cat = (TM.MAPVAR[dash.params().mapvar || 'dep'] || {}).tipo === 'cat';
+  el.classList.remove('dash-skeleton'); el.textContent = `${TM.num(r.data.length)} ${NOME[TM.nivel()]}, ${cat ? 'em ordem alfabética' : 'do maior valor para o menor'}.`;
+});
+dash.draw('m_tabela', (tb) => {
+  const r = dash.data('mapa_unid'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep;
+  const rows = meta.tipo === 'cat' ? r.data.slice().sort((a, b) => String(a.grupo).localeCompare(String(b.grupo), 'pt-BR')) : r.data.slice().sort((a, b) => d3.descending(a.valor ?? -Infinity, b.valor ?? -Infinity));
+  tb.replaceChildren(...rows.map((d) => { const tr = linhaTabela([[d.grupo], [TM.num(d.n), 'n'], [TM.num(d.pop), 'n'], [d.valor == null ? 'sem dado' : meta.fmt(d.valor), 'n']]); tr.dataset.key = encodeURIComponent(d.grupo); return tr; }));
+});
+dash.draw('g_hist', (el) => {
+  const r = dash.data('grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const k = (document.querySelector('#hist-peso') || {}).value || 'dep';
+  TM.hist(el, r.data.map((d) => d[k]), { fmt: (v) => TM.pct(v), fmtEixo: (v) => TM.pct(v, 0), cor: () => TM.cor({ dep: 0, sh_apos_rural: 0, sh_bolsa: 1, sh_bpc: 2, sh_apos_urbana: 3, sh_seguro: 4 }[k]), rotulo: 'Histograma do peso das transferências' });
+});
+dash.draw('v_hist', (el) => {
+  const r = dash.data('valores_grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const k = (document.querySelector('#hist-val') || {}).value || 'total';
+  TM.hist(el, r.data.map((d) => d[k] / d.pop), { fmt: (v) => 'R$ ' + TM.num(v, 2), fmtEixo: (v) => TM.num(v), cor: () => TM.cor({ total: 0, apos_rural: 0, bolsa: 1, bpc: 2, apos_urbana: 3, seguro: 4 }[k]), corte: true, rotulo: 'Histograma do valor por habitante' });
+});
+dash.draw('r_hist', (el) => {
+  const r = dash.data('renda_grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const k = (document.querySelector('#hist-renda') || {}).value || 'com_pc';
+  TM.hist(el, r.data.map((d) => d[k]), { fmt: (v) => 'R$ ' + TM.num(v), fmtEixo: (v) => TM.num(v), cor: () => TM.cor({ pib_pc: 2, massa_pc: 1, sem_pc: 4, com_pc: 0 }[k]), corte: true, rotulo: 'Histograma da renda por habitante' });
+});
 </script>
 
 <script>
@@ -1242,10 +1372,12 @@ TM.escalaMapa = (rows, meta) => {
   return { cor: (v) => (v == null || !isFinite(v) ? null : q(v)), q, pal };
 };
 
-dash.draw('m_titulo', (el) => { const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep; el.textContent = meta.rot; });
+TM.NIVEL = { mun: 'Municípios', rgi: 'Regiões imediatas', rgint: 'Regiões intermediárias', uf: 'UFs', regiao: 'Grandes regiões', bioma: 'Biomas', semiarido: 'Semiárido', tipo: 'Tipologia etária' };
+TM.nivel = () => { const n = dash.params().nivel; return TM.NIVEL[n] ? n : 'uf'; };
+dash.draw('m_titulo', (el) => { const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep; el.textContent = `${TM.NIVEL[TM.nivel()]}: ${meta.rot}`; });
 
 dash.draw('m_legenda', (el) => {
-  const r = dash.data('mapa_val'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  const r = dash.data('mapa_unid'); if (r.status !== 'ok') { TM.estado(el, r); return; }
   el.classList.remove('dash-skeleton'); el.replaceChildren();
   const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep; const e = TM.escalaMapa(r.data, meta);
   const item = (cor, txt) => { const s = document.createElement('span'); s.className = 'cls'; const i = document.createElement('i'); i.className = 'sw'; i.style.background = cor; s.append(i, document.createTextNode(txt)); return s; };
@@ -1264,12 +1396,13 @@ dash.draw('m_legenda', (el) => {
 dash.draw('m_mapa', {
   mount: (el) => { el.replaceChildren(); return {}; },
   update: (el) => {
-    const g = dash.data('malha'), v = dash.data('mapa_val');
-    const ruim = [g, v].find((r) => r.status !== 'ok');
+    const g = dash.data('malha'), v = dash.data('mapa_val'), un = dash.data('mapa_unid');
+    const ruim = [g, v, un].find((r) => r.status !== 'ok');
     if (ruim) { TM.estado(el, ruim); return; }
     el.classList.remove('dash-skeleton'); el.replaceChildren();
     const meta = TM.MAPVAR[dash.params().mapvar || 'dep'] || TM.MAPVAR.dep;
-    const vals = new Map(v.data.map((r) => [r.cod, r])); const e = TM.escalaMapa(v.data, meta);
+    const vals = new Map(v.data.map((r) => [r.cod, r])); const e = TM.escalaMapa(un.data, meta);
+    const nivel = TM.nivel(), agreg = nivel !== 'mun';
     const filtrado = v.data.length < g.data.length - 2;
     const svg = d3.select(el).append('svg').attr('viewBox', '0 20 1000 960').attr('role', 'img')
       .attr('aria-label', `Mapa coroplético dos municípios: ${meta.rot}`);
@@ -1278,6 +1411,10 @@ dash.draw('m_mapa', {
     z.append('g').selectAll('path').data(muns).join('path').attr('class', 'mun').attr('d', (d) => d.d)
       .style('fill', (d) => { const r = vals.get(d.cod); if (!r) return filtrado ? 'var(--cds-chart-grid)' : 'var(--cds-chart-muted)'; return e.cor(r.valor) || 'var(--cds-chart-muted)'; })
       .style('opacity', (d) => (vals.has(d.cod) || !filtrado ? 1 : 0.45));
+    // agregado: a borda de cada município recebe a cor do próprio preenchimento, e a unidade aparece como área única
+    if (agreg) z.selectAll('path.mun').filter((d) => vals.has(d.cod)).each(function () { this.style.stroke = this.style.fill; this.style.strokeWidth = '0.6px'; });
+    const LIM = { rgi: -1, rgint: -2, regiao: -3 }; const lim = LIM[nivel] != null ? g.data.find((r) => r.cod === LIM[nivel]) : null;
+    if (lim) z.append('path').attr('class', 'grp').attr('d', lim.d);
     const uf = g.data.find((r) => r.cod === 0), br = g.data.find((r) => r.cod === 1);
     if (uf) z.append('path').attr('class', 'ufs').attr('d', uf.d);
     if (br) z.append('path').attr('class', 'pais').attr('d', br.d);
@@ -1295,7 +1432,9 @@ dash.draw('m_mapa', {
       const d = ev.target.__data__; if (!d || d.cod <= 1) { tip.hide(); return; }
       const r = vals.get(d.cod);
       if (!r) { tip.show(ev, [['Fora do recorte ou sem dados']]); return; }
-      tip.show(ev, [[`${r.nome} (${r.uf})`], [meta.rot, r.valor == null ? 'sem dado' : meta.fmt(r.valor)], ['Clique', 'abre a pirâmide etária']]);
+      const val = r.valor == null ? 'sem dado' : meta.fmt(r.valor);
+      if (agreg) tip.show(ev, [[String(r.grupo)], [meta.rot, val], ['Municípios', TM.num(r.n)], ['Sob o cursor', `${r.nome} (${r.uf})`], ['Clique', 'pirâmide deste município']]);
+      else tip.show(ev, [[`${r.nome} (${r.uf})`], [meta.rot, val], ['Clique', 'abre a pirâmide etária']]);
     }).on('pointerleave', () => tip.hide())
       .on('click', (ev) => {
         const d = ev.target.__data__; if (!d || !vals.has(d.cod)) return;

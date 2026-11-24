@@ -150,5 +150,5 @@ Faltam dados que não estão no pacote: transferências por município de outros
 - `painel/gerar_dados_painel.py` gera `painel/dados/*.json` (base municipal com RGI, RGINT e bioma; pirâmides 2010 × 2022; regressões; R² da idade). `painel/index.html` é o código da página.
 - Desigualdade e Shapley são recalculados na página para o recorte filtrado. Com o Brasil inteiro, reproduzem os números do passo E.
 - Versão para compartilhar: `painel/gerar_html_standalone.py <d3.min.js>` gera `out/painel_transferencias_municipios.html` (arquivo único, offline, ~5,5 MB).
-- Mapa: `painel/gerar_malha.mjs` projeta a malha do IBGE (Albers) em caminhos SVG (`painel/dados/malha.json`).
+- Mapa: `painel/gerar_malha.mjs` projeta a malha do IBGE (Albers) em caminhos SVG (`painel/dados/malha.json`), com limites de regiões imediatas, intermediárias e grandes regiões (`painel/dados/mun_regioes.json`). O "Agregar por" (município, regiões, UF, bioma, semiárido, tipologia) vale para o mapa e para as páginas de valores, peso e PIB × renda; cada uma tem um histograma da distribuição entre as unidades.
 - Pirâmides: 0–9 e 75+ agregados, porque as tabelas de 2010 por sexo não separam 0–4 e 5–9.
