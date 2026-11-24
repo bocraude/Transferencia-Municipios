@@ -1,0 +1,879 @@
+<meta name="dash-one-writer">
+<meta name="dash-form" content="dashboard">
+<style>
+.tm { display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.tm h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.tm h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; text-wrap: balance; }
+.tm h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.tm p { margin: 0; max-width: 72ch; line-height: 1.5; }
+.tm-head { display: grid; gap: var(--cds-gap-sm); }
+.tm-take { font-size: var(--cds-font-size-body); }
+.tm-take b { font-variant-numeric: tabular-nums; }
+.tm-muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.tm-filtros { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); align-items: end; padding: var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); }
+.tm-filtros label, .tm-ctrl label { display: grid; gap: 4px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); min-width: 0; }
+.tm-filtros select, .tm-ctrl select { min-width: 9rem; max-width: 100%; }
+.tm-btn { font: inherit; font-size: var(--cds-font-size-caption); padding: 6px 12px; border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
+.tm-btn:hover { border-color: var(--color-fg-muted); }
+.tm-btn:focus-visible, .tm-tab:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.tm-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); gap: var(--cds-gap-md); }
+.tm-kpi { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: 4px; align-content: start; }
+.tm-kpi .v { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.tm-kpi .l { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tm-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--color-border-line); }
+.tm-tab { font: inherit; font-size: var(--cds-font-size-body); padding: 8px 12px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--color-fg-muted); cursor: pointer; }
+.tm-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.tm-sec { display: grid; gap: var(--cds-gap-lg); }
+.tm-ctrl { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); align-items: end; }
+.tm-ctrl input[type="search"], .tm-ctrl input[type="text"] { font: inherit; font-size: var(--cds-font-size-body); padding: 6px 10px; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); min-width: 0; width: min(22rem, 100%); }
+.tm-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-lg); }
+.tm-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-sm); min-width: 0; align-content: start; }
+.tm-chart { position: relative; min-height: 220px; min-width: 0; }
+.tm-chart svg { display: block; overflow: visible; }
+.tm-chart text { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.tm-chart .lbl-strong { fill: var(--color-fg); }
+.tm-chart .grid line { stroke: var(--cds-chart-grid); }
+.tm-chart .axis path, .tm-chart .axis line { stroke: var(--cds-chart-axis); }
+.tm-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: 8px 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg); max-width: 16rem; z-index: 2; line-height: 1.4; }
+.tm-tip span { color: var(--cds-text-secondary); }
+.tm-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tm-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.tm-sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; background: var(--cds-chart-muted); }
+.tm-sw.ring { background: none; border: 1.5px solid var(--color-fg); border-radius: 0; height: 2px; width: 14px; border-width: 1.5px 0 0 0; }
+.tm-tablewrap { overflow: auto; max-height: 28rem; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.tm table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.tm th, .tm td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.tm th { position: sticky; top: 0; background: var(--color-panel); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); z-index: 1; }
+.tm td.n, .tm th.n { text-align: right; }
+.tm-pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); border: 1px solid var(--color-border-line); }
+.tm-pill.atrito { border-color: var(--color-bad); color: var(--color-bad); }
+.tm-pill.atracao { border-color: var(--color-ok); color: var(--color-ok); }
+.tm details summary { cursor: pointer; font-weight: var(--cds-font-weight-medium); }
+.tm details { display: grid; gap: var(--cds-gap-sm); }
+.tm details ul { margin: var(--cds-gap-sm) 0 0; padding-left: 1.2rem; display: grid; gap: 6px; max-width: 80ch; line-height: 1.5; }
+@media print { .tm-sec[hidden] { display: grid !important; } .tm-tabs, .tm-filtros button { display: none; } .tm-sec { break-before: page; } .tm-tablewrap { max-height: none; } }
+</style>
+
+<div class="tm">
+  <header class="tm-head" id="cabecalho">
+    <h1 id="titulo">Transferências federais e renda municipal</h1>
+    <p class="tm-take" id="sintese">Nos <b data-draw="t_n" data-source="resumo" data-field="n" data-row="0">—</b> municípios do recorte, BPC, Bolsa Família, seguro-desemprego e aposentadorias somam <b data-draw="t_dep" data-source="resumo" data-field="dep" data-row="0">—</b> da renda e reduzem o Gini entre unidades de <b data-draw="t_g0" data-source="desig" data-field="sem" data-where="indice=gini">—</b> para <b data-draw="t_g1" data-source="desig" data-field="com" data-where="indice=gini">—</b>. Pela decomposição de Shapley, <b data-draw="t_top" data-source="shapley" data-field="rotulo" data-row="0">—</b> responde por <b data-draw="t_toppct" data-source="shapley" data-field="pct" data-row="0">—</b> dessa queda.</p>
+    <p class="tm-muted">Censo 2022 e registros administrativos de 2022 (valores mensais). Resultados contábeis, sem interpretação causal. Os filtros abaixo valem para todas as abas.</p>
+  </header>
+
+  <div class="tm-filtros" id="filtros" role="group" aria-label="Filtros">
+    <label>Região
+      <select class="dash-select" id="f-regiao" data-param="regiao">
+        <option value="">Todas</option><option>Norte</option><option>Nordeste</option><option>Sudeste</option><option>Sul</option><option>Centro-Oeste</option>
+      </select></label>
+    <label>UF
+      <select class="dash-select" id="f-uf" data-param="uf">
+        <option value="">Todas</option><option>AC</option><option>AL</option><option>AM</option><option>AP</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MG</option><option>MS</option><option>MT</option><option>PA</option><option>PB</option><option>PE</option><option>PI</option><option>PR</option><option>RJ</option><option>RN</option><option>RO</option><option>RR</option><option>RS</option><option>SC</option><option>SE</option><option>SP</option><option>TO</option>
+      </select></label>
+    <label>Bioma predominante
+      <select class="dash-select" id="f-bioma" data-param="bioma">
+        <option value="">Todos</option><option>Amazônia</option><option>Caatinga</option><option>Cerrado</option><option>Mata Atlântica</option><option>Pampa</option><option>Pantanal</option>
+      </select></label>
+    <label>Semiárido
+      <select class="dash-select" id="f-semi" data-param="semi">
+        <option value="">Todos</option><option>Semiárido</option><option>Fora do semiárido</option>
+      </select></label>
+    <label>Tipologia etária
+      <select class="dash-select" id="f-tipo" data-param="tipo">
+        <option value="">Todas</option><option value="atrito">Atrito</option><option value="atração">Atração</option><option value="intermediário">Intermediário</option><option value="não envelhecido">Não envelhecido</option>
+      </select></label>
+    <button type="button" class="tm-btn" id="f-limpar">Limpar filtros</button>
+  </div>
+
+  <div class="tm-kpis" id="indicadores">
+    <div class="tm-kpi" id="kpi-mun"><span class="l">Municípios no recorte</span><span class="v" data-draw="k_n" data-source="resumo" data-field="n" data-row="0">—</span><span class="l">de 5.561 com dados</span></div>
+    <div class="tm-kpi" id="kpi-pop"><span class="l">População (milhões)</span><span class="v" data-draw="k_pop" data-source="resumo" data-field="pop_mi" data-row="0">—</span><span class="l">Censo 2022</span></div>
+    <div class="tm-kpi" id="kpi-dep"><span class="l">Transferências / renda</span><span class="v" data-draw="k_dep" data-source="resumo" data-field="dep" data-row="0">—</span><span class="l">soma dos 5 benefícios ÷ renda domiciliar</span></div>
+    <div class="tm-kpi" id="kpi-gini"><span class="l">Queda do Gini entre unidades</span><span class="v" data-draw="k_red" data-source="desig" data-field="reducao" data-where="indice=gini">—</span><span class="l">sem → com transferências</span></div>
+    <div class="tm-kpi" id="kpi-tipos"><span class="l">Envelhecidos por atrito / atração</span><span class="v"><span data-draw="k_atr" data-source="resumo" data-field="n_atrito" data-row="0">—</span> / <span data-draw="k_atc" data-source="resumo" data-field="n_atracao" data-row="0">—</span></span><span class="l">municípios</span></div>
+  </div>
+
+  <nav class="tm-tabs" role="tablist" aria-label="Seções">
+    <button class="tm-tab" role="tab" aria-selected="true" data-tab="regioes">Peso por região</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="desigualdade">Desigualdade</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="atrito">Atrito × atração</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="idade">Estrutura etária</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="piramide">Pirâmides 2010 × 2022</button>
+  </nav>
+
+  <!-- ===== Peso das transferências por agregação ===== -->
+  <section class="tm-sec" id="regioes" role="tabpanel">
+    <div class="tm-ctrl">
+      <label>Agregar por
+        <select class="dash-select" id="p-nivel" data-param="nivel">
+          <option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
+        </select></label>
+      <label>Ordenar por
+        <select class="dash-select" id="ord-grupos">
+          <option value="dep">Peso das transferências</option><option value="pop">População</option><option value="renda_pc">Renda per capita</option>
+        </select></label>
+    </div>
+    <div class="tm-card" id="card-peso">
+      <h2 id="h-peso">Quanto cada transferência pesa na renda</h2>
+      <p class="tm-muted">Benefício ÷ renda domiciliar total do grupo (soma dos municípios). Mostra até 30 grupos; a tabela lista todos.</p>
+      <div class="tm-legend" id="leg-benef">
+        <span><i class="tm-sw" data-cor="0"></i>Aposentadoria rural</span>
+        <span><i class="tm-sw" data-cor="1"></i>Bolsa Família</span>
+        <span><i class="tm-sw" data-cor="2"></i>BPC</span>
+        <span><i class="tm-sw" data-cor="3"></i>Aposentadoria urbana</span>
+        <span><i class="tm-sw" data-cor="4"></i>Seguro-desemprego</span>
+      </div>
+      <div class="tm-chart" id="graf-peso" data-draw="g_barras" data-source="grupos"></div>
+    </div>
+    <div class="tm-tablewrap" id="tab-grupos-wrap">
+      <table id="tab-grupos" data-source="grupos" data-row-key="grupo">
+        <thead><tr>
+          <th data-field="grupo">Grupo</th><th class="n" data-field="n">Municípios</th><th class="n" data-field="pop">População</th><th class="n" data-field="renda_pc">Renda pc (R$/mês)</th><th class="n" data-field="dep">Transf./renda</th><th class="n" data-field="sh_apos_rural">Ap. rural</th><th class="n" data-field="sh_bolsa">Bolsa Família</th><th class="n" data-field="sh_bpc">BPC</th><th class="n" data-field="sh_apos_urbana">Ap. urbana</th><th class="n" data-field="sh_seguro">Seguro</th><th class="n" data-field="n_atrito">Atrito</th><th class="n" data-field="n_atracao">Atração</th>
+        </tr></thead>
+        <tbody data-draw="g_tabela"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== Desigualdade ===== -->
+  <section class="tm-sec" id="desigualdade" role="tabpanel" hidden>
+    <div class="tm-ctrl">
+      <label>Renda própria (sem transferências)
+        <select class="dash-select" id="p-medida" data-param="medida">
+          <option value="orig">Renda do Censo − benefícios (original)</option><option value="hib">Renda do trabalho do Censo (híbrida)</option>
+        </select></label>
+      <label>Ponderação
+        <select class="dash-select" id="p-pond" data-param="pond">
+          <option value="1">Pela população</option><option value="0">Cada unidade pesa igual</option>
+        </select></label>
+      <label>Unidade de análise
+        <select class="dash-select" id="p-unid" data-param="unidade">
+          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option>
+        </select></label>
+    </div>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-indices">
+        <h2 id="h-indices">Desigualdade entre unidades, sem e com transferências</h2>
+        <div class="tm-legend"><span><i class="tm-sw" data-cor="muted"></i>Sem transferências</span><span><i class="tm-sw" data-cor="0"></i>Com transferências</span></div>
+        <div class="tm-chart" id="graf-indices" data-draw="d_halteres" data-source="desig"></div>
+        <p class="tm-muted">Atkinson com aversão à desigualdade ε = 0,5, 1 e 2; Theil-T. À direita, a queda percentual de cada índice.</p>
+      </div>
+      <div class="tm-card" id="card-shapley">
+        <h2 id="h-shapley">Importância de cada benefício na queda do Gini</h2>
+        <div class="tm-chart" id="graf-shapley" data-draw="d_shapley" data-source="shapley"></div>
+        <p class="tm-muted">Decomposição de Shapley: média da redução do Gini ao acrescentar o benefício, sobre todas as ordens possíveis (32 combinações). Soma 100%.</p>
+      </div>
+    </div>
+    <div class="tm-tablewrap" id="tab-desig-wrap">
+      <table id="tab-desig" data-source="desig" data-row-key="indice">
+        <thead><tr><th data-field="rotulo">Índice</th><th class="n" data-field="sem">Sem transferências</th><th class="n" data-field="com">Com transferências</th><th class="n" data-field="reducao">Queda</th><th class="n" data-field="unidades">Unidades</th></tr></thead>
+        <tbody data-draw="d_tabela"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== Atrito x atração ===== -->
+  <section class="tm-sec" id="atrito" role="tabpanel" hidden>
+    <p>Municípios mais envelhecidos que a média do Brasil são classificados por migração líquida de coorte (2010→2022). <b>Atrito</b>: saída líquida de jovens acima de 10% (20–29 anos em 2010 → 32–41 em 2022). <b>Atração</b>: ganho líquido de idosos acima de 5% (50–59 → 62–71). Use o filtro <i>Tipologia etária</i> no topo para isolar um grupo.</p>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-disp">
+        <h2 id="h-disp">Saída de jovens × dependência além do previsto pela idade</h2>
+        <div class="tm-legend" id="leg-tipos">
+          <span><i class="tm-sw" data-cor="bad"></i>Atrito</span><span><i class="tm-sw" data-cor="ok"></i>Atração</span><span><i class="tm-sw" data-cor="2"></i>Intermediário</span><span><i class="tm-sw" data-cor="muted"></i>Não envelhecido</span>
+        </div>
+        <div class="tm-chart" id="graf-disp" data-draw="a_dispersao" data-source="sel"></div>
+        <p class="tm-muted">Eixo x: índice de migração jovem (log da razão de sobrevivência da coorte relativa ao Brasil; &lt; 0 = saída). Eixo y: dependência observada − prevista só pela estrutura etária (random forest, fora da amostra).</p>
+      </div>
+      <div class="tm-card" id="card-tipos">
+        <h2 id="h-tipos">Perfil de cada tipo</h2>
+        <div class="tm-tablewrap">
+          <table id="tab-tipos" data-source="tipos" data-row-key="tipo">
+            <thead><tr><th data-field="tipo">Tipo</th><th class="n" data-field="n">Municípios</th><th class="n" data-field="dep_mediana">Dependência mediana</th><th class="n" data-field="resid_mediano">Excesso sobre a idade</th><th class="n" data-field="mig_jovem_mediana">Migração jovem</th><th class="n" data-field="rural_22">Rural 2022</th></tr></thead>
+            <tbody data-draw="a_tipos"></tbody>
+          </table>
+        </div>
+        <h3 id="h-sit">Atrito dividido pela origem da saída de jovens</h3>
+        <div class="tm-tablewrap">
+          <table id="tab-sit" data-source="tipos_sit" data-row-key="tipo_situacao">
+            <thead><tr><th data-field="tipo_situacao">Tipo</th><th class="n" data-field="n">Municípios</th><th class="n" data-field="dep_mediana">Dependência mediana</th><th class="n" data-field="mig_urb">Mig. jovem urbana</th><th class="n" data-field="mig_rur">Mig. jovem rural</th></tr></thead>
+            <tbody data-draw="a_sit"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="tm-card" id="card-lista">
+      <h2 id="h-lista">Municípios do recorte</h2>
+      <div class="tm-ctrl">
+        <label>Buscar município ou região imediata <input type="search" id="busca-mun" placeholder="ex.: Venha-Ver, Sobral" autocomplete="off"></label>
+        <label>Ordenar por
+          <select class="dash-select" id="ord-mun">
+            <option value="dep">Dependência</option><option value="resid_idade">Excesso sobre a idade</option><option value="mig_jovem">Migração jovem (mais saída primeiro)</option><option value="pop">População</option>
+          </select></label>
+      </div>
+      <p class="tm-muted" data-draw="a_contagem">—</p>
+      <div class="tm-tablewrap">
+        <table id="tab-mun" data-source="municipios" data-row-key="cod">
+          <thead><tr><th data-field="nome">Município</th><th data-field="uf">UF</th><th data-field="rgi">Região imediata</th><th data-field="bioma">Bioma</th><th data-field="tipo">Tipo</th><th data-field="tipo_situacao">Origem do atrito</th><th class="n" data-field="pop">População</th><th class="n" data-field="dep">Dependência</th><th class="n" data-field="dep_prev_idade">Prevista pela idade</th><th class="n" data-field="resid_idade">Excesso</th><th class="n" data-field="mig_jovem">Mig. jovem</th><th class="n" data-field="mig_idoso">Mig. idosa</th></tr></thead>
+          <tbody data-draw="a_lista"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Estrutura etária ===== -->
+  <section class="tm-sec" id="idade" role="tabpanel" hidden>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-r2">
+        <h2 id="h-r2">Quanto da dependência a estrutura etária explica</h2>
+        <div class="tm-chart" id="graf-r2" data-draw="i_r2" data-source="ajuste_idade"></div>
+        <p class="tm-muted">R² do MQO (na amostra) e R² fora da amostra do random forest (out-of-bag). Todos os 5.561 municípios; não muda com os filtros.</p>
+      </div>
+      <div class="tm-card" id="card-obsprev">
+        <h2 id="h-obsprev">Dependência observada × prevista pela idade</h2>
+        <div class="tm-legend"><span><i class="tm-sw" data-cor="muted"></i>Prevista pela idade</span><span><i class="tm-sw" data-cor="0"></i>Observada</span></div>
+        <div class="tm-chart" id="graf-obsprev" data-draw="i_obsprev" data-source="grupos"></div>
+        <p class="tm-muted">Médias ponderadas pela população, nos grupos escolhidos em <i>Agregar por</i> (aba Peso por região). Mostra os 30 grupos com maior diferença.</p>
+      </div>
+    </div>
+    <div class="tm-card" id="card-coef">
+      <h2 id="h-coef">Coeficientes das regressões</h2>
+      <div class="tm-ctrl">
+        <label>Modelo
+          <select class="dash-select" id="reg-modelo">
+            <option>A1. Dependência ~ estrutura etária (MQO)</option>
+            <option>B1. Resíduo da idade ~ migração + Nordeste</option>
+            <option>B2. Resíduo da idade ~ migração + semiárido</option>
+            <option>B3. Resíduo demográfico ~ migração + semiárido + Nordeste fora do SA</option>
+            <option>B4. Resíduo demográfico ~ migração por sexo + Nordeste</option>
+            <option>B5. Resíduo demográfico ~ migração por situação + Nordeste</option>
+          </select></label>
+      </div>
+      <div class="tm-chart" id="graf-coef" data-draw="i_coef" data-source="regressoes"></div>
+      <p class="tm-muted">Pontos: coeficiente; traços: intervalo de 95% (erros-padrão robustos HC1). Modelos B: só municípios envelhecidos; a variável dependente é o excesso de dependência sobre o previsto pela idade (B3–B5 também descontam elegibilidade por sexo e ruralidade).</p>
+      <div class="tm-tablewrap">
+        <table id="tab-coef" data-source="regressoes" data-row-key="modelo,variavel">
+          <thead><tr><th data-field="variavel">Variável</th><th class="n" data-field="coef">Coeficiente</th><th class="n" data-field="ep">Erro-padrão</th><th class="n" data-field="ic_baixo">IC 95% inf.</th><th class="n" data-field="ic_alto">IC 95% sup.</th><th class="n" data-field="n">N</th><th class="n" data-field="r2">R²</th></tr></thead>
+          <tbody data-draw="i_tabcoef"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pirâmides ===== -->
+  <section class="tm-sec" id="piramide" role="tabpanel" hidden>
+    <div class="tm-ctrl">
+      <label>Município (vazio = todos os municípios do recorte)
+        <input type="text" id="busca-pir" list="lista-mun" placeholder="Digite o nome do município" autocomplete="off"></label>
+      <datalist id="lista-mun" data-draw="p_lista"></datalist>
+      <button type="button" class="tm-btn" id="pir-limpar">Usar o recorte inteiro</button>
+    </div>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-pir">
+        <h2 id="h-pir">Estrutura etária: <span data-draw="p_nome" data-source="pirsum" data-field="nome" data-row="0">—</span></h2>
+        <div class="tm-legend"><span><i class="tm-sw" data-cor="0"></i>Homens 2022</span><span><i class="tm-sw" data-cor="1"></i>Mulheres 2022</span><span><i class="tm-sw ring"></i>Contorno de 2010</span></div>
+        <div class="tm-chart" id="graf-pir" data-draw="p_grafico" data-source="pir"></div>
+        <p class="tm-muted">Percentual da população total de cada ano em cada grupo de idade e sexo. Censo 2010 (SIDRA 1378) e Censo 2022 (SIDRA 10089).</p>
+      </div>
+      <div class="tm-card" id="card-pirsum">
+        <h2 id="h-pirsum">Mudança entre os Censos</h2>
+        <div class="tm-tablewrap">
+          <table id="tab-pirsum" data-source="pirsum_tab" data-row-key="indicador">
+            <thead><tr><th data-field="rotulo">Indicador</th><th class="n" data-field="v2010">2010</th><th class="n" data-field="v2022">2022</th><th class="n" data-field="variacao">Variação</th></tr></thead>
+            <tbody data-draw="p_tabela"></tbody>
+          </table>
+        </div>
+        <p class="tm-muted">Índice de envelhecimento = pessoas de 60+ por 100 de 0–14. Razão de dependência dos idosos = 60+ por 100 de 15–59.</p>
+      </div>
+    </div>
+  </section>
+
+  <details id="notas">
+    <summary>Definições, fontes e cuidados</summary>
+    <ul>
+      <li><b>Transferências</b>: BPC, Bolsa Família, seguro-desemprego, aposentadoria rural e urbana, valores mensais de 2022 registrados no município do benefício.</li>
+      <li><b>Renda</b>: rendimento domiciliar do Censo 2022 (é o mesmo conceito da SIDRA 10297). <b>Renda própria original</b> = renda − benefícios administrativos. <b>Híbrida</b> = só a renda do trabalho do Censo; é mais robusta porque o Censo declara menos benefícios que os registros em cerca de metade dos municípios.</li>
+      <li><b>Regiões imediatas e intermediárias</b>: divisão do IBGE de 2017, lida dos agregados por setor do Censo 2022. <b>Bioma</b>: bioma predominante por município (IBGE, 2024). <b>Semiárido</b>: 1.477 municípios (Res. Condel/Sudene 150/2021 + 50 mantidos).</li>
+      <li><b>Migração por coorte</b>: razão entre a coorte de 2022 e a de 2010, dividida pela razão nacional (desconta a mortalidade média), em log. Quatro municípios criados após 2010 ficam sem esse índice.</li>
+      <li><b>Pirâmides</b>: grupos 0–9 e 75+ agregados porque as tabelas de 2010 por sexo não trazem 0–4 e 5–9 separadamente. Homens de 2010 = total − mulheres. A delimitação urbano/rural mudou entre os Censos.</li>
+      <li>Cinco municípios sem dados de aposentadoria ficam fora (5.561 de 5.570).</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+/* ---------- utilidades compartilhadas (window.TM) ---------- */
+(function () {
+  const L = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['R$ ', ''] });
+  const TM = {
+    pct: (x, d = 1) => (x == null || !isFinite(x)) ? '—' : L.format(`.${d}%`)(x),
+    num: (x, d = 0) => (x == null || !isFinite(x)) ? '—' : L.format(`,.${d}f`)(x),
+    dec: (x, d = 3) => (x == null || !isFinite(x)) ? '—' : L.format(`.${d}f`)(x),
+    sdec: (x, d = 3) => (x == null || !isFinite(x)) ? '—' : L.format(`+.${d}f`)(x),
+    BEN: ['apos_rural', 'bolsa', 'bpc', 'apos_urbana', 'seguro'],
+    BENROT: { apos_rural: 'Aposentadoria rural', bolsa: 'Bolsa Família', bpc: 'BPC', apos_urbana: 'Aposentadoria urbana', seguro: 'Seguro-desemprego' },
+    cor(k) {
+      if (k === 'muted') return 'var(--cds-chart-muted)';
+      if (k === 'bad') return 'var(--color-bad)';
+      if (k === 'ok') return 'var(--color-ok)';
+      return dash.colors[(+k) % dash.colors.length];
+    },
+    corTipo: (t) => ({ 'atrito': 'var(--color-bad)', 'atração': 'var(--color-ok)', 'intermediário': dash.colors[2 % dash.colors.length] })[t] || 'var(--cds-chart-muted)',
+    textW(str, el) {
+      const c = TM._c || (TM._c = document.createElement('canvas').getContext('2d'));
+      const cs = getComputedStyle(el); c.font = `${cs.fontSize} ${cs.fontFamily}`; return c.measureText(str).width;
+    },
+    estado(el, r, msg) {
+      el.classList.toggle('dash-skeleton', r.status === 'loading');
+      if (r.status === 'error') el.textContent = msg || 'Não foi possível carregar estes dados.';
+      else if (el.tagName === 'TBODY' || el.tagName === 'DATALIST') el.replaceChildren();
+      else el.textContent = '—';
+    },
+    tip(el) {
+      let t = el.querySelector(':scope > .tm-tip');
+      if (!t) { t = document.createElement('div'); t.className = 'tm-tip'; t.hidden = true; el.appendChild(t); }
+      return {
+        show(ev, linhas) {
+          t.replaceChildren(...linhas.map(([a, b]) => { const div = document.createElement('div'); if (b == null) { div.textContent = a; div.style.fontWeight = '600'; } else { const s = document.createElement('span'); s.textContent = a + ': '; div.append(s, document.createTextNode(b)); } return div; }));
+          t.hidden = false;
+          const r = el.getBoundingClientRect(); let x = ev.clientX - r.left + 12, y = ev.clientY - r.top + 12;
+          const w = t.offsetWidth, h = t.offsetHeight;
+          if (x + w > r.width) x = Math.max(0, ev.clientX - r.left - w - 12);
+          if (y + h > r.height) y = Math.max(0, ev.clientY - r.top - h - 12);
+          t.style.left = x + 'px'; t.style.top = y + 'px';
+        },
+        hide() { t.hidden = true; }
+      };
+    }
+  };
+  window.TM = TM;
+})();
+</script>
+
+<script>
+/* ---------- leitura dos arquivos e cálculos ---------- */
+dash.loader('municipios', { description: 'O arquivo guarda {columns, rows} (uma lista por município); aqui vira uma linha por município.',
+  fn: ({ answer }) => ({ columns: answer.columns, meta: answer.meta, data: answer.rows.map((r) => Object.fromEntries(answer.columns.map((c, i) => [c, r[i]]))) }) });
+dash.loader('piramides', { description: 'O arquivo guarda {columns, rows}; aqui vira uma linha por município.',
+  fn: ({ answer }) => ({ columns: answer.columns, meta: answer.meta, data: answer.rows.map((r) => Object.fromEntries(answer.columns.map((c, i) => [c, r[i]]))) }) });
+dash.loader('regressoes', { description: 'O arquivo guarda {columns, rows}; aqui vira uma linha por coeficiente.',
+  fn: ({ answer }) => ({ columns: answer.columns, meta: answer.meta, data: answer.rows.map((r) => Object.fromEntries(answer.columns.map((c, i) => [c, r[i]]))) }) });
+dash.loader('ajuste_idade', { description: 'O arquivo guarda {columns, rows}; aqui vira uma linha por especificação.',
+  fn: ({ answer }) => ({ columns: answer.columns, meta: answer.meta, data: answer.rows.map((r) => Object.fromEntries(answer.columns.map((c, i) => [c, r[i]]))) }) });
+
+dash.calc('sel', { inputs: ['municipios'], title: 'Municípios no recorte',
+  description: 'Municípios que atendem aos filtros de região, UF, bioma, semiárido e tipologia etária.',
+  fn: (municipios) => {
+    const p = dash.params();
+    return municipios.filter((m) => (!p.regiao || m.regiao === p.regiao) && (!p.uf || m.uf === p.uf) && (!p.bioma || m.bioma === p.bioma)
+      && (!p.semi || m.semiarido === p.semi) && (!p.tipo || m.tipo === p.tipo));
+  } });
+
+dash.calc('resumo', { inputs: ['sel'], title: 'Resumo do recorte',
+  description: 'Totais do recorte: municípios, população, peso das transferências na renda e contagem por tipologia.',
+  fn: (sel) => {
+    const s = (k) => d3.sum(sel, (m) => m[k]);
+    const renda = s('renda'), T = s('apos_rural') + s('bolsa') + s('bpc') + s('apos_urbana') + s('seguro');
+    return [{ n: sel.length, pop_mi: s('pop') / 1e6, dep: renda ? T / renda : null,
+      n_atrito: sel.filter((m) => m.tipo === 'atrito').length, n_atracao: sel.filter((m) => m.tipo === 'atração').length }];
+  } });
+
+dash.calc('grupos', { inputs: ['sel'], title: 'Transferências por grupo',
+  description: 'Soma dos municípios do recorte por nível de agregação escolhido; peso de cada benefício na renda do grupo e dependência observada e prevista pela idade (médias ponderadas pela população).',
+  fn: (sel) => {
+    const nivel = dash.params().nivel || 'uf';
+    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => {
+      const s = (k) => d3.sum(ms, (m) => m[k]); const renda = s('renda'), pop = s('pop');
+      const T = s('apos_rural') + s('bolsa') + s('bpc') + s('apos_urbana') + s('seguro');
+      return { grupo, n: ms.length, pop, renda_pc: renda / pop, dep: T / renda,
+        sh_apos_rural: s('apos_rural') / renda, sh_bolsa: s('bolsa') / renda, sh_bpc: s('bpc') / renda,
+        sh_apos_urbana: s('apos_urbana') / renda, sh_seguro: s('seguro') / renda,
+        dep_obs: d3.sum(ms, (m) => m.dep * m.pop) / pop, dep_prev: d3.sum(ms, (m) => m.dep_prev_idade * m.pop) / pop,
+        n_atrito: ms.filter((m) => m.tipo === 'atrito').length, n_atracao: ms.filter((m) => m.tipo === 'atração').length };
+    });
+  } });
+
+dash.calc('desig', { inputs: ['sel'], title: 'Índices de desigualdade sem e com transferências',
+  description: 'Gini, Atkinson (ε = 0,5; 1; 2) e Theil-T da renda per capita entre as unidades escolhidas, sem e com os 5 benefícios.',
+  fn: (sel) => {
+    const p = dash.params(); const unid = p.unidade || 'mun'; const pond = (p.pond ?? '1') !== '0';
+    const BEN = ['apos_rural', 'bolsa', 'bpc', 'apos_urbana', 'seguro'];
+    const T = (m) => BEN.reduce((a, k) => a + m[k], 0);
+    const propria = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
+    const grupos = unid === 'mun' ? sel.map((m) => [m]) : d3.groups(sel, (m) => m[unid]).map((g) => g[1]);
+    const u = grupos.map((ms) => ({ pop: d3.sum(ms, (m) => m.pop), y0: d3.sum(ms, propria), T: d3.sum(ms, T) }))
+      .filter((g) => g.y0 > 0 && g.pop > 0);
+    const w = u.map((g) => (pond ? g.pop : 1));
+    const gini = (y) => { const o = d3.range(y.length).sort((a, b) => y[a] - y[b]); const W = d3.sum(w), Y = d3.sum(y.map((v, i) => v * w[i]));
+      let cw = 0, cy = 0, g = 0; for (const i of o) { const nw = cw + w[i] / W, ny = cy + y[i] * w[i] / Y; g += (nw - cw) * (ny + cy); cw = nw; cy = ny; } return 1 - g; };
+    const atk = (y, e) => { const W = d3.sum(w), m = d3.sum(y.map((v, i) => v * w[i])) / W;
+      if (e === 1) return 1 - Math.exp(d3.sum(y.map((v, i) => w[i] * Math.log(v))) / W) / m;
+      return 1 - Math.pow(d3.sum(y.map((v, i) => w[i] * Math.pow(v, 1 - e))) / W, 1 / (1 - e)) / m; };
+    const theil = (y) => { const W = d3.sum(w), m = d3.sum(y.map((v, i) => v * w[i])) / W; return d3.sum(y.map((v, i) => (w[i] / W) * (v / m) * Math.log(v / m))); };
+    const y0 = u.map((g) => g.y0 / g.pop), y1 = u.map((g) => (g.y0 + g.T) / g.pop);
+    const idx = [['gini', 'Gini', gini], ['atk05', 'Atkinson ε = 0,5', (y) => atk(y, 0.5)], ['atk1', 'Atkinson ε = 1', (y) => atk(y, 1)],
+      ['atk2', 'Atkinson ε = 2', (y) => atk(y, 2)], ['theil', 'Theil-T', theil]];
+    if (u.length < 2) return [];
+    return idx.map(([indice, rotulo, f]) => { const sem = f(y0), com = f(y1); return { indice, rotulo, sem, com, reducao: 1 - com / sem, unidades: u.length }; });
+  } });
+
+dash.calc('shapley', { inputs: ['sel'], title: 'Shapley: contribuição de cada benefício para a queda do Gini',
+  description: 'Média, sobre todas as ordens de inclusão, da redução do Gini ao acrescentar cada benefício à renda própria; mesmas opções de renda, ponderação e unidade dos índices. Ordenado da maior contribuição para a menor.',
+  fn: (sel) => {
+    const p = dash.params(); const unid = p.unidade || 'mun'; const pond = (p.pond ?? '1') !== '0';
+    const BEN = ['apos_rural', 'bolsa', 'bpc', 'apos_urbana', 'seguro'];
+    const ROT = { apos_rural: 'aposentadoria rural', bolsa: 'Bolsa Família', bpc: 'BPC', apos_urbana: 'aposentadoria urbana', seguro: 'seguro-desemprego' };
+    const T = (m) => BEN.reduce((a, k) => a + m[k], 0);
+    const propria = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
+    const grupos = unid === 'mun' ? sel.map((m) => [m]) : d3.groups(sel, (m) => m[unid]).map((g) => g[1]);
+    const u = grupos.map((ms) => { const o = { pop: d3.sum(ms, (m) => m.pop), y0: d3.sum(ms, propria) }; BEN.forEach((k) => { o[k] = d3.sum(ms, (m) => m[k]); }); return o; })
+      .filter((g) => g.y0 > 0 && g.pop > 0);
+    if (u.length < 2) return [];
+    const w = u.map((g) => (pond ? g.pop : 1)); const W = d3.sum(w);
+    const gini = (y) => { const o = d3.range(y.length).sort((a, b) => y[a] - y[b]); const Y = d3.sum(y.map((v, i) => v * w[i]));
+      let cw = 0, cy = 0, g = 0; for (const i of o) { const nw = cw + w[i] / W, ny = cy + y[i] * w[i] / Y; g += (nw - cw) * (ny + cy); cw = nw; cy = ny; } return 1 - g; };
+    const v = new Map();
+    for (let mask = 0; mask < 32; mask++) v.set(mask, gini(u.map((g) => (g.y0 + BEN.reduce((a, k, j) => a + ((mask >> j) & 1 ? g[k] : 0), 0)) / g.pop)));
+    const fat = [1, 1, 2, 6, 24, 120]; const bits = (m) => [0, 1, 2, 3, 4].reduce((a, j) => a + ((m >> j) & 1), 0);
+    const total = v.get(0) - v.get(31);
+    return BEN.map((k, j) => {
+      let phi = 0;
+      for (let mask = 0; mask < 32; mask++) { if ((mask >> j) & 1) continue; const s = bits(mask); phi += fat[s] * fat[4 - s] / fat[5] * (v.get(mask) - v.get(mask | (1 << j))); }
+      return { beneficio: k, rotulo: ROT[k], contrib: phi, pct: phi / total };
+    }).sort((a, b) => b.contrib - a.contrib);
+  } });
+
+dash.calc('tipos', { inputs: ['sel'], title: 'Perfil por tipologia etária',
+  description: 'Medianas por tipo: dependência, excesso sobre o previsto pela idade, migração jovem e parcela rural em 2022.',
+  fn: (sel) => {
+    const ord = ['atrito', 'atração', 'intermediário', 'não envelhecido', 'sem dados de migração'];
+    return d3.groups(sel, (m) => m.tipo).sort((a, b) => ord.indexOf(a[0]) - ord.indexOf(b[0])).map(([tipo, ms]) => ({ tipo, n: ms.length,
+      dep_mediana: d3.median(ms, (m) => m.dep), resid_mediano: d3.median(ms, (m) => m.resid_idade),
+      mig_jovem_mediana: d3.median(ms, (m) => m.mig_jovem), rural_22: d3.median(ms, (m) => m.rural_22) }));
+  } });
+
+dash.calc('tipos_sit', { inputs: ['sel'], title: 'Atrito pela origem da saída de jovens',
+  description: 'O atrito dividido pela parcela rural da perda líquida de jovens (≥ 50% = atrito rural); medianas por tipo.',
+  fn: (sel) => {
+    const ord = ['atrito rural', 'atrito urbano', 'atração', 'intermediário', 'não envelhecido'];
+    return d3.groups(sel.filter((m) => ord.includes(m.tipo_situacao)), (m) => m.tipo_situacao).sort((a, b) => ord.indexOf(a[0]) - ord.indexOf(b[0]))
+      .map(([tipo_situacao, ms]) => ({ tipo_situacao, n: ms.length, dep_mediana: d3.median(ms, (m) => m.dep),
+        mig_urb: d3.median(ms, (m) => m.mig_jovem_urb), mig_rur: d3.median(ms, (m) => m.mig_jovem_rur) }));
+  } });
+
+dash.calc('pir', { inputs: ['piramides', 'sel'], title: 'Pirâmide etária 2010 × 2022',
+  description: 'Percentual da população de cada ano por sexo e grupo de idade: do município escolhido ou da soma dos municípios do recorte.',
+  fn: (piramides, sel) => {
+    const G = ['0_9', '10_14', '15_19', '20_24', '25_29', '30_34', '35_39', '40_44', '45_49', '50_54', '55_59', '60_64', '65_69', '70_74', '75m'];
+    const mun = dash.params().mun; const codes = new Set(mun ? [+mun] : sel.map((m) => m.cod));
+    const rows = piramides.filter((r) => codes.has(r.cod) && r['h10_0_9'] != null);
+    const s = (k) => d3.sum(rows, (r) => r[k]);
+    const t10 = d3.sum(G, (g) => s('h10_' + g) + s('m10_' + g)), t22 = d3.sum(G, (g) => s('h22_' + g) + s('m22_' + g));
+    if (!t10 || !t22) return [];
+    return G.map((g) => ({ grupo: g === '75m' ? '75+' : g.replace('_', '–'), h10: s('h10_' + g) / t10, m10: s('m10_' + g) / t10, h22: s('h22_' + g) / t22, m22: s('m22_' + g) / t22 }));
+  } });
+
+dash.calc('pirsum', { inputs: ['piramides', 'sel', 'municipios'], title: 'Recorte da pirâmide',
+  description: 'Nome do município escolhido para a pirâmide, ou do recorte.',
+  fn: (piramides, sel, municipios) => {
+    const mun = dash.params().mun; const m = mun ? municipios.find((x) => x.cod === +mun) : null;
+    return [{ nome: m ? `${m.nome} (${m.uf})` : `${sel.length.toLocaleString('pt-BR')} municípios do recorte` }];
+  } });
+
+dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etários 2010 × 2022',
+  description: 'População, parcela de 60+, índice de envelhecimento e razão de dependência dos idosos no município escolhido ou no recorte.',
+  fn: (piramides, sel) => {
+    const G = ['0_9', '10_14', '15_19', '20_24', '25_29', '30_34', '35_39', '40_44', '45_49', '50_54', '55_59', '60_64', '65_69', '70_74', '75m'];
+    const mun = dash.params().mun; const codes = new Set(mun ? [+mun] : sel.map((m) => m.cod));
+    const rows = piramides.filter((r) => codes.has(r.cod) && r['h10_0_9'] != null);
+    const soma = (ano, gs) => d3.sum(rows, (r) => d3.sum(gs, (g) => r[`h${ano}_${g}`] + r[`m${ano}_${g}`]));
+    const ind = (ano) => { const tot = soma(ano, G), jov = soma(ano, G.slice(0, 2)), ido = soma(ano, G.slice(11)), at = soma(ano, G.slice(2, 11));
+      const hom = d3.sum(rows, (r) => d3.sum(G.slice(11), (g) => r[`h${ano}_${g}`])), mul = d3.sum(rows, (r) => d3.sum(G.slice(11), (g) => r[`m${ano}_${g}`]));
+      return { pop: tot, sh60: ido / tot, env: 100 * ido / jov, rdi: 100 * ido / at, rsx: 100 * hom / mul, sh2029: soma(ano, ['20_24', '25_29']) / tot }; };
+    if (!rows.length) return [];
+    const a = ind('10'), b = ind('22');
+    return [['pop', 'População', 'pop'], ['sh60', 'Parcela com 60 anos ou mais', 'sh60'], ['sh2029', 'Parcela com 20–29 anos', 'sh2029'],
+      ['env', 'Índice de envelhecimento', 'env'], ['rdi', 'Razão de dependência dos idosos', 'rdi'], ['rsx', 'Homens por 100 mulheres (60+)', 'rsx']]
+      .map(([indicador, rotulo, k]) => ({ indicador, rotulo, v2010: a[k], v2022: b[k], variacao: b[k] / a[k] - 1 }));
+  } });
+</script>
+
+<script>
+/* ---------- controles: filtros, abas, seleções locais ---------- */
+(function () {
+  const params = () => dash.params();
+  document.querySelectorAll('select[data-param]').forEach((sel) => {
+    sel.addEventListener('change', () => dash.setParams({ [sel.dataset.param]: sel.value || null }));
+  });
+  dash.onData(() => {
+    const p = params();
+    document.querySelectorAll('select[data-param]').forEach((sel) => {
+      if (document.activeElement === sel) return;
+      const v = p[sel.dataset.param]; if (v != null && v !== '') sel.value = String(v); else if (sel.options.length) sel.value = sel.options[0].value;
+    });
+  });
+  document.querySelectorAll('#f-limpar').forEach((b) => b.addEventListener('click', () => dash.setParams({ regiao: null, uf: null, bioma: null, semi: null, tipo: null })));
+  document.querySelectorAll('.tm-sw[data-cor]').forEach((sw) => { sw.style.background = TM.cor(sw.dataset.cor); });
+
+  const tabs = [...document.querySelectorAll('.tm-tab')];
+  const abrir = (id, link) => {
+    if (!tabs.some((t) => t.dataset.tab === id)) return;
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
+    document.querySelectorAll('.tm-sec').forEach((s) => { s.hidden = s.id !== id; });
+    if (link) dash.setLink(id);
+  };
+  tabs.forEach((t) => t.addEventListener('click', () => abrir(t.dataset.tab, true)));
+  const h = (location.hash || '').slice(1); if (h) abrir(h, false);
+  let antes = null;
+  window.addEventListener('beforeprint', () => { if (antes) return; antes = [...document.querySelectorAll('.tm-sec')].map((s) => [s, s.hidden]); antes.forEach(([s]) => { s.hidden = false; }); });
+  window.addEventListener('afterprint', () => { if (!antes) return; antes.forEach(([s, v]) => { s.hidden = v; }); antes = null; });
+
+  document.querySelectorAll('#ord-grupos').forEach((s) => s.addEventListener('change', () => { dash.draw('g_barras'); dash.draw('g_tabela'); }));
+  document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => dash.draw('a_lista')));
+  document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => dash.draw('a_lista')));
+  document.querySelectorAll('#reg-modelo').forEach((s) => s.addEventListener('change', () => { dash.draw('i_coef'); dash.draw('i_tabcoef'); }));
+  document.querySelectorAll('#busca-pir').forEach((inp) => inp.addEventListener('change', () => {
+    const cod = (TM.munPorRotulo || new Map()).get(inp.value.trim());
+    if (cod) dash.setParams({ mun: String(cod) });
+  }));
+  document.querySelectorAll('#pir-limpar').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('#busca-pir').forEach((i) => { i.value = ''; }); dash.setParams({ mun: null });
+  }));
+})();
+</script>
+
+<script>
+/* ---------- números do cabeçalho ---------- */
+window.um = (fonte, campo, fmt, onde) => (el) => {
+  const r = dash.data(fonte);
+  if (r.status !== 'ok') { TM.estado(el, r, 'erro'); return; }
+  el.classList.remove('dash-skeleton');
+  const row = onde ? r.data.find(onde) : r.data[0];
+  el.textContent = row ? fmt(row[campo]) : '—';
+};
+dash.draw('t_n', um('resumo', 'n', (v) => TM.num(v)));
+dash.draw('t_dep', um('resumo', 'dep', (v) => TM.pct(v)));
+dash.draw('t_g0', um('desig', 'sem', (v) => TM.dec(v), (d) => d.indice === 'gini'));
+dash.draw('t_g1', um('desig', 'com', (v) => TM.dec(v), (d) => d.indice === 'gini'));
+dash.draw('t_top', um('shapley', 'rotulo', (v) => v ?? '—'));
+dash.draw('t_toppct', um('shapley', 'pct', (v) => TM.pct(v, 0)));
+dash.draw('k_n', um('resumo', 'n', (v) => TM.num(v)));
+dash.draw('k_pop', um('resumo', 'pop_mi', (v) => TM.num(v, 1)));
+dash.draw('k_dep', um('resumo', 'dep', (v) => TM.pct(v)));
+dash.draw('k_red', um('desig', 'reducao', (v) => TM.pct(v), (d) => d.indice === 'gini'));
+dash.draw('k_atr', um('resumo', 'n_atrito', (v) => TM.num(v)));
+dash.draw('k_atc', um('resumo', 'n_atracao', (v) => TM.num(v)));
+</script>
+
+<script>
+/* ---------- aba: peso por região ---------- */
+(function () {
+  const ordenar = (rows) => {
+    const k = (document.querySelector('#ord-grupos') || {}).value || 'dep';
+    return rows.slice().sort((a, b) => d3.descending(a[k], b[k]));
+  };
+  const SH = ['sh_apos_rural', 'sh_bolsa', 'sh_bpc', 'sh_apos_urbana', 'sh_seguro'];
+  const ROT = ['Aposentadoria rural', 'Bolsa Família', 'BPC', 'Aposentadoria urbana', 'Seguro-desemprego'];
+
+  dash.draw('g_barras', (el) => {
+    const r = dash.data('grupos');
+    if (r.status !== 'ok') { TM.estado(el, r); return; }
+    el.classList.remove('dash-skeleton'); el.replaceChildren();
+    const rows = ordenar(r.data).slice(0, 30);
+    if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+    const W = el.clientWidth || 600, bh = 20, gap = 6;
+    const ml = Math.min(W * 0.45, d3.max(rows, (d) => TM.textW(String(d.grupo), el)) + 10), mr = TM.textW('00,0%', el) + 10;
+    const H = rows.length * (bh + gap) + 28;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d.dep) || 0.1]).nice().range([ml, W - mr]);
+    const y = d3.scaleBand().domain(rows.map((d) => d.grupo)).range([0, rows.length * (bh + gap)]).paddingInner(gap / (bh + gap));
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+      .attr('aria-label', 'Barras empilhadas: peso de cada benefício na renda de cada grupo');
+    const ax = svg.append('g').attr('class', 'grid').attr('transform', `translate(0,${H - 22})`);
+    const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 80)));
+    ax.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', -(H - 22)).attr('y2', 0);
+    ax.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', 16).attr('text-anchor', 'middle').text((d) => TM.pct(d, 0));
+    const tip = TM.tip(el);
+    const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d) => `translate(0,${y(d.grupo)})`);
+    g.append('text').attr('x', ml - 8).attr('y', bh / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.grupo);
+    g.each(function (d) {
+      let acc = 0;
+      SH.forEach((k, i) => {
+        const v = d[k];
+        d3.select(this).append('rect').attr('x', x(acc)).attr('y', 0).attr('height', bh).attr('width', Math.max(0, x(acc + v) - x(acc)))
+          .style('fill', TM.cor(i))
+          .on('pointermove', (ev) => tip.show(ev, [[d.grupo], [ROT[i], TM.pct(v)], ['Todas as transferências', TM.pct(d.dep)], ['Municípios', TM.num(d.n)], ['Renda per capita', 'R$ ' + TM.num(d.renda_pc)]]))
+          .on('pointerleave', () => tip.hide());
+        acc += v;
+      });
+      d3.select(this).append('text').attr('x', x(acc) + 6).attr('y', bh / 2).attr('dy', '0.35em').text(TM.pct(d.dep));
+    });
+  });
+
+  dash.draw('g_tabela', (tb) => {
+    const r = dash.data('grupos');
+    if (r.status !== 'ok') { TM.estado(tb, r); return; }
+    tb.replaceChildren(...ordenar(r.data).map((d) => {
+      const tr = document.createElement('tr'); tr.dataset.key = encodeURIComponent(d.grupo);
+      [[d.grupo], [TM.num(d.n), 1], [TM.num(d.pop), 1], [TM.num(d.renda_pc), 1], [TM.pct(d.dep), 1], ...SH.map((k) => [TM.pct(d[k]), 1]), [TM.num(d.n_atrito), 1], [TM.num(d.n_atracao), 1]]
+        .forEach(([v, n]) => { const td = document.createElement('td'); td.textContent = v; if (n) td.className = 'n'; tr.appendChild(td); });
+      return tr;
+    }));
+  });
+})();
+</script>
+
+<script>
+/* ---------- aba: desigualdade ---------- */
+dash.draw('d_halteres', (el) => {
+  const r = dash.data('desig');
+  if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data; if (!rows.length) { el.textContent = 'O recorte precisa de pelo menos duas unidades.'; return; }
+  const W = el.clientWidth || 500, rh = 40;
+  const ml = d3.max(rows, (d) => TM.textW(d.rotulo, el)) + 12, mr = TM.textW('−00,0%', el) + 12, H = rows.length * rh + 28;
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => Math.max(d.sem, d.com))]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Índices de desigualdade sem e com transferências');
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70)));
+  const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.dec(d, 2));
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + rh / 2})`);
+  g.append('text').attr('x', ml - 10).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.rotulo);
+  g.append('line').attr('x1', (d) => x(d.com)).attr('x2', (d) => x(d.sem)).style('stroke', 'var(--cds-chart-muted)').attr('stroke-width', 3);
+  g.append('circle').attr('cx', (d) => x(d.sem)).attr('r', 6).style('fill', 'var(--cds-chart-muted)');
+  g.append('circle').attr('cx', (d) => x(d.com)).attr('r', 6).style('fill', TM.cor(0));
+  g.append('text').attr('x', W - mr + 8).attr('dy', '0.35em').attr('class', 'lbl-strong').text((d) => '−' + TM.pct(d.reducao));
+  g.append('rect').attr('x', 0).attr('y', -rh / 2).attr('width', W).attr('height', rh).style('fill', 'transparent')
+    .on('pointermove', (ev, d) => tip.show(ev, [[d.rotulo], ['Sem transferências', TM.dec(d.sem)], ['Com transferências', TM.dec(d.com)], ['Queda', TM.pct(d.reducao)], ['Unidades', TM.num(d.unidades)]]))
+    .on('pointerleave', () => tip.hide());
+});
+
+dash.draw('d_shapley', (el) => {
+  const r = dash.data('shapley');
+  if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data; if (!rows.length) { el.textContent = 'O recorte precisa de pelo menos duas unidades.'; return; }
+  const ROT = TM.BENROT, idx = { apos_rural: 0, bolsa: 1, bpc: 2, apos_urbana: 3, seguro: 4 };
+  const W = el.clientWidth || 500, rh = 34;
+  const ml = d3.max(rows, (d) => TM.textW(ROT[d.beneficio], el)) + 12, mr = TM.textW('100%', el) + 14, H = rows.length * rh + 28;
+  const x = d3.scaleLinear().domain([Math.min(0, d3.min(rows, (d) => d.pct)), Math.max(0.05, d3.max(rows, (d) => d.pct))]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Contribuição de cada benefício para a queda do Gini');
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70)));
+  const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.pct(d, 0));
+  svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 0).attr('y2', H - 22).style('stroke', 'var(--cds-chart-reference)');
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 4})`);
+  g.append('text').attr('x', ml - 10).attr('y', (rh - 8) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => ROT[d.beneficio]);
+  g.append('rect').attr('x', (d) => x(Math.min(0, d.pct))).attr('width', (d) => Math.abs(x(d.pct) - x(0))).attr('height', rh - 8)
+    .style('fill', (d) => TM.cor(idx[d.beneficio]))
+    .on('pointermove', (ev, d) => tip.show(ev, [[ROT[d.beneficio]], ['Parte da queda do Gini', TM.pct(d.pct)], ['Redução do Gini', TM.dec(d.contrib, 4)]]))
+    .on('pointerleave', () => tip.hide());
+  g.append('text').attr('x', (d) => Math.max(x(d.pct), x(0)) + 6).attr('y', (rh - 8) / 2).attr('dy', '0.35em').text((d) => TM.pct(d.pct, 0));
+});
+
+dash.draw('d_tabela', (tb) => {
+  const r = dash.data('desig');
+  if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...r.data.map((d) => {
+    const tr = document.createElement('tr'); tr.dataset.key = d.indice;
+    [[d.rotulo], [TM.dec(d.sem), 1], [TM.dec(d.com), 1], [TM.pct(d.reducao), 1], [TM.num(d.unidades), 1]]
+      .forEach(([v, n]) => { const td = document.createElement('td'); td.textContent = v; if (n) td.className = 'n'; tr.appendChild(td); });
+    return tr;
+  }));
+});
+</script>
+
+<script>
+/* ---------- aba: atrito x atração ---------- */
+dash.draw('a_dispersao', (el) => {
+  const r = dash.data('sel');
+  if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const pts = r.data.filter((m) => m.mig_jovem != null && m.resid_idade != null && isFinite(m.mig_jovem));
+  if (!pts.length) { el.textContent = 'Nenhum município com índice de migração no recorte.'; return; }
+  const W = el.clientWidth || 500, H = Math.max(280, Math.min(420, W * 0.75)), m = { l: 44, r: 12, t: 10, b: 34 };
+  const xe = d3.extent(pts, (d) => d.mig_jovem), ye = d3.extent(pts, (d) => d.resid_idade);
+  const x = d3.scaleLinear().domain([Math.max(-1, xe[0]), Math.min(1, xe[1])]).nice().range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([Math.max(-0.4, ye[0]), Math.min(0.6, ye[1])]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Dispersão: migração jovem contra excesso de dependência, cor por tipologia');
+  const gx = svg.append('g').attr('class', 'grid'), xt = x.ticks(Math.max(3, Math.floor(W / 90))), yt = y.ticks(6);
+  gx.selectAll('.v').data(xt).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', m.t).attr('y2', H - m.b);
+  gx.selectAll('.h').data(yt).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d));
+  gx.selectAll('.tx').data(xt).join('text').attr('x', (d) => x(d)).attr('y', H - m.b + 16).attr('text-anchor', 'middle').text((d) => TM.dec(d, 1));
+  gx.selectAll('.ty').data(yt).join('text').attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.35em').attr('text-anchor', 'end').text((d) => TM.dec(d, 1));
+  svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--cds-chart-reference)');
+  svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).style('stroke', 'var(--cds-chart-reference)');
+  if (x.domain()[0] < -0.1) svg.append('line').attr('x1', x(-0.1)).attr('x2', x(-0.1)).attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--color-bad)').attr('stroke-dasharray', '3 3');
+  svg.append('text').attr('x', W - m.r).attr('y', H - 4).attr('text-anchor', 'end').text('migração jovem →');
+  const ord = { 'não envelhecido': 0, 'intermediário': 1, 'atração': 2, 'atrito': 3 };
+  const dados = pts.slice().sort((a, b) => (ord[a.tipo] ?? -1) - (ord[b.tipo] ?? -1));
+  const cx = (d) => x(Math.max(x.domain()[0], Math.min(x.domain()[1], d.mig_jovem))), cy = (d) => y(Math.max(y.domain()[0], Math.min(y.domain()[1], d.resid_idade)));
+  svg.append('g').selectAll('circle').data(dados).join('circle').attr('cx', cx).attr('cy', cy).attr('r', dados.length > 2000 ? 2.2 : 3.2)
+    .style('fill', (d) => TM.corTipo(d.tipo)).style('opacity', (d) => (d.tipo === 'não envelhecido' ? 0.35 : 0.75));
+  const foco = svg.append('circle').attr('r', 6).style('fill', 'none').style('stroke', 'var(--color-fg)').attr('stroke-width', 1.5).attr('visibility', 'hidden');
+  const dl = d3.Delaunay.from(dados, cx, cy); const tip = TM.tip(el);
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('pointermove', (ev) => {
+      const [px, py] = d3.pointer(ev, svg.node());
+      const d = dados[dl.find(px, py)]; if (!d) return;
+      foco.attr('cx', cx(d)).attr('cy', cy(d)).attr('visibility', 'visible');
+      tip.show(ev, [[`${d.nome} (${d.uf})`], ['Tipo', d.tipo], ['Dependência', TM.pct(d.dep)], ['Prevista pela idade', TM.pct(d.dep_prev_idade)], ['Migração jovem', TM.sdec(d.mig_jovem, 2)], ['Migração idosa', TM.sdec(d.mig_idoso, 2)]]);
+    })
+    .on('pointerleave', () => { tip.hide(); foco.attr('visibility', 'hidden'); });
+});
+
+window.linhaTabela = (cells) => { const tr = document.createElement('tr');
+  cells.forEach(([v, cls]) => { const td = document.createElement('td'); if (v instanceof Node) td.appendChild(v); else td.textContent = v; if (cls) td.className = cls; tr.appendChild(td); }); return tr; };
+window.pilula = (t) => { const s = document.createElement('span'); s.className = 'tm-pill' + (t === 'atrito' || (t || '').startsWith('atrito') ? ' atrito' : t === 'atração' ? ' atracao' : ''); s.textContent = t; return s; };
+
+dash.draw('a_tipos', (tb) => {
+  const r = dash.data('tipos'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...r.data.map((d) => { const tr = linhaTabela([[pilula(d.tipo)], [TM.num(d.n), 'n'], [TM.pct(d.dep_mediana), 'n'], [TM.sdec(d.resid_mediano, 3), 'n'], [TM.sdec(d.mig_jovem_mediana, 3), 'n'], [TM.pct(d.rural_22, 0), 'n']]); tr.dataset.key = encodeURIComponent(d.tipo); return tr; }));
+});
+dash.draw('a_sit', (tb) => {
+  const r = dash.data('tipos_sit'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...r.data.map((d) => { const tr = linhaTabela([[pilula(d.tipo_situacao)], [TM.num(d.n), 'n'], [TM.pct(d.dep_mediana), 'n'], [TM.sdec(d.mig_urb, 3), 'n'], [TM.sdec(d.mig_rur, 3), 'n']]); tr.dataset.key = encodeURIComponent(d.tipo_situacao); return tr; }));
+});
+
+const listaMun = () => {
+  const r = dash.data('sel'); if (r.status !== 'ok') return { r, rows: [] };
+  const q = ((document.querySelector('#busca-mun') || {}).value || '').trim().toLocaleLowerCase('pt-BR');
+  const k = (document.querySelector('#ord-mun') || {}).value || 'dep';
+  let rows = q ? r.data.filter((m) => m.nome.toLocaleLowerCase('pt-BR').includes(q) || (m.rgi || '').toLocaleLowerCase('pt-BR').includes(q)) : r.data;
+  rows = rows.slice().sort(k === 'mig_jovem' ? (a, b) => d3.ascending(a[k] ?? Infinity, b[k] ?? Infinity) : (a, b) => d3.descending(a[k], b[k]));
+  return { r, rows };
+};
+dash.draw('a_contagem', (el) => {
+  const { r, rows } = listaMun(); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton');
+  el.textContent = rows.length > 200 ? `${TM.num(rows.length)} municípios; mostrando os 200 primeiros. Refine pela busca ou pelos filtros.` : `${TM.num(rows.length)} municípios.`;
+});
+dash.draw('a_lista', (tb) => {
+  const { r, rows } = listaMun(); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...rows.slice(0, 200).map((m) => { const tr = linhaTabela([[m.nome], [m.uf], [m.rgi], [m.bioma], [pilula(m.tipo)], [m.tipo_situacao.startsWith('atrito') ? m.tipo_situacao : '—'],
+    [TM.num(m.pop), 'n'], [TM.pct(m.dep), 'n'], [TM.pct(m.dep_prev_idade), 'n'], [TM.sdec(m.resid_idade, 3), 'n'], [TM.sdec(m.mig_jovem, 3), 'n'], [TM.sdec(m.mig_idoso, 3), 'n']]);
+    tr.dataset.key = String(m.cod); return tr; }));
+});
+</script>
+
+<script>
+/* ---------- aba: estrutura etária ---------- */
+dash.draw('i_r2', (el) => {
+  const r = dash.data('ajuste_idade'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data.slice().sort((a, b) => a.ordem - b.ordem); const W = el.clientWidth || 500, rh = 30;
+  const ml = Math.min(W * 0.55, d3.max(rows, (d) => TM.textW(d.especificacao, el)) + 12), mr = TM.textW('0,000', el) + 10, H = rows.length * rh + 24;
+  const x = d3.scaleLinear().domain([0, 1]).range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'R² de cada especificação');
+  const tk = [0, 0.25, 0.5, 0.75, 1]; const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 20);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 5).attr('text-anchor', 'middle').text((d) => TM.dec(d, 2));
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 3})`);
+  g.append('text').attr('x', ml - 10).attr('y', (rh - 8) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.especificacao);
+  g.append('rect').attr('x', x(0)).attr('width', (d) => x(d.r2) - x(0)).attr('height', rh - 8).style('fill', (d) => (d.metodo === 'RF' ? TM.cor(1) : TM.cor(0)));
+  g.append('text').attr('x', (d) => x(d.r2) + 6).attr('y', (rh - 8) / 2).attr('dy', '0.35em').text((d) => TM.dec(d.r2));
+});
+
+dash.draw('i_obsprev', (el) => {
+  const r = dash.data('grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data.slice().sort((a, b) => Math.abs(b.dep_obs - b.dep_prev) - Math.abs(a.dep_obs - a.dep_prev)).slice(0, 30)
+    .sort((a, b) => (b.dep_obs - b.dep_prev) - (a.dep_obs - a.dep_prev));
+  if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+  const W = el.clientWidth || 500, rh = 22;
+  const ml = Math.min(W * 0.45, d3.max(rows, (d) => TM.textW(String(d.grupo), el)) + 12), mr = TM.textW('+00,0 p.p.', el) + 12, H = rows.length * rh + 26;
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => Math.max(d.dep_obs, d.dep_prev))]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Dependência observada e prevista pela idade por grupo');
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70))); const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 20);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 5).attr('text-anchor', 'middle').text((d) => TM.pct(d, 0));
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + rh / 2})`);
+  g.append('text').attr('x', ml - 10).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.grupo);
+  g.append('line').attr('x1', (d) => x(d.dep_prev)).attr('x2', (d) => x(d.dep_obs)).style('stroke', 'var(--cds-chart-muted)').attr('stroke-width', 2);
+  g.append('circle').attr('cx', (d) => x(d.dep_prev)).attr('r', 4.5).style('fill', 'var(--cds-chart-muted)');
+  g.append('circle').attr('cx', (d) => x(d.dep_obs)).attr('r', 4.5).style('fill', TM.cor(0));
+  g.append('text').attr('x', W - mr + 8).attr('dy', '0.35em').text((d) => `${d.dep_obs >= d.dep_prev ? '+' : '−'}${TM.num(Math.abs(d.dep_obs - d.dep_prev) * 100, 1)} p.p.`);
+  g.append('rect').attr('x', 0).attr('y', -rh / 2).attr('width', W).attr('height', rh).style('fill', 'transparent')
+    .on('pointermove', (ev, d) => tip.show(ev, [[String(d.grupo)], ['Observada', TM.pct(d.dep_obs)], ['Prevista pela idade', TM.pct(d.dep_prev)], ['Municípios', TM.num(d.n)]]))
+    .on('pointerleave', () => tip.hide());
+});
+
+const coefDoModelo = () => {
+  const r = dash.data('regressoes'); const mod = (document.querySelector('#reg-modelo') || {}).value;
+  return { r, rows: r.status === 'ok' ? r.data.filter((d) => d.modelo === mod) : [] };
+};
+dash.draw('i_coef', (el) => {
+  const { r, rows } = coefDoModelo(); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  if (!rows.length) { el.textContent = 'Escolha um modelo.'; return; }
+  const W = el.clientWidth || 600, rh = 34;
+  const ml = Math.min(W * 0.45, d3.max(rows, (d) => TM.textW(d.variavel, el)) + 12), mr = 16, H = rows.length * rh + 28;
+  const lo = d3.min(rows, (d) => d.ic_baixo), hi = d3.max(rows, (d) => d.ic_alto);
+  const x = d3.scaleLinear().domain([Math.min(0, lo), Math.max(0, hi)]).nice().range([ml, W - mr]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Coeficientes com intervalo de 95%');
+  const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70))); const gr = svg.append('g').attr('class', 'grid');
+  gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+  gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.dec(d, 2));
+  svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 0).attr('y2', H - 22).style('stroke', 'var(--cds-chart-reference)').attr('stroke-width', 1.5);
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + rh / 2})`);
+  g.append('text').attr('x', ml - 10).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.variavel);
+  const sig = (d) => d.ic_baixo > 0 || d.ic_alto < 0;
+  g.append('line').attr('x1', (d) => x(d.ic_baixo)).attr('x2', (d) => x(d.ic_alto)).style('stroke', (d) => (sig(d) ? TM.cor(0) : 'var(--cds-chart-muted)')).attr('stroke-width', 2.5);
+  g.append('circle').attr('cx', (d) => x(d.coef)).attr('r', 5).style('fill', (d) => (sig(d) ? TM.cor(0) : 'var(--cds-chart-muted)'));
+  g.append('rect').attr('x', 0).attr('y', -rh / 2).attr('width', W).attr('height', rh).style('fill', 'transparent')
+    .on('pointermove', (ev, d) => tip.show(ev, [[d.variavel], ['Coeficiente', TM.dec(d.coef)], ['IC 95%', `${TM.dec(d.ic_baixo)} a ${TM.dec(d.ic_alto)}`], ['R² do modelo', TM.dec(d.r2)], ['N', TM.num(d.n)]]))
+    .on('pointerleave', () => tip.hide());
+});
+dash.draw('i_tabcoef', (tb) => {
+  const { r, rows } = coefDoModelo(); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  tb.replaceChildren(...rows.map((d) => { const tr = linhaTabela([[d.variavel], [TM.dec(d.coef), 'n'], [TM.dec(d.ep), 'n'], [TM.dec(d.ic_baixo), 'n'], [TM.dec(d.ic_alto), 'n'], [TM.num(d.n), 'n'], [TM.dec(d.r2), 'n']]);
+    tr.dataset.key = `${encodeURIComponent(d.modelo)},${encodeURIComponent(d.variavel)}`; return tr; }));
+});
+</script>
+
+<script>
+/* ---------- aba: pirâmides ---------- */
+dash.draw('p_lista', (dl) => {
+  const r = dash.data('municipios'); if (r.status !== 'ok') { dl.replaceChildren(); return; }
+  const mapa = new Map();
+  dl.replaceChildren(...r.data.map((m) => { const rot = `${m.nome} – ${m.uf}`; mapa.set(rot, m.cod); const o = document.createElement('option'); o.value = rot; return o; }));
+  TM.munPorRotulo = mapa;
+});
+dash.draw('p_nome', um('pirsum', 'nome', (v) => v ?? '—'));
+dash.draw('p_grafico', (el) => {
+  const r = dash.data('pir'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+  el.classList.remove('dash-skeleton'); el.replaceChildren();
+  const rows = r.data.slice().reverse(); if (!rows.length) { el.textContent = 'Sem dados de 2010 para este recorte (município criado após 2010).'; return; }
+  const W = el.clientWidth || 500, rh = 20, H = rows.length * rh + 30, mid = W / 2, lab = TM.textW('75+', el) + 16;
+  const mx = d3.max(rows, (d) => Math.max(d.h10, d.m10, d.h22, d.m22));
+  const xr = d3.scaleLinear().domain([0, mx]).nice().range([0, mid - lab / 2 - 8]);
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Pirâmide etária 2022 com contorno de 2010');
+  const y = (i) => i * rh;
+  const tk = xr.ticks(3).filter((t) => t > 0); const gr = svg.append('g').attr('class', 'grid');
+  tk.forEach((t) => { [mid - lab / 2 - xr(t), mid + lab / 2 + xr(t)].forEach((xx) => { gr.append('line').attr('x1', xx).attr('x2', xx).attr('y1', 0).attr('y2', H - 24); gr.append('text').attr('x', xx).attr('y', H - 8).attr('text-anchor', 'middle').text(TM.pct(t, 0)); }); });
+  const tip = TM.tip(el);
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${y(i)})`);
+  g.append('rect').attr('x', (d) => mid - lab / 2 - xr(d.h22)).attr('y', 2).attr('width', (d) => xr(d.h22)).attr('height', rh - 4).style('fill', TM.cor(0));
+  g.append('rect').attr('x', mid + lab / 2).attr('y', 2).attr('width', (d) => xr(d.m22)).attr('height', rh - 4).style('fill', TM.cor(1));
+  g.append('text').attr('x', mid).attr('y', rh / 2).attr('dy', '0.35em').attr('text-anchor', 'middle').attr('class', 'lbl-strong').text((d) => d.grupo);
+  const pts = (lado) => rows.flatMap((d, i) => { const v = lado === 'h' ? d.h10 : d.m10; const xx = lado === 'h' ? mid - lab / 2 - xr(v) : mid + lab / 2 + xr(v); return [[xx, y(i)], [xx, y(i) + rh]]; });
+  ['h', 'm'].forEach((l) => svg.append('path').attr('d', d3.line()(pts(l))).style('fill', 'none').style('stroke', 'var(--color-fg)').attr('stroke-width', 1.5));
+  svg.append('text').attr('x', 4).attr('y', H - 8).text('Homens');
+  svg.append('text').attr('x', W - 4).attr('y', H - 8).attr('text-anchor', 'end').text('Mulheres');
+  g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rh).style('fill', 'transparent')
+    .on('pointermove', (ev, d) => tip.show(ev, [[`${d.grupo} anos`], ['Homens 2010 → 2022', `${TM.pct(d.h10)} → ${TM.pct(d.h22)}`], ['Mulheres 2010 → 2022', `${TM.pct(d.m10)} → ${TM.pct(d.m22)}`]]))
+    .on('pointerleave', () => tip.hide());
+});
+dash.draw('p_tabela', (tb) => {
+  const r = dash.data('pirsum_tab'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+  const f = (k, v) => (k === 'pop' ? TM.num(v) : (k === 'sh60' || k === 'sh2029') ? TM.pct(v) : TM.num(v, 1));
+  tb.replaceChildren(...r.data.map((d) => { const tr = linhaTabela([[d.rotulo], [f(d.indicador, d.v2010), 'n'], [f(d.indicador, d.v2022), 'n'], [(d.variacao >= 0 ? '+' : '') + TM.pct(d.variacao), 'n']]); tr.dataset.key = d.indicador; return tr; }));
+});
+</script>

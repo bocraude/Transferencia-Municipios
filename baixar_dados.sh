@@ -21,3 +21,7 @@ done
 mkdir -p data/ibge/sidra10297
 [ -s data/ibge/sidra10297/t10297.json ] || curl -sS --retry 4 --max-time 300 -o data/ibge/sidra10297/t10297.json \
   "https://apisidra.ibge.gov.br/values/t/10297/n6/all/v/13506,13504/p/all/c11308/allxt/f/c/h/n"
+# Bioma predominante por município (IBGE, 2024) — usado pelo painel
+mkdir -p data/ibge/biomas
+[ -s data/ibge/biomas/Bioma_Predominante_por_Municipio_2024.csv ] || curl -sS -o data/ibge/biomas/Bioma_Predominante_por_Municipio_2024.csv \
+  "https://geoftp.ibge.gov.br/informacoes_ambientais/estudos_ambientais/biomas/documentos/Bioma_Predominante_por_Municipio_2024.csv"
