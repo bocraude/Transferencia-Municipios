@@ -1,0 +1,62 @@
+SIDRA 10297: municipios 5570 | todas = trabalho + outras? max |dif| = 1
+
+== renda_total da planilha / massa de todas as fontes (Censo 2022, SIDRA 10297) ==
+quantis: {0.01: 0.9966, 0.05: 1.0, 0.25: 1.0004, 0.5: 1.0019, 0.75: 1.0044, 0.95: 1.0109, 0.99: 1.0565}
+=> renda_pc da planilha e o rendimento domiciliar per capita do Censo 2022 (mesmo conceito, ~mesma massa).
+
+== Declarado (Censo: outras fontes) x administrativo (5 beneficios) ==
+Brasil: outras fontes (Censo) R$ bi/mes 81.0 | beneficios administrativos 72.29 | razao 1.121
+razao municipal outras/T: quantis {0.05: 0.791, 0.25: 0.91, 0.5: 1.004, 0.75: 1.126, 0.95: 1.417}
+municipios com outras fontes declaradas < beneficios administrativos: 2719 de 5561 (48.9%)
+  idem excluindo seguro-desemprego: 2342
+(outras fontes inclui tambem RPPS, previdencia privada, aluguel, pensao alimenticia etc.: deveria ser >= T)
+
+Por quintil da dependencia original (T/renda_total):
+                     n  dep_admin_mediana  dep_censo_mediana  razao_outras_T_agregada  pct_outras_menor_T  sh_rural_em_T
+s                                                                                                                      
+Q1 menor dep.  1113.0              0.185              0.208                    1.259              23.001          0.051
+Q2             1112.0              0.247              0.261                    1.050              33.543          0.120
+Q3             1112.0              0.305              0.316                    0.983              42.536          0.179
+Q4             1112.0              0.415              0.400                    0.925              61.871          0.362
+Q5 maior dep.  1112.0              0.557              0.513                    0.872              83.543          0.472
+
+Por regiao:
+               razao_outras_T  pct_outras_menor_T
+Norte                  1.086              35.938
+Nordeste               1.010              71.636
+Sudeste                1.118              45.024
+Sul                    1.191              31.734
+Centro-Oeste           1.465              31.545
+
+log(outras/T) ~ parcela ap. rural em T + parcela BF+BPC em T + log renda_pc: {'const': np.float64(-1.93), 'sh_ap_rural': np.float64(0.099), 'sh_bf_bpc': np.float64(0.349), 'log_renda_pc': np.float64(0.263)}
+
+== Dependencia sob denominadores alternativos ==
+                              razao_agregada  ponderada_pop  mediana    p95    max  pct_munic>25%  pct_munic>50%
+T/renda_total (original)               0.217          0.255    0.305  0.608  0.959         68.783         17.982
+outras/todas (so Censo)                0.245          0.270    0.324  0.562  0.770         75.184         13.073
+T/(trabalho Censo + T)                 0.224          0.256    0.311  0.577  0.785         71.408         15.483
+T/(trabalho + max(outras,T))           0.217          0.251    0.303  0.571  0.785         68.531         14.692
+T/(massa salarial RAIS + T)            0.262          0.349    0.510  0.756  0.987         91.476         51.969
+T*12/PIB                               0.086          0.135    0.162  0.447  0.692         29.905          1.906
+correlacoes de Spearman:
+                  s  s_censo  s_hibrido  s_hibrido2  s_massa_sal  s_pib
+s            1.000    0.902      0.989       0.996        0.826  0.818
+s_censo      0.902    1.000      0.949       0.919        0.826  0.802
+s_hibrido    0.989    0.949      1.000       0.995        0.842  0.829
+s_hibrido2   0.996    0.919      0.995       1.000        0.835  0.824
+s_massa_sal  0.826    0.826      0.842       0.835        1.000  0.868
+s_pib        0.818    0.802      0.829       0.824        0.868  1.000
+
+== Desigualdade entre municipios (ponderada pela populacao, R$/mes per capita) ==
+                               n  media_pc   gini  atk_0.5  atk_1  atk_2  theil
+medida                                                                         
+PIB pc                      5561  4137.291  0.376    0.120  0.221  0.385  0.271
+massa salarial RAIS pc      5561  1004.159  0.435    0.154  0.304  0.567  0.307
+renda - T admin (original)  5561  1282.819  0.293    0.073  0.152  0.322  0.139
+renda total (original)      5561  1639.024  0.242    0.046  0.094  0.187  0.091
+Censo: trabalho pc          5561  1231.047  0.275    0.064  0.132  0.278  0.121
+Censo: trabalho + T admin   5561  1587.252  0.227    0.041  0.083  0.167  0.080
+Censo: todas as fontes      5561  1630.185  0.242    0.046  0.093  0.186  0.091
+(conferencia com o LEIAME: Gini 0,293 -> 0,242; Atkinson e=2 0,322 -> 0,187; PIB pc 0,376; massa salarial 0,435)
+
+Reducao do Gini pelas transferencias: original 0.051 (17.4%) | trabalho Censo -> + T admin 0.048 (17.4%)

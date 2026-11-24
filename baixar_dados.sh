@@ -17,3 +17,7 @@ for uf in 11 12 13 14 15 16 17 21 22 23 24 25 26 27 28 29 31 32 33 35 41 42 43 5
   [ -s $f ] || curl -sS --retry 4 --max-time 300 -o $f \
     "https://apisidra.ibge.gov.br/values/t/10089/n6/in%20n3%20$uf/v/93/p/all/c2/4,5/c58/allxt/c1/1,2/c2661/32776/f/c/h/n"
 done
+# SIDRA 10297: massa de rendimento domiciliar por tipo (todas as fontes, trabalhos, outras fontes), municípios
+mkdir -p data/ibge/sidra10297
+[ -s data/ibge/sidra10297/t10297.json ] || curl -sS --retry 4 --max-time 300 -o data/ibge/sidra10297/t10297.json \
+  "https://apisidra.ibge.gov.br/values/t/10297/n6/all/v/13506,13504/p/all/c11308/allxt/f/c/h/n"

@@ -1,0 +1,2065 @@
+                   ASCOM: alterar o
+                   nome do
+                   Ministério
+
+
+
+
+ASCOM: alterar o
+ano.
+MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL
+  SUPERINTENDÊNCIA DO DESENVOLVIMENTO DO NORDESTE
+            CONSELHO DELIBERATIVO DA SUDENE
+
+             COMITÊ PROVISÓRIO DO CONDEL
+          (Processo SEI Sudene nº 59336.003253/2022-18)
+
+
+
+
+                 Relatório Conclusivo
+
+
+
+
+           Resultado da análise das
+argumentações técnicas apresentadas por Estados
+    com municípios passíveis de exclusão do
+                  Semiárido
+
+            Comitê Provisório do Condel
+
+
+
+
+                        Recife, 2023
+MINISTRO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL
+Antônio Waldez Góes da Silva
+
+SUPERINTENDENTE DO DESENVOLVIMENTO DO NORDESTE
+Danilo Jorge de Barros Cabral
+
+DIRETOR DE PLANEJAMENTO E ARTICULAÇÃO DE POLÍTICAS
+Álvaro Silva Ribeiro
+
+COORDENADORA-GERAL DE ESTUDOS E PESQUISAS, AVALIAÇÃO, TECNOLOGIA E
+INOVAÇÃO
+Rafaella Iliana Alves Arcila
+
+COORDENADOR DE TECNOLOGIA E INOVAÇÃO
+Manoel Francisco do Carmelo Santos Barreiros
+
+COORDENADORA DE AVALIAÇÃO E ESTUDOS
+Maria da Glória Cané Martins Sistelos
+
+COORDENADORA-GERAL DE PROMOÇÃO DO DESENVOLVIMENTO SUSTENTÁVEL E
+MEIO AMBIENTE
+Beatriz Araripe Bezerra de Menezes Lyra
+
+EQUIPE TÉCNICA DA SUDENE (Comitê Provisório do Condel)
+Gabriela Lins Barbosa – Analista Técnico Administrativo
+Ludmilla de Oliveira Calado – Geógrafa
+Marcus Vinicius Santos Coelho da Paz - Economista
+Marcelo Saiki Braga – Engenheiro Agrônomo
+Mauro Luciano Póvoas Souto – Engenheiro Agrônomo
+
+APOIO
+Emile Maely Melo Mendes (Estagiária – Sudene)
+
+EQUIPE INDICADA PELOS CONSELHEIROS DO CONDEL (Comitê Provisório do Condel)
+João Mendes da Rocha Neto (MDR – Ministério do Desenvolvimento Regional)
+Bárbara Salatiel Matos de Alencar (MDR – Ministério do Desenvolvimento Regional)
+Luiz Jorge Dias (Gov. MA – Instituto Maranhense de Estudos Sócioeconômicos e Cartográficos)
+Rejane Tavares da Silva (Gov. PI – Secretaria de Planejamento)
+Gilmar Bistrot (Gov. RN – Empresa de Pesquisa Agropecuária do Rio Grande do Norte)
+Maria Aparecida Fernandes Ferreira (Gov. PE – Agência Pernambucana de Águas e Clima)
+Ailton Francisco da Rocha (Gov. SE – Secretaria de Desenvolvimento Urbano e Sustentabilidade)
+Luiz Carlos de Araújo Júnior (Gov. BA - Secretaria de Meio Ambiente)
+Eduardo Farias Topázio (Gov. BA – Instituto de Meio Ambiente e Recursos hídricos)
+Carlos Alexandre Gonçalves da Silva (Gov. MG – Instituto de Desenvolvimento do Norte e Nordeste de Minas
+Gerais)
+Felipe Lopes Vieira Vasconcelos (Gov. MG - Instituto de Desenvolvimento do Norte e Nordeste de Minas
+Gerais)
+Joseana de Fátima Geraldo Zoghbi (Gov. ES – Secretaria de Estado de Economia e
+Planejamento/Subsecretaria de Planejamento e Projetos)
+Luciano Feijão Ximenes (Banco do Nordeste de Brasil)
+Isabel Mendes de Faria (Confederação da Agricultura e Pecuária)
+Renato Conchon (Confederação da Agricultura e Pecuária)
+
+ÓRGÃOS PARCEIROS
+
+Agência Nacional de Águas e Saneamento Básico-ANA, Geraldo José Lucatelli Doria de Araújo Júnior
+Instituto Nacional de Pesquisas Espaciais-INPE, Caio Augusto dos Santos Coelho
+Instituto Nacional de Pesquisas Espaciais-INPE, Jose Alberto da Silva Ferreira
+Instituto Nacional de Pesquisas Espaciais-INPE, Paulo Roberto Martini
+                                                                                    SUMÁRIO
+
+
+
+
+INTRODUÇÃO ............................................................................................................................................................................ 6
+1.METODOLOGIA ADOTADA NA ANÁLISE E SEUS REFERENCIAIS ............................................................................................ 9
+2.BASE LEGAL DAS ANÁLISES DE RECURSOS E ARGUMENTOS TÉCNICOS .............................................................................. 11
+3.CRIAÇÃO E FUNCIONAMENTO DO COMITÊ TÉCNICO PROVISÓRIO DO CONDEL ................................................................ 13
+4.RESULTADO DA ANÁLISE DOS RECURSOS, MANIFESTAÇÕES E ARGUMENTOS TÉCNICOS INTERPOSTOS JUNTO À SUDENE
+(Resolução Condel/Sudene Nº 155/2022) .............................................................................................................................. 14
+   4.1.RESULTADO DA ANÁLISE DOS RECURSOS APRESENTADOS PELO GOV. DE MINAS GERAIS E PELO MUNICÍPIO DE
+   PALMERINA/PE ................................................................................................................................................................... 14
+   4.2. RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE ARAPIRACA/AL. ..................................... 15
+   4.3. RESULTADO DAS ANÁLISES DOS ARGUMENTOS TÉCNICOS APRESENTADOS ............................................................. 15
+       4.3.1. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO RIO GRANDE DO NORTE ............... 15
+       4.3.2. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DA PARAÍBA ........................................ 17
+       4.3.3. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE MINAS GERAIS ............................... 18
+       4.3.4. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE PERNAMBUCO............................... 20
+       4.3.5. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE SERGIPE ......................................... 21
+   4.4. RESUMO DE IRRESIGNAÇÕES RECEBIDAS CONTRA A EXCLUSÃO DE MUNICÍPIOS DO SEMIÁRIDO SOB A ÉGIDE DA
+   RESOLUÇÃO CONDEL Nº 155/2022 .................................................................................................................................... 22
+5. RESULTADO DA ANÁLISE DOS RECURSOS, MANIFESTAÇÕES E ARGUMENTOS TÉCNICOS INTERPOSTOS JUNTO À SUDENE
+(Resolução Condel/Sudene Nº 163/2022) .............................................................................................................................. 25
+   5.1 RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE ARAPIRACA/AL. ...................................... 26
+   5.2. RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE SÃO LUIS/MA......................................... 27
+   5.3. RESULTADO DAS ANÁLISES DOS ARGUMENTOS TÉCNICOS E MANIFESTAÇÃO APRESENTADOS PELOS ESTADOS..... 27
+       5.3.1. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DA BAHIA ........................ 27
+       5.3.2 RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE MINAS GERAIS ................................ 29
+       5.3.3 RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DE PERNAMBUCO............ 30
+       5.3.4 RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DO PIAUÍ............................. 31
+       5.3.5. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DE SERGIPE ..................... 31
+   5.4. RESUMO DE IRRESIGNAÇÕES RECEBIDAS CONTRA A EXCLUSÃO DE MUNICÍPIOS DO SEMIÁRIDO ............................ 32
+6. CONSIDERAÇÕES FINAIS ..................................................................................................................................................... 36
+7. ANEXOS ............................................................................................................................................................................... 37
+                                                                                                               6
+
+       INTRODUÇÃO
+
+     A revisão da delimitação do Semiárido brasileiro em 2021 foi condição estabelecida pela Resolução
+Condel nº 107, de 27 de julho de 2017, vindo o relatório de sua revisão em 2021 a ser aprovado pela
+Resolução Condel nº 150, de 13 de dezembro de 2021, publicada no DOU de 30 de dezembro de 2021,
+credeciando 1.427 municípios, dos quais 1.212 já constavam em 2017, novos 215 se habilitaram e 50
+outros se tornaram passíveis de exclusão por não se enquadrarem em nenhum dos critérios mencionados
+adiante.
+
+     O trabalho que consolidou os novos contornos da região semiárida seguiu padrões recomendados
+pela Organização Mundial de Meteorologia (WMO) e envolveu a participação de onze instituições federais.
+De acordo com a entidade internacional, a análise climática de uma região requer o estudo de uma série
+de 30 anos de dados meteorológicos e ambientais. Desta forma, a revisão utilizou dados climatológicos
+dos anos de 1991 a 2020, considerando todos os municípios da área de atuação da Sudene.
+
+       De acordo com o relatório final da delimitação de 2021, 50 (cinquenta) foram os municípios
+excluídos pelos critérios técnicos e cientificos, alcançando 9 (nove) estados: Alagoas (4), Bahia (4), Ceará
+(4), Minas Gerais (8), Paraíba (10), Pernambuco (5), Piauí (1), Rio Grande do Norte (7), Sergipe (7).
+
+       Foram adotados como critérios técnicos e cientificos: o Índice de Aridez de Thornthwaite inferior ou
+igual a 0,50; Precipitação pluviométrica média anual igual ou inferior a 800 mm; e, o Percentual Diário de
+Déficit Hídrico igual ou superior a 60%, considerando todos os dias do ano, bastando como admissão ao
+semiárido, que um dos critérios pudesse ser atendido (item 10 da Proposição nº 151/2021, aprovada pelo
+Resolução Condel nº 150/2021).
+
+      Para os casos de irresignação a Resolução Condel nº 150/2021 fixou o prazo de 60 dias contados da
+data de publicação, para apresentação de recurso – termo então usado, prazo que veio a vencer em 28 de
+fevereiro de 2022.
+
+       Tendo em vista o apelo de diversas entidades pela dilação do prazo para apresentação de
+manifestações técnicas, mostrou-se necessária uma readequação da Resolução nº 150/2021, não só em
+relação a um novo prazo, mas também, a um novo modelo de governança, que fosse mais proativo e
+pudesse contar com a participação de todos.
+
+       Fato é que o inciso IV, art. 10 da Lei Complementar nº 125, de 03 de janeiro de 2007, atribuiu ao
+Conselho Deliberativo, a criação de comitês permanentes ou provisórios,fixando no ato da sua criação suas
+composições e atribuições. E o Regimento do Condel estabelece no inciso XII, art. 6º, que o mesmo
+colegiado apreciará e deliberará sobre outras matérias, em consonância com a legislação em vigor.
+
+      Para atender a essas expectativas foi realizada reunião do Comitê prévio do Condel em 24 de março
+de 2022 para discussão de uma proposta de readequação da Resolução Condel nº 150/2021. Na
+oportunidade estiveram presentes representantes do Ministério do Desenvolvimento Regional, do
+Ministério da Economia, dos Governos da Bahia, do Ceará, do Maranhão, da Paraíba, de Pernambuco,
+de Sergipe, do Banco do Nordeste, da Confederação Nacional de Municípios (CNM), da Confederação
+Nacional de Agricultura e Pecuária (CNA), da Confederação Nacional da Indústria (CNI), da Confederação
+Nacional dos Trabalhadores na Indústria (CNTI), da Confederação Nacional dos Trabalhadores no Comércio
+(CNTC), da Confederação Nacional dos Trabalhadores na Agricultura (CONTAG), além da própria Sudene.
+
+       Essa reunião serviu para chancelar o encaminhamento ao Presidente do Condel, para apreciação e
+deliberação, que veio a ser realizada na condição de ad referendum, da Resolução Condel nº 155, de 29 de
+abril de 2022, publicada no DOU de 02 de maio de 2022, oferecendo prazo até 01 de agosto de 2022, para
+que os Estados que tiveram municípios passíveis de exclusão do Semiárido, pudessem ingressar na Sudene
+com argumentações técnicas contestatórias, respaldadas por órgãos oficiais de clima e tempo de seus
+                                                                                                                                                           7
+
+respectivos estados, para fins de análise e deliberação.
+
+      Da mesma forma, foi criado pela nova Resolução Condel nº 155/2022 (art. 2º), o Comitê Técnico
+provisório com o objetivo de assessorar a Sudene nessa análise das argumentações técnicas (art. 1º), e
+prazo até 30 de novembro de 2022 para apresentação de relatório conclusivo sobre o resultado das
+análises de argumentos eventualmente apresentados pelos interessados (§ 2º, art. 1º).
+
+      Para materializar a criação do Comitê Técnico Provisório foi estabelecido como prazo para admissão
+de indicados pelos Conselheiros do Condel, e constituição da equipe, até 30 dias corridos contados da data
+de publicação da nova Resolução no DOU, prazo esse vencido em 02 de junho de 2022. Para isso, os
+Conselheiros, a seu turno, deveriam indicar titular e suplente, para permanecerem como representantes
+até a data de conclusão dos trabalhos e extinção do Comitê, considerada esta como a data da reunião do
+Conselho Deliberativo na qual será apreciado o relatório conclusivo da análise das argumentações
+apresentadas em defesa da permanência de município passível de exclusão do Semiárido.
+
+      Para recepcionar e proceder a apreciação das irresignações técnicas apresentadas pelos estados que
+tiveram municípios passíveis de exclusão conforme relatório da delimitação do semiárido de 2021, foi
+criada pela Sudene para trabalhar no âmbito do Comitê Provisório do Condel, uma equipe de análise, que
+durante os trabalhos foi assessorada por dois órgãos de reconhecida capacidade internacional, a Agência
+Nacional de Águas e Saneamento Básico (ANA) e o Instituto Nacional de Pesquisas Espaciais (INPE),
+fundamentais e exímios conhecedores do processo de delimitação, que atuaram firmemente nos trabalhos
+anteriores de geoprocessamento da delimitação do semiárido brasileiro.
+
+    Esse trabalho possui uma fundamentação1,2,3 que vale ser trazida aqui para uma melhor
+compreensão do que vai adiante.
+
+     Em 1872, o Comitê Meteorológico Internacional decidiu compilar valores médios climatológicos
+sobre um período uniforme, a fim de assegurar a compatibilidade entre os dados coletados nas estações
+meteorológicas, resultando na recomendação para o cálculo das normais (também conhecido na média
+como médias) de 30 anos. A Regulamentação Técnica nº 49, Volume 1, Seção B, determinou que cada
+membro estabeleceria e, periodicamente, revisaria as Normais para as estações cujos dados climatológicos
+seriam distribuídos pelo Sistema Global de Telecomunicações, ddeterminado foi 1901-1930, seguindo-se
+os períodos sucessivos que deveriam ocorrer a intervalos de 30 anos, isto é: 1931-1960, 1961-1990. 34. Em
+1956, na Nota Técnica nº 84, a Organização Meteorológica Mundial (OMM) recomendou a atualização das
+Normais de 30 anos, a cada 10 anos completos, o que vem sendo feito por muitos países membros.
+Contudo, pouca orientação existia, à época, no sentido de estabelecer métodos estatísticos para o cálculo
+das Normais, para preencher lacunas de dados, para trabalhar dados errados e períodos incompletos ou
+para definir o número de dados requeridos na distinção entre as Normais-Padrão e as Provisórias, lacunas
+que só mais tarde seriam preenchidas pela própria OMM.
+
+     Em 1989, com o objetivo de estabelecer procedimentos gerais para o cálculo das médias mensais e
+anuais, para o período de 1961 a 1990 e subsequentes, a OMM publicou o Documento Técnico WMO-
+TD/nº 341 (OMM, 1989), que permite obter as Normais Climatológicas Padronizadas e as Provisórias,
+sugerindo ainda outras variáveis climáticas. Coerentemente, estabeleceu-se que tais procedimentos
+devam ser seguidos por todos os países membros. 36. As Regulamentações Técnicas definem normais
+como “valores médios calculados para um período relativamente longo e uniforme, compreendendo no
+mínimo três décadas consecutivas” e padrões climatológicos normais como “médias de dados
+climatológicos calculadas para períodos consecutivos de 30 anos, iniciando-se em 1º de janeiro de 1901
+até 31 de dezembro de 1930, 1º de janeiro de 1931 até 31 de dezembro de 1960, etc.”.
+__________________________
+1 OMM, Organização Meteorological Mundial. Calculation of monthly and annual 30-year standard normals. WMO-TD No.341, WCDP-No.10 WMO, Genebra,
+
+Suiça,1989.
+2 Normais Climatológicas do Brasil 1961-1990/Organizadores: Andrea Malheiros Ramos, Luiz André Rodrigues dos Santos, Lauro Tadeu Guimarães Forte.465pp.,
+
+ISBN: 978-85-62817-01-4, Brasília, DF,2009.
+3 Tempo e Clima no Brasil/Iracema F.A.Cavalcanti...(et. al.) e organizadores. ISBN: 978-85-86238-92-5, São Paulo: Oficina de Textos,2009.
+                                                                                                                                                          8
+
+      Muitos municípios não possuem estações pluviométricas, e, muito menos, séries de 30 anos dados.
+Esta é uma realidade para o Brasil como um todo. Mesmo em municípios com disponibilidade de dados,
+muitas vezes não é possível considerá-los em análise, pois as estações não têm certificação homologada
+por órgãos de meteorologia federais em acordo com os padrões da OMM. Por esta razão, é que se utilizam
+métodos geoestatísticos de estimativa (interpolação) das informações para os pontos nos quais os dados
+não existem. No trabalho realizado em 2021 foram considerados todos os dados disponíveis de todas as
+estações certificadas (4.262 estações, conforme Anexo 1 do Relatório Final da delimitação de 2021) no
+período de 30 anos (1991-2020). A título de exemplo, se na data A havia dados de X estações certificadas,
+então os dados de todas essas estações foram utilizados para gerar as informações na malha de 140.800
+nós do modelo matemático. Se na data A+1 dia, havia dados de Y estações, então todos os dados
+disponíveis foram utilizados para gerar informações para os 140.800 nós. O procedimento está descrito no
+Relatório final de 2021 sobre delimitação do Semiárido em seu item 3 – Desenvolvimento da metodologia
+atual. Em síntese, a série de dados de cada estação certificada foi utilizada no processamento, seja ela uma
+série de 1 dia ou de 30 anos ininterruptos, mas nunca essa série foi considerada isoladamente, a fim de
+impedir ou minimizar erros ou inconsistências das suas informações.
+
+      A certificação homologada por órgãos federais de meteorologia em acordo com os padrões da OMM
+é importante para garantia da qualidade dos dados utilizados, conferindo confiabilidade do resultado final.
+Dados provenientes de estações com funcionamento ou registro de dados de forma inadequada podem
+ser inconsistentes e produzirem resultados enviesados. Por isso, os dados “brutos” devem passar por
+análise prévia de consistência. Isso é feito para recobrimento de falhas e remoção de dados espúrios ou
+discrepantes (outliers), que possam incluir viés positivo ou negativo no resultado final. Os dados utilizados
+no trabalho de 2021 foram provenientes das bases oficiais do INPE, INMET, ANA, Sudene e órgãos gestores
+estaduais, o que garante sua qualidade, uma vez que passam por análise de consistência prévia à sua
+publicação.
+
+     Todos os estudos climáticos são baseados em observações meteorológicas4. Segundo a OMM, os
+dados climáticos são frequentemente mais úteis quando comparados aos valores normais padronizados,
+sendo considerados aqueles obtidos segundo suas próprias recomendações técnicas. Torna-se, assim, de
+suma importância o cálculo e a publicação das Normais Climatológicas “Padronizadas”. No Brasil, como as
+observações meteorológicas só começaram a ser realizadas, de forma sistemática, a partir de 1910, as
+primeiras Normais Climatológicas foram publicadas pelo Escritório de Meteorologia do Ministério da
+Agricultura, em 1970, referentes ao período 1931-1960. Em 2010, o INMET atualizou e ampliou as
+informações da publicação feita em 1992 e a nova versão das Normais Climatológicas do Brasil 1961- 1990
+podem ser consultadas em http://www.inmet.gov.br/portal/index.php?r=clima/normaisClimatologicas.
+
+       A equipe técnica responsável pelo trabalho de 2021 procedeu a análise de dados para o período de
+1991-2020, obedecendo o período recomendado pela OMM. O intervalo de 30 anos e a utilização de
+dados meteorológicos é uma parametrização sugerida pela OMM e que qualifica o dado para comparação
+a nível mundial e permite a formatação de mapas indicativos. A equipe técnica recomendou, ainda,
+atualização decenal a partir de 2031, em intervalos regulares e previsíveis, conforme item 5 do Relatório
+Final.
+
+     Em 12 de Janeiro de 2023, foi publicada no Diário Oficial da União, a RESOLUÇÃO CONDEL/SUDENE
+Nº 163, de 15 de Dezembro de 2022, que prorrogou o prazo para apresentação de argumentações técnicas
+sobre o resultado da delimitação do semiárido, de acordo com os critérios elencados no inciso I do art. 1º
+da Resolução CONDEL/SUDENE n. 150, de 13 de dezembro de2021, e o prazo de vigência do Comitê
+Técnico Provisório de que trata o art. 2º da Resolução CONDEL/SUDENE n. 155, de 29 de abril de 2022.
+_____________
+4 A diferenciação entre condições meteorológicas (tempo) e climatológicas (clima) envolve conceitos distintos que representam diferentes escalas de um
+
+mesmo fenômeno e que, não raro, são confundidos e até tratados como sinônimos pela mídia. A diferença entre tempo e clima está relacionada com a escala
+temporal que os envolve. O tempo é um estado momentâneo da atmosfera, enquanto o clima é a configuração mais permanente ou referente a um período de
+tempo maior. O tempo e o clima estão em constante evolução, mas há padrões que se repetem (clima) e outros que podem ser antecipados, o que permitem
+prever o tempo futuro com dias de antecedência e até mesmo, em algumas circunstâncias, padrões climáticos com meses de antecedência e assim, todas as
+previsões meteorológicas são bastante uteis para a humanidade.
+                                                                                                              9
+
+      O Art. 1º da Resolução Condel Nº 163/2022 prorrogou até o dia 31 de março de 2023, o prazo
+previsto no art. 1º da Resolução CONDEL/SUDENE n. 155, de 29 de abril de 2022, referente à possibilidade
+de apresentação de argumentos técnicos acerca do resultado de redelimitação do Semiárido 2021 de que
+trata a Resolução CONDEL/SUDENE n. 150, de 13 de dezembro de 2021.
+
+      O Art. 2º da Resolução Nº 163/2022 prorrogou até o dia 30 de junho de 2023, a vigência do Comitê
+Técnico Provisório criado pelo art. 2º da Resolução CONDEL/SUDENE n. 155, de 2022, com o objetivo de
+analisar as novas ou complementares argumentações técnicas apresentadas à Sudene e submeter
+Proposta de Relatório Conclusivo à apreciação do Conselho Deliberativo.
+
+     O Art. 3º da referida Resolução autorizou que, até a deliberação do Conselho Deliberativo da Sudene
+sobre o Relatório Conclusivo de que trata o art. 2º desta Resolução, permanecem como integrantes do
+Semiárido os 50 (cinquenta) municípios apontados como passíveis de exclusão no Relatório Técnico que
+apresentou os resultados da revisão da delimitação do Semiárido 2021 no âmbito da Resolução
+CONDEL/SUDENE n. 150, de 2021.
+
+       1.METODOLOGIA ADOTADA NA ANÁLISE E SEUS REFERENCIAIS
+
+     Haja vista que durante 2022 duas resoluções do Condel geraram efeitos sobre o processo de
+admissão e análise de irresignações contra possível exclusão de municípios do semiárido, mostrou-se
+necessário aqui separar essas abordagens.
+
+       A primeira abordagem se reporta ao que foi estabelecido pela Resolução Condel nº 150, de 13 de
+dezembro de 2021, publicada no DOU de 30 de dezembro de 2021, que, entre outras decisões, aprovou o
+relatório da delimitação 2021, tornando habilitados ao semiárido os municípios integrantes da área de
+atuação da Sudene que após o processamento dos dados climatológicos do período 1991-2020, tivessem
+atendido a pelo menos um dos mesmos critérios da delimitação anterior: a)índice de aridez de
+Thornthwaite inferior ou igual a 0,50, b) precipitação pluviométrica média anual igual ou inferior a 800
+mm, e, c)percentual diário de déficit hídrico igual ou superior a 60%, considerando todos os dias do ano. O
+mesmo normativo possibilitou também, o ingresso do que se chamou de “recurso”, que teve prazo de 60
+dias, e se venceu em 28 de fevereiro de 2022, quando foram apresentados recurso pelo estado de Minas
+Gerais e manifestação técnica pelo município de Palmerina/PE.
+
+     Em resumo, a Resolução Condel nº 150/2021 fixou como regras:
+
+     a) possibilitar aos Estados integrantes da área de atuação da Sudene apresentar recurso à delimitação
+        proposta no Relatório Técnico a que se refere o art. 1º, no prazo de 60 (sessenta) dias, a partir da
+        data de publicação da resolução (30 de dezembro de 2021) (art. 2º);
+
+     b) que os recursos de que trata o caput deverão ser embasados por Relatório Técnico dos órgãos de
+        Clima e Tempo oficiais dos Estados. (§ 1º, art. 2º);
+
+     c) que a Sudene terá 120 (cento e vinte) dias, a partir da publicação desta Resolução, para responder
+        às solicitações, podendo recorrer a especialistas para composição da sua manifestação. (§ 2º, art.
+        2º);
+
+     d) que concluída a manifestação de que trata o § 2º deste artigo, as unidades administrativas
+        vinculadas aos trabalhos estabelecidos pela Portaria Sudene nº 80, de 27 de julho de 2021, darão as
+        suas participações por concluídas. (§ 3º, art. 2º);
+
+     e) que concluídos os trabalhos de que trata o § 2º, o Relatório Técnico consolidando as contribuições
+        recebidas, deverá ser submetido ao Condel/Sudene para apreciação. (§ 4º, art. 2º).
+                                                                                                            10
+
+     f) Que até a deliberação pelo Condel/Sudene de que trata o § 4º, permanecem como integrantes da
+        delimitação da região semiárida brasileira os 50 (cinquenta) municípios excluídos na nova
+        delimitação proposta pelo Relatório Técnico que apresenta os resultados da revisão da delimitação
+        do Semiárido 2021. (§ 5º, art. 2º).
+
+     A segunda abordagem reporta-se ao que foi estabelecido pela Resolução Condel nº 155/2022, tendo
+por base a análise de “argumentações técnicas” que viessem a ser apresentadas no período de 29 de abril
+a 01 de agosto de 2022 visando uma eventual revisão do rol de municípios excluídos conforme a
+Resolução Condel nº 150, de 13 de dezembro de 2021. (art. 1º).
+
+   Em resumo, a Resolução Condel nº 155/2022 estabeleceu:
+
+     a) que os argumentos de que tratam o caput deverão ser embasados por Relatório Técnico de órgãos
+        de Clima e Tempo oficiais, devendo conter dados sobre o índice de aridez de Thornthwaite, a
+        precipitação pluviométrica média anual e o Percentual Diário de Déficit Hídrico, considerando todos
+        os dias do ano nos últimos 30 anos (1991 a 2020) (§ 1º, art. 1º);
+
+     b) que a Sudene, através do Comitê Técnico Provisório a que se refere o art. 2º desta Resolução,
+        apresentará, até o dia 30 de novembro de 2022, Relatório Conclusivo sobre o resultado da análise
+        dos argumentos técnicos eventualmente apresentados pelos interessados (§ 2º, art. 1º);
+
+     c) a aprovação da criação de Comitê Técnico Provisório, composto por representantes indicados pelos
+        conselheiros deste Conselho Deliberativo e coordenado pela Sudene, o qual terá como objetivo
+        analisar e debater, juntamente com o corpo técnico da Autarquia designado para a referida análise,
+        os argumentos técnicos eventualmente apresentados, bem como apresentar Relatório Conclusivo a
+        ser submetido à deliberação final do Conselho Deliberativo na reunião de dezembro de 2022 (art.
+        2º).
+
+     d) que os integrantes deste Conselho Deliberativo terão até 30 (trinta) dias corridos, contados da data
+        de publicação desta Resolução, para apresentar suas indicações para a composição do Comitê
+        Técnico Provisório (§ 2º, art. 2º).
+
+     e) que as reuniões ordinárias do Comitê Técnico Provisório deverão ocorrer mensalmente, em datas a
+        serem estabelecidas pela Sudene (§ 3º, art. 2º).
+
+     f) que o Comitê Técnico Provisório será extinto na data da reunião do Conselho Deliberativo que
+        apreciará e deliberará sobre o Relatório Conclusivo a que alude o caput deste artigo (§ 4º, art. 2º).
+
+     g) que até a deliberação do Conselho Deliberativo da Sudene sobre o Relatório Conclusivo de que trata
+        o artigo anterior, permanecem como integrantes do Semiárido da área de atuação da Sudene os 50
+        (cinquenta) municípios apontados como passíveis de exclusão no Relatório Técnico que apresentou
+        os resultados da revisão da delimitação do Semiárido 2021 (art. 3º).
+
+      Para ambas as abordagens foram mantidos como parâmetros para verificação dos argumentos
+técnicos que viessem a ser apresentados pelos estados em defesa da permanência de municípios passíveis
+de exclusão do semiárido e preservação da coerência metodológica com os procedimentos adotados na
+definição dos municípios integrantes das revisões das delimitações de 2017 e 2021, os mesmos critérios
+técnicos então usados, e que os dados fossem respaldados pelos órgãos oficiais de clima e tempo: Índice
+de Aridez de Thornthwaite; Precipitação pluviométrica média anual; e Percentual Diário de Déficit Hídrico
+para uma série temporal compreendendo o período de 1991 a 2020.
+                                                                                                             11
+
+      Em 2017, por decisão dos Conselheiros do Condel expressa pela Resolução Condel nº 107, de 27 de
+ julho de 2017, 122 municípios que não alcançaram nenhum dos critérios técnicos anteriormente
+ assinalados, tampouco, o critério da contiguidade, ver a relação abaixo, foram integrados à subregião
+ Seimiárida, lembrando que disjunções não foram admitidas, e vieram a integrar o “Anexo A” daquela
+ decisão.
+
+ Alagoas (5): Arapiraca, Coité do Noia, Lagoa da Canoa, Palmeira dos Indíos, Quebrangulo.
+ Bahia (12): Caatiba, Cabaceiras do Paraguaçu, Cocos, Iguaí, Itapetinga, Itarantim, Itororó, Macarani,
+ Maiquiniqui, Nova canaã, Potiraguá, Tabocas do Brejo Velho.
+ Ceará (10): Acarape, Barreira, Chorozinho, Guaramiranga, Horizonte, Mulungu, Pacajus, Pacotí, Palmácia,
+ Redenção.
+ Minas Gerais (50): Almenara, Araçuai, Bandeira, Berilo, Bonito de Minas, Cachoeira de Pajeú, Capitão
+ Enéas, Caraí, Chapada do Norte, Comercinho, Cônego Marinho, Coronel Murta, Cristália, Divisópolis,
+ Felisburgo, Francisco Badaró, Francisco Sá, Grão Mogol, Ibiracatu, Itaobim, Itinga, Jacinto, Januária,
+ Japonvar, Jenipapo de Minas, Jequitinhonha, Joalma, Jordânia, José Gonçalves de Minas, Josenópolis,
+ Lontra, Mata Verde, Medina, Miravânia, Monte Formoso, Novo Cruzeiro, Padre Carvalho, Padre Paraíso,
+ Patis, Pedras de Maria da Cruz, Ponto dos Volantes, Riacho dos Machados, Rubelita, Rubim, Salto da
+ Divisa, Santa Cruz de Salinas, Santa Maria do Salto, São João da Ponte, Varzelândia, Virgem da Lapa.
+ Paraíba (10): Arara, Bananeiras, Caiçara, Itabaiana, Logradouro, Mogeiro, Natuba, Riachão do Bacamarte,
+ Salgado de São Felix, São Sebastião de Lagoa de Roça.
+ Pernambuco (7): Brejão, Chã Grande, Correntes, Lagoa do Ouro, Lagoa dos Gatos, Orobó, Palmeirina.
+ Piauí (4): Currais, Palmeira do Piauí, São José do Divino, Sebastião Leal.
+ Rio Grande do Norte (6): Brejinho, Macaiba, Monte Alegre, Passagem, Várzea, Vera Cruz.
+ Sergipe (18): Amparo de São Francisco, Aquidabã, Canhoba, Cedro de São João, Cumbe, Feira Nova, Frei
+ Paulo, Gracho Cardoso, Macambira, Nossa Senhora Aparecida, Nossa Senhora das Dores, Pedra Mole,
+ Pinhão, Propriá, Ribeirópolis, São Miguel do Aleixo, Simão Dias, Telha.
+
+      Nenhum desses municípios integrou relação adicional após análise de recursos que possibilitou o
+ ingresso de 73 municípios, e fixou em 1.262 o total da região Semiárida em 2017 conforme Resolução
+ Condel nº 115, de 23 de novembro de 2017.
+
+       Chama-se a atenção para o fato de que os municípios sublinhados acima também constaram como
+ passíveis de exclusão da região semiárida no processamento realizado em 2021 por não atenderem a
+ quaisquer dos critérios, fossem os climatológicos fosse o de contiguidade, considerados.
+
+        Assim, como mecanismo para aplicação das orientações advindas da Resolução Condel nº 155/2022,
+ foi criado o Comitê Provisório. E para o funcionamento do Comitê Provisório, a Sudene instituiu regimento
+ por meio da Resolução da Diretoria Colegiada nº 720, de 28/06/2022, que objetivou disciplinar o processo
+ operacional do colegiado.
+
+        2.BASE LEGAL DAS ANÁLISES DE RECURSOS E ARGUMENTOS TÉCNICOS
+
+       O Quadro adiante não visa exaurir toda a legislação considerada nos trabalhos do Comitê Provisório do
+Condel, particularmente na análise das argumentações técnicas recebidas pela Sudene, mas oferecer a base de
+sustentação legal desse trabalho.
+                                                                                                            12
+
+
+
+   Quadro 1: Documentos de Referência considerados nos trabalhos do Comitê Provisório do
+                                         Condel
+
+      DOCUMENTO                                              EMENTA
+LEI COMPLEMENTAR Nº Institui, na forma do art. 43 da Constituição Federal, a Superintendência do
+125, DE 03 DE JANEIRO DE Desenvolvimento do Nordeste - SUDENE; estabelece sua composição, natureza
+2007                      jurídica, objetivos, áreas de atuação, instrumentos de ação; altera a Lei
+                          no 7.827, de 27 de setembro de 1989, e a Medida Provisória no 2.156, de 24 de
+                          agosto de 2001; revoga a Lei Complementar no 66, de 12 de junho de 1991; e
+                          dá outras providências.
+PROPOSIÇÃO Nº 105/2017 Proposta de critérios técnicos e científicos para delimitação do Semiárido
+de 20/06/2017.            Brasileiro e procedimentos para revisão de sua abrangência
+RESOLUÇÃO                 Estabelece critérios técnicos e científicos para delimitação do Semiárido
+CONDEL/SUDENE Nº 107, Brasileiro e procedimentos para revisão de sua abrangência
+DE 27 DE JULHO DE 2017
+DOCUMENTO RELATÓRIO Relatório final grupo de trabalho para delimitação do semiárido
+DO    GT     DELIMITAÇÃO
+SEMIÁRIDO            2017
+(JUNHO/2017)
+PROPOSIÇÃO Nº 151/2021 Revisão da delimitação do Semiárido Brasileiro, segundo critérios técnicos e
+de 06/12/2021.            cientificos definidos em relatório pela Sudene, relação de municípios
+                          habilitados na revisão de 2021 e regra de transição para municípios excluídos.
+RESOLUÇÃO                 Aprova a Proposição n. 151/2021, que trata do Relatório Técnico que
+CONDEL/SUDENE Nº 150, apresenta os resultados da revisão da delimitação do Semiárido 2021, inclusive
+DE 13 DE DEZEMBRO DE os critérios técnicos e cientificos, a relação de municípios habilitados, e da
+2021.                     regra de transição para municípios excluídos.
+RELATÓRIO              DA Delimitação do semiárido - 2021 relatório final
+DELIMITAÇÃO           DO
+SEMIÁRIDO 2021
+PROPOSIÇÃO Nº 157/2022 Criação de Comitê Técnico Provisório para análise de argumentos técnicos
+de 28/03/2022.            apresentados com vistas a eventual revisão de decisão adotada pela Resolução
+                          Condel nº 150, de 13/12/2021, que delimitou o Semiárido na área de atuação
+                          da SUDENE, e dá outras providências.
+RESOLUÇÃO                 Aprova, ad referendum do Conselho Deliberativo, a Proposição n. 157/2022,
+CONDEL/SUDENE Nº 155, que trata da criação de Comitê Técnico Provisório responsável pela análise de
+DE 29 DE                  argumentos técnicos apresentados pelos interessados, com vistas à eventual
+ABRIL DE 2022.            revisão da decisão adotada pela Resolução CONDEL/SUDENE n. 150, de 13 de
+                          dezembro de 2021, que delimitou o Semiárido na Área de Atuação da Sudene,
+                          e dá outras providências
+RESOLUÇÃO DC/SUDENE Aprova o Regimento Interno do Comitê Técnico Provisório responsável pela
+Nº 720, DE 28 DE          análise de argumentos técnicos apresentados pelos interessados, com vistas à
+JUNHO DE 2022.            eventual revisão da decisão adotada pela Resolução CONDEL/SUDENE nº 150,
+                          de 13 de dezembro de 2021, que delimitou o Semiárido na Área de Atuação da
+                          Sudene
+LEI COMPLEMENTAR Nº Altera o art. 2º da Lei Complementar nº 125, de 3 de janeiro de 2007, para
+185, de 06 DE OUTUBRO incluir Municípios dos Estados de Minas Gerais e do Espírito Santo na área de
+DE 2021                   atuação da Superintendência do Desenvolvimento do Nordeste (Sudene).
+RESOLUÇÃO                 Prorroga o prazo para apresentação de argumentações técnicas sobre o
+CONDEL/SUDENE Nº 163, resultado da delimitação do semiárido, de acordo com os critérios elencados
+DE 15 DE DEZEMBRO DE no inciso I do art. 1º daResolução CONDEL/SUDENE n. 150, de 13 de dezembro
+2022                      de 2021, e o prazo de vigência do Comitê Técnico Provisório de que trata o art.
+                          2º da Resolução CONDEL/SUDENE n. 155, de 29 de abril de 2022.
+   Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                                 13
+
+       3.CRIAÇÃO E FUNCIONAMENTO DO COMITÊ TÉCNICO PROVISÓRIO DO CONDEL
+
+      O Comitê Provisório do Condel foi instituído pela Resolução Condel nº 155, de 29 de abril de 2022,
+como instância de caráter técnico-consultivo (art.1º da Resolução da Diretoria Colegiada nº 720, de 28 de
+junho de 2022), composta por técnicos da Sudene e indicações apresentadas pelos Conselheiros do
+Conselho Deliberativo (§ 2º, art. 2º da Resolução Condel nº 155, de 29 de abril de 2022), tendo como
+objetivo analisar e debater, juntamente com o corpo técnico da Autarquia, designado para a referida
+análise, os argumentos técnicos eventualmente encaminhados, bem como, apresentar Relatório
+Conclusivo a ser submetido à deliberação final do Conselho Deliberativo na reunião de dezembro de 2022.
+
+      Sua criação visou suprir expectativa dos municípios que, segundo entendimento, não foi
+devidamente considerada pelos Conselheiros quando das discussões ocorridas no final de 2021, em torno
+dos resultados dos trabalhos da delimitação processada com o apoio técnico da ANA e INPE em 2021, que
+veio a ser posteriormente aprovada por deliberação do Conselho Deliberativo da Sudene.
+
+     Os levantamentos técnicos que balizaram a decisão foram apresentados primeiramente aos
+representantes do colegiado na reunião do comitê técnico do Condel/Sudene, ocorrida em 9 de dezembro
+de 2021, recebendo o aval para prosseguir. A nova delimitação do semiárido passou a integrar a pauta do
+encontro seguinte, a 28ª reunião do Conselho Deliberativo da Sudene, realizada no dia 13 do mesmo mês,
+quando foi aprovada. Em ambas as ocasiões, a Sudene convidou todos os membros do colegiado,
+conforme estabelecido pelo regimento interno da instância deliberativa, da qual fazem parte os
+governadores da área da Autarquia, representantes das entidades congregadoras dos prefeitos, dos
+ministérios da Economia, do Desenvolvimento Regional, das classes patronais e trabalhadoras, além do
+Presidente do BNB e o Superintendente.
+
+       Para compensar possíveis perdas, a Sudene encaminhou ao Conselho Deliberativo uma regra de
+transição para apoiar os municípios que não se enquadraram nos contornos semiáridos. Conforme a
+proposição nº 151/2021, que foi a base para a Resolução Condel nº 150/2021, as empresas ou produtores
+localizados nestas cidades que, até a data de entrada em vigor da nova resolução, tenham formalmente
+apresentado propostas, consultas prévias, cartas consultas ou projetos ao Banco do Nordeste do Brasil
+(BNB) ou à Sudene pleiteando recursos do Fundo Constitucional de Financiamento do Nordeste (FNE) ou
+do Fundo de Desenvolvimento do Nordeste (FDNE), terão seus projetos ou propostas analisados como se
+no semiárido estivessem, mesmo que as operações de crédito ainda não tenham sido contratadas.
+
+      Adicionalmente ao pedido de indicações da Resolução Condel nº 155, de 29 de abril de 2022, a
+Sudene encaminhou correspondência e/ou contatou 19 (dezenove) dos 23 (vinte e três) Conselheiros
+(exclusive Sudene), conforme relação a seguir: o Ministério do Desenvolvimento Regional (MDR), o
+Ministério da Economia (ME), os governos dos Estados do Maranhão, Piauí, Ceará, Rio Grande do Norte,
+Paraíba, Pernambuco, Alagoas, Sergipe, Bahia, Minas Gerais, Espírito Santo, o Banco do Nordeste do Brasil
+(BNB), a Confederação Nacional de Agricultura e Pecuária (CNA), a Confederação Nacional dos
+Trabalhadores na Indústria (CNTI), a Confederação Nacional do Comércio de Bens e Serviços (CNC), a
+Confederação Nacional da Indústria (CNI) e a Confederação Nacional dos Municípios (CNM).
+
+      Por não possuírem titular ou suplente designados para o Condel na época, não puderam ser
+contatados 4 (quatro) entidades: Confederação Nacional dos Trabalhadores no Comércio (CNTC), a
+Confederação Nacional dos Trabalhadores na Agricultura (CONTAG), a Associação Brasileira de Municípios
+(ABM) e a Frente Nacional de Prefeitos (FNP).
+
+       Integraram o Comitê Provisório 15 (quinze) servidores indicados pelo Conselheiros, assim
+representados: Governos dos Estados do Maranhão (1), Piauí (1), Rio Grande do Norte (1), Pernambuco
+(1), Sergipe (1), Bahia (2), Minas Gerais (2), Espirito Santo (1), Ministério do Desenvolvimento Regional (2),
+Banco do Nordeste do Brasil (1) e Confederação Nacional de Agricultura e Pecuária (2). O Ministério da
+Economia informou que não apresentaria representante em razão de suas competências.
+                                                                                                          14
+
+
+
+       Como técnicos da Sudene, Integraram o colegiado 5 (cinco) servidores de diferentes áreas da
+ Diretoria de Planejamento e Articulação de Políticas, cabendo o apoio à Coordenação-Geral de Estudos e
+ Pesquisas, Avaliação, Tecnologia e Inovação, em articulação com a Coordenação-Geral de Promoção do
+ Desenvolvimento Sustentável e Meio Ambiente.
+
+       Durante o período de funcionamento do Comitê foram realizadas reuniões com todos os integrantes,
+ inclusive com a participação de especialistas da ANA e do INPE, dias 06 de setembro de 2022, 04 de
+ outubro de 2022, 29 de novembro de 2022 e 07 de junho de 2023.
+
+4.RESULTADO DA ANÁLISE DOS RECURSOS, MANIFESTAÇÕES E ARGUMENTOS TÉCNICOS
+  INTERPOSTOS JUNTO À SUDENE (Resolução Condel/Sudene Nº 155/2022)
+
+
+                     Figura 1: Mapa geral de Municípios passíveis de exclusão do Semiárido
+
+
+
+
+          Fonte: SUDENE (Sigmapas)/CGEP/COAE
+          Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da
+          delimitação por força do art. 3º da Resolução Condel nº 155/2022.
+
+
+
+4.1.RESULTADO DA ANÁLISE DOS RECURSOS APRESENTADOS PELO GOV. DE MINAS GERAIS E PELO
+MUNICÍPIO DE PALMERINA/PE
+
+      Durante o transcurso dos 60 dias de prazo estabelecido pela Resolução Condel nº 150/2021 para
+ apresentação de recurso apenas o Governo do Estado de Minas Gerais na data de 25/02/2022 apresentou
+ recurso administrativo por meio do ofício nº 50/2022, de 25/02/2022, acompanhado da Nota Técnica nº
+ 3/IGAM/GMHEC/2022, da Gerência de Monitoramento Hidrometeorológico e Eventos Críticos, do Instituto
+ Mineiro de Gestão das Águas, juntamente com o Recurso IDENE/DG nº 42844358/2022, que foi analisado
+                                                                                                              15
+
+ por equipe técnica da Sudene. A analise concluiu que o interessado não reuniu dados climatológicos
+ capazes de possibilitar a reversão da situação de exclusão de 8 municípios (Bandeira, Felisburgo, Jacinto,
+ Jordânia, Mata Verde, Rubim, Salto da Divisa e Santa Maria do Salto), pois, segundo parecer, as
+ informações coletadas são de período diverso do contemplado pela Resolução Condel/Sudene nº.
+ 150/2021, sendo a resposta da Sudene oficializada por meio do ofício nº 1262/2022/GAB/SUDENE, de
+ 10/05/2022, incluindo toda a documentação que respaldou a decisão.
+
+       O município de Palmerina/PE, por meio da Secretaria de Agricultura, apresentou em 07/03/2022, e-
+ mail de recurso datado de 25/02/2022, contendo informações (Formulários de Informações do Desastre-
+ FIDE) extraídas do Sistema Nacional de Proteção e Defesa Civil – SINPEC, cuja análise técnica revelou se
+ tratarem de registros de eventos de desastres naturais decorrentes do clima, que ocorreram no município
+ nas datas de 31/01/2022, 22/01/2018, 01/08/2016 e 28/01/2017, solicitando a reinserção do município no
+ semiárido. Não foi observado porém, o estabelecido no § 1º, art. 2º da Resolução Condel nº 150/2021.
+ Além de analisado pela área técnica, o pleito também foi analisado pela área jurídica da Autarquia, cuja
+ conclusão foi pela impossibilidade de alteração da situação de exclusão. O resultado da análise foi
+ transmitido ao município por meio do ofício nº 1363/2022/GAB/SUDENE, de 24/05/2022, incluindo toda a
+ documentação que respaldou a decisão.
+
+4.2. RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE ARAPIRACA/AL.
+
+      O município de Arapiraca (AL) enviou Ofício EXTERNO GP Nº 241-2022, com Exposição Técnica,
+ visando pedido de reintegração do Município de Arapiraca/AL na Região Semiárida do Brasil. A resposta foi
+ encaminhada por meio do ofício nº 3542/2022/GAB/SUDENE, de 24/10/2022, acompanhada de toda
+ documentação que respaldou a decisão, cujo resultado foi pelo indeferimento por não atender ao
+ estabelecido no § 1º, art. 1º da Resolução Condel nº 155/2022.
+
+4.3. RESULTADO DAS ANÁLISES DOS ARGUMENTOS TÉCNICOS APRESENTADOS
+
+      Como argumentos técnicos a Sudene recebeu, no prazo devido, documentação dos Governos dos
+ estados do Rio Grande do Norte, da Paraíba e de Minas Gerais que foram analisadas pela equipe da
+ Sudene no Comitê Provisório.
+
+       Também foram recebidos pleitos dos Governos dos estados de Pernambuco e de Sergipe, mas
+ ambos foram indeferidos por apresentação fora do prazo estabelecido pelo art. 1º da Resolução Condel nº
+ 155, de 29 de abril de 2022 (DOU de 02/05/2022). Cabe ressaltar que durante o período de vigência da
+ recepção de argumentos técnicos a Sudene não recebeu de nenhum dos estados que tiveram a tramitação
+ indeferida, qualquer expediente que informasse o interesse desses na apresentação de suas irresignações,
+ ou sinalização de alguma dificuldade que viesse a resultar em possível atraso na entrega de seus
+ documentos.
+
+4.3.1. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO RIO GRANDE DO NORTE
+       Em 01 de agosto de 2022, o Governo do Rio Grande do Norte encaminhou o Ofício nº 125/2022-GE
+ acompanhado de argumentações técnicas elaboradas pela Empresa de Pesquisa Agropecuária (EMPARN) e
+ pela Companhia de Águas e Esgotos do Rio Grande do Norte (CAERN) abordando, respectivamente, uma
+ análise das condições climáticas, e outra, das condições de abastecimento e disponibilidade hídrica dos
+ municípios passíveis de exclusão: Lagoas de Pedras, Várzea, Vera Cruz, Monte Alegre, Passagem, Macaíba
+ e Brejinho, solicitando a permanência de todos no semiárido.
+
+      A análise resultou no Parecer Técnico nº 425/2022-SEI/SUDENE, que concluiu pela não aceitação
+ dos argumentos apresentados pelo Governo do Estado do Rio Grande do Norte para permanência dos
+ municípios de Brejinho, Lagoa Salgada (erroneamente citado como Lagoa de Pedras em parte do estudo),
+ Macaíba, Monte Alegre, Passagem, Várzea e Vera Cruz no Semiárido, notadamente pela mudança da base
+                                                                                                             16
+
+de dados e pela alteração metodológica (dados considerados para o período entre os anos de 1963 e
+2007) relativos aos municípios em apreço e pela inobservância à forma de tratamento dos critérios
+técnicos e científicos constantes na Resolução Condel nº 150/2021.
+
+
+            Figura 2: Mapa de Municípios passíveis de exclusão por Estado (Rio Grande do Norte)
+
+
+
+
+            Fonte: SUDENE (Sigmapas)/CGEP/COAE
+            Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da
+            delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+
+
+
+               Quadro 2: Documentos de Referência do Estado do Rio Grande do Norte
+
+     UF        DOCUMENTO                                             EMENTA
+               Ofício GAC nº             Solicita informações sobre o período dos dados avaliados, a fonte
+     RN        638/2022 de                 dos dados, presença de falhas e forma de preenchimento das
+               08/06/2022.                  mesmas, assim como quem realizou a validação dos índices.
+
+           E-mail Defesa Civil RN                       Remete o Ofício – GAC nº 638/2022
+     RN       de 08/06/2022.
+
+            Resposta ao Ofício          Resposta às informações solicitadas no Ofício GAC nº 638/2022, do
+             GAC nº 638/2022:            Gabinete do Governador do Rio Grande do Norte/Coordenação
+     RN
+           Ofício Sudene 1704 de                        Estadual de Proteção e Defesa Civil
+                16/06/2022.
+              Parecer Técnico de              Parecer Técnico nº 425/2022 – Sudene, de 10/11/2022.
+     -
+              análise da Sudene.
+     Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                                  17
+
+4.3.2. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DA PARAÍBA
+
+
+       Em 21 de Julho de 2022, o Governo da Paraíba enviou o Ofício nº 100/2022/GS-SEDAP, com Nota
+Técnica elaborada pela Secretaria de Estado da Agropecuária e da Pesca, acompanhada de Relatório do
+Grupo de Trabalho instituído pelo Governo do Estado da Paraíba como recurso à delimitação do semiárido
+2021, por meio dos quais solicita a permanência dos municípios de Borborema, Cuitegi, Duas Estradas,
+Lagoa de Dentro, Pilões, Pilõezinhos, Pirpituba, Serra da Raiz, Serraria e Sertãozinhos no semiárido.
+       A análise resultou no Parecer Técnico nº 426/2022-SEI/SUDENE, que concluiu pela não aceitação dos
+argumentos apresentados pelo Governo do Estado Paraíba para permanência dos municípios de
+Borborema, Cuitegi, Duas Estradas, Lagoa de Dentro, Pilões, Pilõezinhos, Pirpirituba, Serra da Raiz, Serraria e
+Sertãozinho no Semiárido, notadamente pela mudança da base de dados relativos aos municípios em
+apreço e pela inobservância à forma de tratamento dos critérios técnicos e científicos constantes na
+Resolução Condel nº 150/2021.
+
+
+                       Figura 3: Mapa de Municípios passíveis de exclusão por Estado (Paraíba)
+
+
+
+
+                    Fonte: SUDENE (Sigmapas)/CGEP/COAE
+                    Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono
+                    da delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+                                                                                                            18
+
+
+                            Quadro 3: Documentos de Referência do Estado da Paraíba
+
+      UF         DOCUMENTO                                        EMENTA
+              Ofício 100/2022/GS-         Encaminhar para análise do Comitê e posterior apreciação e
+             SEDAP de 21/07/2022.         deliberação do Conselho, Relatório Técnico e Nota Técnica,
+                                       elaborados pelo Grupo de Trabalho da Paraíba, com chancela do
+      PB                                órgão de monitoramento de tempo e clima oficial do Estado, os
+                                      quais apresentamos como recurso à delimitação do Semiárido 2021
+                                          para a manutenção dos municípios paraibanos objeto deste
+                                                                  trabalho.
+               Anexo 01 OFÍCIO         Recurso do Estado da Paraíba para manutenção de municípios na
+      PB        100/2022 de                            delimitação do semiárido 2021.
+                 21/07/2022.
+               Anexo 02 OFÍCIO         Relatório Grupo de Trabalho (GT) do Estado da Paraíba (Recurso à
+      PB        100/2022 de                             Delimitação do Semiárido 2021
+                 21/07/2022.
+              Parecer Técnico de            Parecer Técnico nº 426/2022 – Sudene, de 10/11/2022.
+       -
+              análise da Sudene.
+      Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+
+4.3.3. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE MINAS GERAIS
+
+       Em 25/02/2022, o estado de Minas Gerais, por meio do Ofício 50/2022, enviou para a Sudene o
+ Recurso IDENE/DG, acompanhado da Nota Técnica nº 3/IGAM/GMHEC/22 elaborada pelo Instituto
+ Mineiro de Gestão das Águas e do recurso IDENE/DG nº 42844358/2022, de 25/02/2022, assinado pelo
+ Diretor-Geral do órgão, tendo por referência a Resolução Condel/Sudene nº 150/2021, solicitando a não
+ exclusão de oito municípios mineiros da delimitação do semiárido, o qual foi indeferido conforme tratado
+ no item 4.1 deste relatório.
+
+        Entretanto, em 27/07/2022, sob a égide da Resolução Condel nº 155/2022, foi encaminado o Ofício
+ SECGERAL/GAB GOVERNADOR nº. 184/2022, do Governador do Estado de Minas Gerais Romeu Zema
+ Neto, como informação complementar ao recurso IDENE/DG nº 42844358/2022 apresentado em
+ 25/02/2022, acompanhado de novo recurso IDENE nº 50248532/2022, de 25/07/2022, e do Relatório
+ Técnico nº 1/IGAM/GMHEC/2022, de lavra da Gerência de Monitoramento Hidrometeorológico e Eventos
+ Críticos, do Instituto Mineiro de Gestão das Águas – IGAM, o qual apresenta elementos técnicos acerca do
+ caso, solicitando a permanência dos 8 (oito) municípios passíveis de exclusão: Bandeira, Felisburgo,
+ Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa, Santa Maria do Salto.
+
+        A análise resultou no Parecer Técnico Nº 424/2022-SEI/SUDENE, que concluiu pela não aceitação
+ dos argumentos apresentados pelo Governo do Estado de Minas Gerais para permanência dos municípios
+ de Bandeira, Felisburgo, Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa e Santa Maria do Salto no
+ Semiárido, notadamente pela mudança da base de dados relativos aos municípios em apreço e pela
+ inobservância à forma de tratamento dos critérios técnicos e científicos constantes na Resolução Condel
+ nº 150/2021.
+                                                                                                        19
+
+
+
+     Figura 4: Mapa de Municípios passíveis de exclusão por Estado (Bahia e Minas Gerais)
+
+
+
+
+     Fonte: SUDENE (Sigmapas)/CGEP/COAE
+     Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono
+     da delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+
+         Quadro 4: Documentos de Referência do Estado de Minas Gerais
+
+UF      DOCUMENTO                                            EMENTA
+     Nota_Tecnica_425523          Essa Nota Técnica tem como objetivo de apresentar
+       73_SEI_GOVMG               informações sobro cenário hídrico do estado, através de
+      42481815_Nota, de           análises referentes às precipitações, para subsidiar o
+         18/02/2022.              Instituto de Desenvolvimento do Norte e Nordeste de Minas
+MG
+                                  Gerais – IDENE, conforme solicitação recebida por e-mail
+                                  institucional no dia 10 de fevereiro de 2022, para reinclusão
+                                  de municípios mineiros no mapa nacional do semiárido,
+                                  conforme exigido pela Resolução Condel/Sudene nº 150.
+             Anexo                Essa Nota Técnica tem como objetivo apresentar
+     Nota_Tecnica_425523          informações sobre o cenário hídrico do estado, através de
+MG      73_SEI_GOVMG              análises referentes às precipitações, para subsidiar o IDENE.
+      42481815_Nota, de
+          18/02/2022.
+     Ofício SECGERAL/GAB          Encaminho o Recurso IDENE/DG (42844358), de lavra do
+       GOVERNADOR nº.             Diretor-Geral do Instituto de Desenvolvimento do Norte e
+MG        50/2022 de              Nordeste de Minas Gerais - IDENE, bem como seu respectivo
+          25/02/2022.             anexo, Nota Técnica nº 3/IGAM/GMHEC/22 (42552373), em
+                                  face da Resolução Condel/Sudene nº 150/2021
+        Anexo Recurso             O Governo de Minas Gerais solicita o deferimento deste
+        IDENE_DG, de              recurso, mantendo-se os municípios de Bandeira, Felisburgo,
+MG       25/02/2022.              Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa e Santa
+                                  Maria do Salto na área de demarcação da Sudene do
+                                  Semiárido brasileiro.
+                                                                                             Continua
+                                                                                                         20
+
+
+
+
+                  Quadro 4: Documentos de Referência do Estado de Minas Gerais (Cont.)
+
+         UF          DOCUMENTO                                     EMENTA
+                  Parecer Técnico Nº     Parecer referente Solicitação Governo de Minas Gerais -
+                 112/2022-SEI/SUDENE     Ofício SEC GERAL /GAB Governo de Minas Gerais, Ofício SE C
+         MG
+                                         GERAL/ GAB Governador n. 50/2022, Belo Horizonte, 25 de
+                                         fevereiro de 2022
+                       OFÍCIO Nº         Resposta ao recurso apresentado pelo Governo do Estado de
+                 1262/2022/GAB/SUDE      Minas Gerais em defesa da não exclusão de 8 (oito)
+                  NE, de 11/05/2022.     municípios do Semiárido brasileiro: Bandeira, Felisburgo,
+         MG
+                                         Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa e Santa
+                                         Maria do Salto (Ofício SEC GERAL/GAB/Governador nº.
+                                         50/2022).
+                     Anexo Relatório     Relatório Técnico nº 1/IGAM/GMHEC/2022
+                        Técnico nº
+         MG
+                 1/IGAM/GMHEC/2022
+                    , de 15/07/2022.
+                    Anexo RECURSO        O presente documento tem o objetivo de somar às
+                      IDENE/DG Nº        informações já enviadas para a não exclusão dos municípios
+         MG
+                  50248532/2022, de      em questão, justificativas técnicas complementares.
+                       25/07/2022.
+                 Ofício SECGERAL/GAB     Solicita a não exclusão de 8 (oito) municípios mineiros da
+                   GOVERNADOR Nº         delimitação proposta. Encaminha o Relatório Técnico nº
+         MG           184/2022, de       1/IGAM/GMHEC/2022 (50083027), de lavra da Gerência de
+                       28/07/2022.       Monitoramento Hidrometeorológico e Eventos Críticos, do
+                                         Instituto Mineiro de Gestão das Águas – IGAM.
+                   E-mail ENC. OFÍCIO    Encaminha Informação Complementar ao Recurso IDENE/DG
+                     SECGERAL/GAB        (42844358), apresentado em 25.02.2022, em face da
+                   GOVERNADOR Nº         Resolução Condel/Sudene nº 150/2021. Encaminha,
+         MG           184/2022, de       outrossim, o Relatório Técnico nº 1/IGAM/GMHEC/2022, de
+                      29/07/2022.        lavra da Gerência de Monitoramento Hidrometeorológico e
+                                         Eventos Críticos, do Instituto Mineiro de Gestão das Águas –
+                                         IGAM, o qual apresenta elementos técnicos acerca do caso.
+                   Parecer Técnico de    Parecer Técnico nº 424/2022 – Sudene, de 10/11/2022.
+         -
+                   análise da Sudene.
+      Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+4.3.4. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE PERNAMBUCO
+
+        Em 04 de Agosto de 2022, o Governo de Pernambuco enviou o Ofício 411/2022-GS, o qual foi
+respondido pela Sudene Por meio do Ofício nº 2523/2022/GAB/SUDENE. Posteriormente, em
+03/10/2022, Pernambuco enviou novo Ofício nº 476/2022-GS, pedindo readmissão do pleito, o qual
+foi indeferido pela Sudene por meio do Ofício nº 3322/2022/GAB/SUDENE face à intempestividade do
+encaminhamento. No pleito estava sendo solicitada a permanência no semiárido, dos municípios de
+Lagoa do Ouro, Brejão, Correntes, Palmeirina, Lagoa dos Gatos.
+                                                                                                          21
+
+
+                       Quadro 5: Documentos de Referência do Estado de Pernambuco
+
+         UF              DOCUMENTO                                  EMENTA
+                    Ofício 411/2022-GS, de    Reinserção dos municípios pernambucanos de Lagoa do
+         PE               04/08/2022.           Ouro, Brejão, Correntes e Palmeirina na relação de
+                                               municípios habilitados na delimitação do Semiárido.
+
+                      Anexo DO OFÍCIO                 NOTA TÉCNICA Nº 004/22/ GMMC-APAC
+         PE           411/2022- NOTA          Este documento foi datado de 17/03/2022 e apresentado
+                   TÉCNICA, de 17/03/2022.           com o Ofício 411/2022-GS, de 04/08/2022.
+                   E-mail ENCAMINHANDO         Encaminhamos em anexo, Ofício Seplag nº 411/2022 e
+                   OFÍCIO 411/2022-GS, de        Nota Técnica, referente à reinserção dos municípios
+         PE              04/08/2022             pernambucanos de Lagoa do Ouro, Brejão, Correntes,
+                                                Palmeirina e Lagoa do Ouro, na relação de municípios
+                                                      habilitados na delimitação do Semiárido
+                        Anexo Ofício nº                 Resposta ao Ofício Nº 411/2022 – GS
+         PE        2523/2022/GAB/SUDENE,
+                        de 09/09/2022
+                    Ofício Nº 476/2022-GS,     Recurso de solicitação da avaliação da Nota Técnica de
+         PE             de 09/09/2022.                              Pernambuco
+
+                      E-mail GOV.PE, de        Encaminhamos em anexo, Ofício Seplag nº 476/2022 e
+         PE              15/09/2022             Nota Técnica, referente ao Recurso de solicitação da
+                                                    avaliação da Nota Técnica de Pernambuco
+                      Nota TÉCNICA Nº                NOTA TÉCNICA Nº 004/22/ GMMC-APAC
+         PE        004/22/GMMC-APAC, de          Documento reapresentado com Ofício 476/2022.
+                         17/03/2022.
+                           Ofício nº                    Resposta ao Ofício Nº 476/2022 – GS
+          -        3322/2022/GAB/SUDENE,
+                        de 03/10/2022
+       Fonte: SUDENE(SEI)/CGEP/COTI
+
+4.3.5. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE SERGIPE
+
+       Em 16 de Agosto de 2022, o Governo de Sergipe enviou Ofício EXTERNO Nº 210-2022-GG
+(0384341). A resposta da Sudene foi encaminhada por meio do OFÍCIO Nº 2862/2022/GAB/SUDENE, que
+se posicionou pelo indeferimento em razão da intempestividade do encaminhamento. O pleito objetivou a
+defesa pela permanência no semiárido, dos municípios de Amparo de São Francisco, Aquidabã, Cedro de São
+João, Cumbe, Macambira, Nossa Senhora das Dores e São Miguel do Aleixo.
+                            Quadro 6: Documentos de Referência do Estado de Sergipe
+
+              UF         DOCUMENTO                                   EMENTA
+                    Nota TÉCNICA SEDURBS-      Análise climatológica dos sete muicípios sergipanos,
+              SE    SERHMA, de 01/08/2022.     em relação aos critérios adotados pela Sudene para
+                                                          nova Delimitação do Semiárido
+
+                     Ofício EXTERNO Nº 210-     Envio de Nota Técnica recorrendo da exclusão de
+                    2022-GG, de 16/08/2022.    sete municípios sergipanos na nova delimitação do
+              SE                               Semiárido Nordestino e solicitação de ampliação de
+                                                prazo para a sua entrega nos termos do art. 2º da
+                                                         Resolução Condel nº 150/2021
+                           Ofício nº             Resposta ao Ofício Externo Nº 210/2022-GG, do
+              -     2862/2022/GAB/SUDENE,                Governo do Estado de Sergipe.
+                        de 01/09/2022.
+       Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                       22
+
+
+4.4. RESUMO DE IRRESIGNAÇÕES RECEBIDAS CONTRA A EXCLUSÃO DE MUNICÍPIOS DO SEMIÁRIDO SOB A
+ÉGIDE DA RESOLUÇÃO CONDEL Nº 155/2022
+
+       Apenas 3 (três) argumentações técnicas preencheram os requisitos da Resolução Condel nº
+ 155/2022 para admissão e análise. Elas foram apresentadas pelos estados do Rio Grande do Norte,
+ da Paraíba e de Minas Gerais. Abrangeram 25 (vinte e cinco) dos 50 municípios passíveis de exclusão
+ da região Semiárida, assim distribuídos Rio Grande do Norte (7), Paraíba (10) e Minas Gerais (8).
+
+      Os pleitos dos Governos dos estados de Pernambuco e Sergipe foram intempestivamente
+ apresentados face ao regramento da Resolução Condel nº 155/2022, e portanto indeferidos.
+                                                                                                                                                  23
+
+
+
+
+            Quadro 7: Resumo de Documentos de Referência dos Estados Apresentados sob a Égide da Resolução Condel Nº 155/2022
+
+                                                                  Data de
+UF e Quantidade de
+                       Municípios Passíveis    Processo SEI     entrada do         Recurso ou Arg.     Data de resposta      Documento de
+Municípios Passíveis
+                          de Exclusão            Sudene         Recurso ou             técnica             Sudene           Resposta Sudene
+    de Exclusão
+                                                                Arg. Técnica
+                            RUBIM;                                                     Ofício
+                                                                    25 de                                                      Ofício nº
+                       SALTO DA DIVISA;         59336.000592/                     SECGERAL/GAB           11 de maio
+                                                                 fevereiro de                                               1262/2022/GAB/
+                       SANTA MARIA DO              2022-34                       GOVERNADOR nº.           de 2022
+                                                                    2022                                                        SUDENE
+                            SALTO;                                                    50/2022
+Minas Gerais (8)           JACINTO;                                                   Ofício
+                          BANDEIRA;                                              SECGERAL/GAB
+                                                59336.000463/   29 de julho de                         Dependente de      Parecer nº 424/2022 -
+                          JORDÂNIA;                                              GOVERNADOR
+                                                   2020-84          2022                               reunião Condel     SUDENE, 10/11/2022
+                         MATA VERDE;                                              nº. 184/2022
+                         FELISBURGO.                                             (complemento
+                        LAGOA DE DENTRO;
+                           BORBOREMA;
+                          SERRA DA RAIZ;
+                             SERRARIA;
+                          SERTÃOZINHO;        59336.002369/      21 de julho     Ofício 100/2022/GS-   Dependente de      Parecer nº 426/2022 –
+  Paraíba (10)
+                              CUITEGI;           2022-21          de 2022               SEDAP          reunião Condel      SUDENE, 10/11/2022
+                         DUAS ESTRADAS;
+                              PILÕES;
+                           PILÕEZINHOS;
+                           PIRPIRITUBA.
+                                                                                                                                       Continua
+Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                                                                                               24
+
+
+
+       Quadro 7: Resumo de Documentos de Referência dos Estados Apresentados sob a Égide da Resolução Condel Nº 155/2022 (Cont.)
+                                                                                Data de
+UF e Quantidade de
+                        Municípios Passíveis de         Processo SEI          entrada do         Recurso ou           Data de resposta        Documento de Resposta
+Municípios Passíveis
+                              Exclusão                    Sudene              Recurso ou         Arg. Técnica             Sudene                    Sudene
+    de Exclusão
+                                                                              Arg. Técnica
+
+                         LAGOA DO OURO;                59336.002406/         04 de agosto          Ofício Nº                                  Ofício nº 2523/2022/GAB/
+                                                                                                                         09/09/2022
+                        LAGOA DOS GATOS;                  2022-00              de 2022           411/2022 - GS                                          SUDENE
+Pernambuco (5)               BREJÃO;
+                           CORRENTES;
+                                                     59336.002406/          09 de setembro          Ofício Nº                                 Ofício nº 3322/2022/GAB/
+                           PALMEIRINA.                                                                                   03/10/2022
+                                                        2022-00                 de 2022           476/2022-GS                                           SUDENE
+                     LAGOA SALGADA;
+                         BREJINHO;
+                         MACAÍBA;
+ Rio Grande do                                       59336.002365/            01 de agosto          Ofício nº           Dependente de           Parecer nº 425/2022 -
+                      MONTE ALEGRE;
+    Norte (7)                                           2022-43                 de 2022           125/2022-GE           reunião Condel          SUDENE, 10/11/2022
+                          VÁRZEA;
+                        VERA CRUZ;
+                        PASSAGEM.
+                     AMPARO DE SÃO
+                        FRANCISCO;
+                        AQUIDABÃ;
+                      SÃO MIGUEL DO
+                          ALEIXO;                                                                    Ofício
+                                                       59336.002581/          16 de agosto                                                    Ofício nº 2862/2022/GAB/
+   Sergipe (7)         MACAMBIRA;                                                                  Externo nº            01/09/2022
+                                                          2022-99               de 2022                                                              SUDENE
+                       CEDRO DE SÃO                                                              210/2022- GG
+                           JOÃO;
+                     NOSSA SENHORA
+                        DAS DORES;
+                          CUMBE.
+Fonte: SUDENE(SEI)/CGEP/COTI
+ Nota: Não foram retratados no quadro acima, as informações apresentadas pelos municípios de Palmerina/PE e Arapiraca/AL, por que não se trataram de recurso ou argumentação
+ técnica nos termos estabelecidos pelas Resoluções Condel nºs 150/2021 e 155/2022.
+                                                                                                           25
+
+
+
+   5. RESULTADO DA ANÁLISE DOS RECURSOS, MANIFESTAÇÕES E ARGUMENTOS TÉCNICOS
+           INTERPOSTOS JUNTO À SUDENE (Resolução Condel/Sudene Nº 163/2022)
+
+      Este novo capítulo foi inserido após a RESOLUÇÃO CONDEL/SUDENE Nº 163, de 15 de Dezembro de
+2022 (publicada no Diário Oficial da União em 12 de Janeiro de 2023), visando relacionar os pleitos e
+análises relacionadas. A mencionada Resolução prorrogou o prazo para apresentação de argumentações
+técnicas sobre o resultado da delimitação do semiárido, de acordo com os critérios elencados no inciso I
+do art. 1º da Resolução CONDEL/SUDENE n. 150, de 13 de dezembro de2021, e o prazo de vigência do
+Comitê Técnico Provisório de que trata o art. 2º da Resolução CONDEL/SUDENE n. 155, de 29 de abril de
+2022.
+
+     O Art. 1º da citada Resolução prorrogou, até o dia 31 de março de 2023, o prazo previsto no art. 1º
+da Resolução CONDEL/SUDENE n. 155, de 29 de abril de 2022, reabrindo a possibilidade de apresentação
+de novos argumentos técnicos acerca do resultado de redelimitação do Semiárido 2021 de que trata a
+ResoluçãoCONDEL/SUDENE n. 150, de 13 de dezembro de 2021.
+
+      O Art. 2º da Resolução Nº 163 de 15 de dezembro de 2022 prorrogou até o dia 30 de junho de 2023,
+a vigência do Comitê Técnico Provisório criado pelo art. 2º da Resolução CONDEL/SUDENE n. 155, de 2022,
+com o objetivo de analisar as novas ou complementares argumentações técnicas apresentadas à Sudene e
+submeter Proposta de Relatório Conclusivo à apreciação do Conselho Deliberativo.
+
+     O Art. 3º da referida Resolução autorizou que, até a deliberação do Conselho Deliberativo da Sudene
+sobre o Relatório Conclusivo de que trata o art. 2º desta Resolução, permanecessem como integrantes do
+Semiárido os 50 (cinquenta) municípios apontados como passíveis de exclusão no Relatório Técnico que
+apresentou os resultados da revisão da delimitação do Semiárido 2021 no âmbito da Resolução
+CONDEL/SUDENE n. 150, de 2021.
+
+     A figura 5 adiante, mostra os municípios passíveis de exclusão do Semiárido, e estão representados
+em fundo verde.
+                                                                                                                           26
+
+
+
+
+                       Figura 5: Mapa geral de Municípios passíveis de exclusão do Semiárido
+
+
+
+
+                    Fonte: SUDENE (Sigmapas)/CGEP/COAE
+                    Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono
+                    da delimitação por força do art. 3º da Resolução Condel nº 155/2022.
+
+5.1 RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE ARAPIRACA/AL.
+
+      O município de Arapiraca (AL) enviou Ofício nº 09/2023 – PGM, datado de 31 de março de 2023, SEI
+0474554:
+
+      “De ordem do Excelentíssimo Senhor Prefeito, em atenção ao Ofício nº272/2023/GAB/SUDENE, no qual Vossa Excelência
+      informa que os municípios interessados terão até 31/03/2023 para apresentar novos argumentos técnicos à SUDENE, em
+      defesa da permanência na sub-região semiárida brasileira, nos termos da Resolução Condel nº 150, de 13 dezembro de 2021,
+      encaminho a manifestação elaborada pelo corpo técnico da Secretaria Municipal de Agricultura, com a finalidade de
+      subsidiar essa respeitada Autarquia.”
+
+
+       Análise realizada pela equipe do Comitê Provisório do Condel tomando por base o que estabelece o §
+ 1º, art. 1º da Resolução Condel/SUDENE nº 155, de 29 de abril de 2022 “Os argumentos de que tratam o
+ caput deverão ser embasados por Relatório Técnico de órgãos de Clima e Tempo oficiais, devendo conter
+ dados sobre o índice de aridez de Thornthwaite, a precipitação pluviométrica média anual e o Percentual
+ Diário de Déficit Hídrico, considerando todos os dias do ano nos últimos 30 anos (1991 a 2020)” constatou
+ que o “Documento Técnico” apresentado no Ofício 09/2023 - PGM não foi elaborado
+                                                                                                            27
+
+ pelo órgão competente de Clima e Tempo do estado de Alagoas, fato este que incompatibilizou sua
+ conformidade com os pré-requisitos necessários para análise, conforme estabelece o Art. 1º da Resolução
+ Condel/SUDENE nº 155/2022.
+
+
+5.2. RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO MUNICÍPIO DE SÃO LUIS/MA
+
+       Em 09 de Maio de 2023, a Prefeitura de São Luis/MA encaminhou o Ofício nº 34/2023-GAB (0489631),
+como resposta ao ofício n° 275/2023/GAB/SUDENE, tendo como signatário o representante da Frente Nacional
+de Prefeitos (FNP) junto ao Conselho Deliberativo da Sudene, o Prefeito Eduardo Salim Braide, que em sua
+missiva encaminha "parecer técnico da Secretaria Municipal da Planejamento e Desenvolvimento - SEPLAN,
+informando que não há compatibilidade entre as condições climáticas de São Luís e o ambiente semiárido",
+tratando-se tão somente, de informe como resposta ao expediente da Sudene.
+
+5.3. RESULTADO DAS ANÁLISES DOS ARGUMENTOS TÉCNICOS E MANIFESTAÇÃO APRESENTADOS PELOS
+ESTADOS
+
+      Como argumentos técnicos a Sudene recebeu, no prazo devido, documentação dos Governos dos
+ estados de Bahia, Minas Gerais, Pernambuco e Sergipe, mais a manifestação técnica do estado do Piauí,
+ que foram analisadas pela equipe da Sudene no Comitê Provisório.
+
+       Também foram recebidas manifestações dos municípios de Arapiraca/AL e São Luís/MA, sendo a
+ manifestação de Arapiraca/AL não analisada, considerando que o Documento Técnico apresentado no
+ Ofício 09/2023-PGM (SEI 0474554) não foi elaborado pelo órgão competente de Clima e Tempo do estado
+ de Alagoas, fato este que incompatibiliza sua conformidade com os pré-requisitos necessários para
+ análise, conforme estabelece o Art. 1 da Resolução Condel/SUDENE nº 155/2022.
+
+      Quanto à manifestação do município de São Luís/MA, este se configurou em resposta quanto ao
+ expediente da Sudene, sem caráter de irresignação contra possível exclusão de município no semiárido.
+
+5.3.1. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DA BAHIA
+
+       Em 25 de fevereiro de 2023, o Governo da Bahia enviou Ofício nº 00062381966/2023 -
+GABGOV/CHEGAB/SEDOC, (SEI 0460426) acusando o recebimento do documento enviado ao Excelentíssimo
+Senhor Governador Jerônimo Rodrigues e informando o encaminhamento às Secretarias do Meio Ambiente, de
+Planejamento, de Relações Institucionais e à Casa Civil.
+
+        Em 30 de março de 2023, o Governo da Bahia enviou Ofício GE nº 54/2023 (SEI 0474890). A Bahia
+apresentou manifestação pela defesa da permanência dos municípios de Iguaí, Itarantim e Itororó na sub-
+região semiárida brasileira. Com efeito, a vista da análise técnica realizada pelo Instituto do Meio Ambiente e
+Recursos Hídricos - INEMA, por meio de sua Coordenação de Estudo de Clima e Projetos Especiais, baseada em
+série histórica de balanços hídricos do período compreendido entre os anos de 1999 e 2020, dos quatro
+municípios baianos excluídos somente o municipio de Potiragua não apresentou o percentual diário de déficit
+hídrico de 60%, nos termos do art. 1°, I, c da Resolução CONDEL n° 150/21. Assim sendo, diante do exposto, o
+Estado da Bahia defende a revisão da decisão adotada pela Resolução CONDEL/SUDENE n° 150, de 13 de
+dezembro de 2021, a fim de que sejam reinseridos os municípios de Iguai, Itarantim e Itororo na sub-região
+semiárida brasileira.
+
+        A Sudene, por meio do Parecer Técnico 237 (0502949) concluiu que em que pese os valorosos trabalhos
+realizados pelo Inema, considerando a incumbência determinada na Resolução Condel nº 155/2022, “este
+Corpo Técnico é de parecer contrário à aceitação dos argumentos apresentados pelo Governo do Estado da
+Bahia para permanência dos municípios de Iguaí, Itarantim e Itororó no Semiárido, notadamente pela
+mudança da base de dados relativos aos municípios em apreço e pela inobservância à forma de tratamento dos
+                                                                                                                      28
+
+critérios técnicos e científicos constantes na Resolução Condel nº 150/2021.”
+
+
+                            Figura 6: Mapa de Municípios passíveis de exclusão (Bahia)
+
+
+
+
+           Fonte: SUDENE (Sigmapas)/CGEP/COAE
+           Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da
+           delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+
+
+                           Quadro 8: Documentos de Referência do Estado da Bahia
+
+ UF      DOCUMENTO                                                      EMENTA
+            Ofício nº               Acusamos o recebimento do documento enviado ao Excelentíssimo Senhor
+      00062381966/2023 -            Governador Jerônimo Rodrigues e informamos que o encaminhamos às
+ BA
+    GABGOV/CHEGAB/SEDOC             Secretarias do Meio Ambiente, de Planejamento, de Relações Institucionais e
+         (SEI 0460426)              à Casa Civil, através do Processo SEI nº 001.7313.2022.0002416-18.
+                                    Em resposta ao Resposta ao OFICIO N° 263/2023/GAB/SUDENE, a Bahia
+                                    apresenta manifestação pela defesa da permanência dos municípios baianos
+                                    de Iguaí, Itarantim e Itororó na sub-regiao semiárida brasileira. Com efeito, a
+                                    vista da análise técnica realizada pelo Instituto do Meio Ambiente e Recursos
+       Ofício GE nº 54/2023 de
+                                    Hídricos - INEMA, por meio de sua Coordenação de Estudo de Clima e
+ BA     30 de março de 2023.
+                                    Projetos Especiais, baseada em série histórica de balanços hídricos do
+            (SEI 0474890)
+                                    período compreendido entre os anos de 1999 e 2020, dos quatro municípios
+                                    baianos excluídos, somente o município de Potiragua nao apresentou o
+                                    percentual diário de déficit hídrico de 60%, nos termos do art. 1°, I, c da
+                                    Resolução CONDEL n° 150/21.
+ Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                            29
+
+
+
+
+5.3.2 RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DE MINAS GERAIS
+
+        Em 31/03/2023, o estado de Minas Gerais, por meio do Ofício SECGERAL 63/2023 (SEI 0474895),
+encaminhou o Relatório nº 63160983 (SEI 63160983), elaborado pela Embrapa Milho e Sorgo, em parceria com
+o Instituto de Desenvolvimento do Norte e Nordeste de Minas Gerais e a Federação da Agricultura e Pecuária
+do Estado de Minas Gerais (FAEMG), que tem como objetivo complementar as informações já apresentadas no
+Recurso IDENE/DG, em 25/02/2022, em face da Resolução Condel/Sudene nº 150/2021.
+
+        A Sudene, por meio do Parecer Técnico 235 (0502942) concluiu que em que pese os valorosos
+ trabalhos realizados pelo IDENE, pelo IGAM e pela Embrapa Milho e Sorgo, considerando a incumbência
+ determinada na Resolução Condel nº 155/2022, “este Corpo Técnico é de parecer contrário à aceitação
+ dos argumentos apresentados pelo Governo do Estado de Minas Gerais para permanência dos municípios
+ de Bandeira, Felisburgo, Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa e Santa Maria do Salto no
+ Semiárido, notadamente pela mudança da base de dados relativos aos municípios em apreço e pela
+ inobservância à forma de tratamento dos critérios técnicos e científicos constantes na Resolução Condel
+ nº 150/2021.”
+
+                        Figura 7: Mapa de Municípios passíveis de exclusão (Minas Gerais)
+
+
+
+
+            Fonte: SUDENE (Sigmapas)/CGEP/COAE
+            Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da
+            delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+                                                                                                           30
+
+
+
+
+                       Quadro 9: Documentos de Referência do Estado de Minas Gerais
+
+          UF          DOCUMENTO                                        EMENTA
+                                              Encaminha Relatório elaborado pela Embrapa Milho e Sorgo
+                                              em parceria com o Instituto de Desenvolvimento do Norte e
+                     Ofício SECGERAL          Nordeste de Minas Gerais e a Federação da Agricultura e
+          MG             63/2023              Pecuária do Estado de Minas Gerais, com o objetivo de
+                      (SEI 0474895)           complementar as informações já apresentadas no Recurso
+                                              IDENE/DG em 25/02/2022, em face da Resolução
+                                              Condel/Sudene nº 150/2021.
+       Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+5.3.3 RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DE PERNAMBUCO
+
+       Em 29 de Março de 2023, o Governo de Pernambuco enviou o Ofício APAC 001/2023 (0472979), com a
+Nota Técnica APAC 004/2023 (0472980), pleiteando a permanência no semiárido, dos municípios de Brejão,
+Correntes, Lagoa do Ouro, Lagoa dos Gatos e Palmeirina.
+
+       A Sudene concluiu, por meio do Parecer Técnico 236 (0502946), que, em que pese os valorosos
+trabalhos realizados pela APAC, considerando a incumbência determinada na Resolução Condel nº 155/2022,
+“este Corpo Técnico é de parecer contrário à aceitação dos argumentos apresentados pelo estado de
+Pernambuco para permanência dos municípios de Brejão, Correntes, Lagoa do Ouro, Lagoa dos Gatos e
+Palmeirina no Semiárido, notadamente pela mudança da base de dados relativos aos municípios em apreço e
+pela inobservância à forma de tratamento dos critérios técnicos e científicos constantes na Resolução Condel
+nº 150/2021.”
+                         Figura 8: Mapa de Municípios passíveis de exclusão (Pernambuco)
+
+
+
+
+           Fonte: SUDENE (Sigmapas)/CGEP/COAE
+           Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da
+           delimitação, por força do art. 3º da Resolução Condel nº 155/2022.
+                                                                                                          31
+
+
+                      Quadro 10: Documentos de Referência do Estado de Pernambuco
+
+          UF            DOCUMENTO                                      EMENTA
+                                              Encaminha Nota Técnica para análise de novas e/ou
+                                              complementares argumentações técnicas para
+          PE      Ofício Nº 001/2023          permanência dos municípios de Pernambuco no semiárido:
+                      (SEI 0472979)           Brejão, Correntes, Lagoa do Ouro, Lagos dos Gatos e
+                                              Palmerina.
+      Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+
+5.3.4 RESULTADO DA ANÁLISE DA MANIFESTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DO PIAUÍ
+
+       Em 31/03/2023, o estado do Piauí encaminhou, por meio do Ofício Nº 378/2023/SEPLAN-PI/GAB (SEI
+0474575), Parecer Técnico nº 01/2023, da Coordenação de Estudos Cartográficos/Diretoria de Estudos
+Ambientais da Superintendência de Estudos Econômicos e Sociais e Planejamento Participativo -
+CEPRO/SEPLAN-PI, com as observações técnicas de delimitação do Semiárido realizado pela SUDENE. E que em
+suma, a Superintendência supramencionada se manifesta favorável à metodologia utilizada e não tem ressalvas
+quanto aos dados e análises apresentados.
+
+                          Quadro 11: Documentos de Referência do Estado do Piauí
+
+        UF     DOCUMENTO                                       EMENTA
+                                Encaminha Parecer Técnico nº 01/2023, da Coordenação de Estudos
+                 Ofício Nº      Cartográficos/Diretoria de Estudos Ambientais da Superintendência de
+               378/2023/SEP     Estudos Econômicos e Sociais e Planejamento Participativo -
+        PI      LAN-PI/GAB      CEPRO/SEPLAN-PI, com as observações técnicas de delimitação do
+               (SEI 0474575)    Semiárido realizado pela SUDENE. E que em suma, a Superintendência
+                                supramencionada se manifesta favorável à metodologia utilizada e não
+                                tem ressalvas quanto aos dados e análises apresentados.
+       Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+5.3.5. RESULTADO DA ANÁLISE DA ARGUMENTAÇÃO TÉCNICA DO GOVERNO DO ESTADO DE SERGIPE
+
+       Em 30 de Março de 2023, o Governo de Sergipe enviou Ofício Circular Nº 245/2023-SECC (0478143),
+para apreciação do Comitê Técnico Provisório instituído nos termos do art. 2° da Resolução Condel n° 150/2021
+e da Resolução Condel n° 163/2022, com a Nota Técnica intitulada: Análise Climatológica dos Sete Municípios
+Sergipanos em Relação aos Critérios Adotados para a Nova Delimitação do Semiárido Nordestino. A referida
+Nota Técnica revê procedimentos metodológicos e apresenta argumentos relevantes em favor da revisão do
+enquadramento de municípios sergipanos que foram excluídos na nova delimitação do Semiárido Nordestino.
+
+       Foi salientado no referido Ofício que a Secretaria de Meio Ambiente, Sustentabilidade e Ações
+Climáticas do Estado de Sergipe foi notificada pelo Oficio N° 288/2023/GAB/SUDENE, de teor similar, e
+encaminhou resposta por intermédio do Oficio Externo n° 16/2023-SEMAC, em 08 de março de 2023, em
+anexo.
+
+       A Sudene concluiu, por meio do Parecer Técnico 238 (0502950), que, em que pese os valorosos
+trabalhos realizados pela SEDURBS/SERHMA, considerando a incumbência determinada na Resolução Condel
+nº 155/2022, “este Corpo Técnico é de parecer contrário à aceitação dos argumentos apresentados pelo
+estado de Sergipe para permanência dos municípios de Amparo de São Francisco, Aquidabã, Cedro de São
+João, Cumbe, Macambira, Nossa Senhora das Dores e São Miguel do Aleixo no Semiárido, notadamente pela
+mudança da base de dados relativos aos municípios em apreço e pela inobservância à forma de tratamento dos
+                                                                                                                    32
+
+critérios técnicos e científicos constantes na Resolução Condel nº 150/2021.”
+
+
+                              Figura 9: Mapa de Municípios passíveis de exclusão (Sergipe)
+
+
+
+
+       Fonte: SUDENE (Sigmapas)/CGEP/COAE
+       Nota: Os municípios passíveis de exclusão do semiárido integram provisoriamente o polígono da delimitação,
+       por força do art. 3º da Resolução Condel nº 155/2022.
+
+                           Quadro 12: Documentos de Referência do Estado de Sergipe
+
+UF      DOCUMENTO                                                  EMENTA
+            Ofício           Encaminhou os anexos
+         Circular Nº         I - Nota Técnica SEDURBS/SERHMA recorrendo da exclusão de sete municípios
+         245/2023-           sergipanos na nova delimitação do Semiárido Nordestino.
+  SE        SECC             II - Nota Técnica assinada SEDURBS/SERHMA recorrendo da exclusão de sete municípios
+         (0478143)           sergipanos na nova delimitação do Semiárido Nordestino.
+                             III - Oficio N° 273/2023/GAB/SUDENE.
+                             IV - Oficio Externo n° i 6/2023-SEMAC
+Fonte: SUDENE(SEI)/CGEP/COTI
+
+
+5.4. RESUMO DE IRRESIGNAÇÕES RECEBIDAS CONTRA A EXCLUSÃO DE MUNICÍPIOS DO SEMIÁRIDO
+
+       Quatro argumentações técnicas preencheram os requisitos da Resolução Condel Nº 155/2022
+ para admissão e análise nos termos da Resolução Condel Nº 163/2022. Elas foram apresentadas
+ pelos estados da Bahia, Minas Gerais, Pernambuco e Sergipe. Os quatro estados abrangeram 23
+ (vinte e três) dos 50 municípios passíveis de exclusão da região Semiárida, assim distribuídos: Bahia
+ (3), Minas Gerais (8), Pernambuco (5) e Sergipe (7).
+                                                                                                                                                              33
+
+
+                            Quadro 13: Resumo de Referência dos Estados Apresentados sob a Égide da Resolução Condel Nº 163/2022
+
+    UF e
+ Quantidade        Municípios                                                                                                    Data de      Documento de
+                                       Processo SEI     Data de entrada do
+de Municípios      Passíveis de                                                            Recurso ou Arg. técnica               resposta    Resposta Sudene
+                                         Sudene       Recurso ou Arg. Técnica
+ Passíveis de       Exclusão                                                                                                      Sudene
+  Exclusão
+                                                      Ofício           nº       Acusamos o recebimento do documento
+                                                      00062381966/2023 -        enviado ao Excelentíssimo Senhor
+                                                      GABGOV/CHEGAB/S           Governador Jerônimo Rodrigues e
+                                                      EDOC (SEI 0460426)        informamos que o encaminhamos às
+                                                                                Secretarias do Meio Ambiente, de
+                                                                                Planejamento, de Relações Institucionais
+                                                                                e à Casa Civil.
+                                                      Ofício GE nº 54/2023      Em resposta ao Resposta ao OFICIO N°
+                                                      de 30 de março de         263/2023/GAB/SUDENE, a Bahia
+                Iguaí                  59336.0        2023.                     apresenta manifestação pela defesa da
+   Bahia
+                Itarantim              00463/2        (SEI 0474890)             permanência dos municípios baianos de
+    (3)                                                                                                                       Dependent
+                Itororó                020-84                                   Iguaí, Itarantim e Itororó na sub-regiao                    Parecer Técnico
+                                                                                                                              e       de
+                                                                                semiárida brasileira. Com efeito, a vista                   237 (0502949)
+                                                                                                                              reunião
+                                                                                da análise técnica realizada pelo Instituto
+                                                                                                                              Condel
+                                                                                do Meio Ambiente e Recursos Hídricos -
+                                                                                INEMA, por meio de sua Coordenação de
+                                                                                Estudo de Clima e Projetos Especiais,
+                                                                                baseada em série histórica de balanços
+                                                                                hídricos do período compreendido entre
+                                                                                os anos de 1999 e 2020, dos quatro
+                                                                                municípios baianos excluídos, somente o
+                                                                                município de Potiraguá não apresentou o
+                                                                                percentual diário de déficit hídrico de
+                                                                                60%, nos termos do art. 1°, I, c da
+                                                                                Resolução CONDEL n° 150/21.
+                                                                                                                                                       Continua
+                                                                                                                                                         34
+
+
+                        Quadro 13: Resumo de Referência dos Estados Apresentados sob a Égide da Resolução Condel Nº 163/2022
+
+    UF e
+ Quantidade                                                  Data de entrada                                                        Data de    Documento
+                 Municípios Passíveis de     Processo SEI
+de Municípios                                                 do Recurso ou                   Recurso ou Arg. técnica               resposta   de Resposta
+                       Exclusão                Sudene
+ Passíveis de                                                  Arg. Técnica                                                          Sudene      Sudene
+  Exclusão
+ Minas Gerais   Bandeira                   59336.001235/20   Ofício            Encaminha Relatório elaborado pela Embrapa
+     (8)        Felisburgo                 23-74             SECGERAL          Milho e Sorgo em parceria com o Instituto de
+                Jacinto                                      63/2023           Desenvolvimento do Norte e Nordeste de Minas
+                Jordânia                                     (SEI              Gerais e a Federação da Agricultura e Pecuária do   Depend      Parecer
+                Mata Verde                                   0474895)          Estado de Minas Gerais, com o objetivo de           ente de     Técnico
+                Rubim                                                          complementar as informações já apresentadas         reunião     235
+                Salto da Divisa                                                no Recurso IDENE/DG em 25/02/2022, em face          Condel      (05029
+                Santa Maria do Santo                                           da Resolução Condel/Sudene nº 150/2021.                         42)
+
+Pernambuco      Brejão                     59336.00116       Ofício Nº         Encaminha Nota Técnica para análise de novas
+    (5)         Correntes                  0/2023-21         001/2023          e/ou complementares argumentações técnicas          Depend      Parecer
+                Lagoa do Ouro                                (SEI              para permanência dos municípios de                  ente de     Técnico
+                Lagoa dos Gatos                              0472979)          Pernambuco no semiárido: Brejão, Correntes,         reunião     236
+                Palmerina                                                      Lagoa do Ouro, Lagos dos Gatos e Palmerina.         Condel      (05029
+                                                                                                                                               46)
+    Piauí                 -                59336.00121       Ofício Nº         Encaminha Parecer Técnico nº 01/2023, da
+                                           8/2023-37         378/2023/         Coordenação de Estudos Cartográficos/Diretoria
+                                                             SEPLAN-           de Estudos Ambientais da Superintendência de
+                                                             PI/GAB (SEI       Estudos Econômicos e Sociais e Planejamento
+                                                             0474575)          Participativo - CEPRO/SEPLAN-PI, com as                -           -
+                                                                               observações técnicas de delimitação do
+                                                                               Semiárido realizado pela SUDENE, e q que em
+                                                                               suma, a Superintendência supramencionada se
+                                                                               manifesta favorável à metodologia utilizada e
+                                                                               não tem ressalvas quanto aos dados e análises
+                                                                               apresentados.
+                                                                                                                                                  Continua
+                                                                                                                                                      35
+
+
+
+
+                         Quadro 13: Resumo de Referência dos Estados Apresentados sob a Égide da Resolução Condel Nº 163/2022
+
+    UF e
+ Quantidade                                                 Data de entrada                                                      Data de    Documento
+                 Municípios Passíveis de     Processo SEI
+de Municípios                                                do Recurso ou                  Recurso ou Arg. técnica              resposta   de Resposta
+                       Exclusão                Sudene
+ Passíveis de                                                 Arg. Técnica                                                        Sudene      Sudene
+  Exclusão
+   Sergipe      Amparo      de     São     59336.00083      Ofício            Encaminhou os anexos                              Depend      Parecer
+     (7)        Francisco                  8/2023-59        Circular Nº       I - Nota Técnica SEDURBS/SERHMA recorrendo da     ente de     Técnico
+                Aquidabã                                    245/2023-         exclusão de sete municípios sergipanos na nova    reunião     238
+                Cedro de São João                           SECC              delimitação do Semiárido Nordestino.              Condel      (05029
+                Cumbe                                       (0478143)         II - Nota Técnica assinada SEDURBS/SERHMA                     50)
+                Macambira                                                     recorrendo da exclusão de sete municípios
+                Nossa Senhora das                                             sergipanos na nova delimitação do Semiárido
+                Dores                                                         Nordestino;
+                São Miguel do Aleixo                                          III - Oficio N° 273/2023/GAB/SUDENE.
+                                                                              IV - Oficio Externo n° i 6/2023-SEMAC
+Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                           36
+
+
+
+6. CONSIDERAÇÕES FINAIS
+
+        Esse Relatório é fruto de uma das etapas estabelecidas pela Resolução Condel nº 155, de 29 de Abril de
+2022 e Resolução Condel nº 163 de 15 de Dezembro de 2022. Na Resolução Concel nº 155 de 29 de Abril de
+2022, consta que “Relatório Conclusivo” será apresentado como resultado dos trabalhos conduzidos por
+Comitê Técnico provisório criado. Nesse sentido, o presente documento reune os resultados das apreciações
+técnicas da equipe constituída pela Sudene para esse fim. Essas apreciações técnicas seguiram rigorosamente
+as recomendações da Organização Mundial de Meteorologia, ao mesmo tempo que receberam valiosas
+contribuições dos mesmos órgãos, internacionalmente reconhecidos, que conduziram o processamento das
+informações que resultaram na delimitação do semiárido de 2021, a Agência Nacional de Águas e Saneamento
+Básico (ANA), e o Instituto Nacional de Pesquisas Espaciais (INPE), além dos normativos adotados no
+disciplinamento do trabalho. Todos os resultados aqui postos expressam não apenas a apurada e rigorosa
+apreciação conduzida pelos técnicos designados para este trabalho, como também, o comprometimento com a
+a imparcialidade e a transparência das análises, culminando neste Relatório Conclusivo eminentemente
+técnico.
+
+       Adicionalmente informa-se que as reuniões periódicas, também previstas em Regimento do próprio
+Comitê Provisório, que foi estabelecido pela Resolução da Diretoria Colegiada nº 720, de 28 de junho de 2022,
+se constituiram importante instrumento de compartilhamento dos resultados progressivos das análises sobre
+as argumentações técnicas apresentadas. Esses resultados foram acompanhados por todos os integrantes do
+Comitê Provisório indicados pelos Conselheiros do Conselho Deliberativo da Sudene, como representantes para
+debater o assunto. Foram realizadas reuniões nos dias 06/09/2022, 04 e 24/11/2022. Todas as questões foram
+debatidas, e contribuiram para uma melhor compreensão sobre a forma como as argumentações dos estados
+foram elaboradas, e os resultados estão representados neste documento.
+
+       Em relação à Resolução nº 155, de 29 de Abril de 2022, em que pese os valiosos trabalhos realizados
+pelos órgãos de Clima e Tempo oficiais dos Estados de Minas Gerais, da Paraíba e do Rio Grande do Norte, a
+equipe de análise deste Comitê Técnico Provisório mostra-se contrário à aceitação dos argumentos
+apresentados pelos Governos pleiteantes à permanência dos respectivos municípios no Semiárido,
+notadamente pela mudança observada na base de dados, alteração metodológica e apresentação de
+argumentos socioeconômicos que estão fora do escopo dos critérios técnico-científicos, em especial dos
+climatológicos determinados para a delimitação do Semiárido, relativamente aos municípios dos estados em
+apreço, o que configura inobservância dos pressupostos técnicos e científicos constantes da Resolução Condel
+nº 150/2021, reproduzidos também na Resolução Condel nº 155/2022.
+
+       Em relação às irressignações encaminhadas após a Resolução nº 163, de 15 de Dezembro de 2022, em
+que pese os também valiosos trabalhos realizados pelos órgãos de Clima e Tempo oficiais dos Estados de Bahia,
+Minas Gerais, Pernambuco e Sergipe, a equipe de análise deste Comitê Técnico Provisório mostra-se
+contrário à aceitação dos argumentos apresentados pelos Governos pleiteantes à permanência dos respectivos
+municípios no Semiárido, notadamente pela mudança observada na base de dados, alteração metodológica e
+apresentação de argumentos socioeconômicos que estão fora do escopo dos critérios técnico-científicos, em
+especial dos climatológicos determinados para a delimitação do Semiárido, relativamente aos municípios dos
+estados em apreço, o que configura inobservância dos pressupostos técnicos e científicos constantes da
+Resolução Condel nº 150/2021, reproduzidos também na Resolução Condel nº 155/2022.
+       Por fim, em cumprimento à determinação do Condel e orientado pelas suas competências e obrigações
+regimentais, a equipe de análise do Comitê Técnico Provisório apresenta este Relatório Conclusivo para ser
+submetido à apreciação e à deliberação do Conselho Deliberativo da Sudene, incluindo as minutas de
+proposição e de resolução a esse colegiado, e recomendando a ratificação do relatório final da delimitação de
+2021, o presente relatório e a extinção do provisório colegiado, naturalmente reconhecendo que os resultados
+ora apresentados estão adstritos aos aspectos técnicos, ficando reservado ao Conselho Deliberativo as
+questões políticas.
+                                                                                                               37
+
+
+
+
+        7. ANEXOS
+
+   UF/DOCUMENTO                                                     EMENTA
+          Ofício nº             Acusamos o recebimento do documento enviado ao Excelentíssimo Senhor
+     00062381966/2023 -         Governador Jerônimo Rodrigues e informamos que o encaminhamos às
+BA
+     GABGOV/CHEGAB/SE           Secretarias do Meio Ambiente, de Planejamento, de Relações Institucionais e
+      DOC. (SEI 0460426)        à Casa Civil, através do Processo SEI nº 001.7313.2022.0002416-18.
+                                Em resposta ao Resposta ao OFICIO N° 263/2023/GAB/SUDENE, a Bahia
+                                apresenta manifestação pela defesa da permanência dos municípios
+                                baianos de Iguaí, Itarantim e Itororó na sub-regiao semiárida brasileira.
+                                Com efeito, a vista da análise técnica realizada pelo Instituto do Meio
+                                Ambiente e Recursos Hídricos - INEMA, por meio de sua Coordenação de
+                                Estudo de Clima e Projetos Especiais, baseada em série histórica de
+         Ofício GE nº 54/2023
+                                balanços hídricos do período compreendido entre os anos de 1999 e 2020,
+BA        de 30 de março de
+                                dos quatro municípios baianos excluídos, somente o município de
+         2023. (SEI 0474890)
+                                Potiragua nao apresentou o percentual diário de déficit hídrico de 60%,
+                                nos termos do art. 1°, I, c da Resolução CONDEL n° 150/21. Assim sendo,
+                                diante do exposto, o Estado da Bahia defende a revisão da decisão adotada
+                                pela Resolução CONDEL/SUDENE n° 150, de 13 de dezembro de 2021, a fim
+                                de que sejam reinseridos os municípios de Iguai, Itarantim e Itororó na
+                                sub-região semiárida brasileira.
+
+          Parecer Técnico 237   Parecer Técnico de resposta da Sudene ao Ofício GE nº 54/2023 de 30 de
+-
+              (0502949)         março de 2023.
+
+                                Encaminhamento de Recurso IDENE/DG (42844358), de lavra do Diretor-
+         Ofício SECGERAL/GAB
+                                Geral do Instituto de Desenvolvimento do Norte e Nordeste de Minas
+         Gov. MG nº. 50/2022,
+MG                              Gerais - IDENE, bem como seu respectivo anexo, Nota Técnica nº
+            de 25/02/2022.
+                                3/IGAM/GMHEC/22 (42552373), em face da Resolução Condel/Sudene nº
+           (SEI nº 0419965)
+                                150/2021
+                                Essa Nota Técnica tem como objetivo de apresentar informações sobre o
+              Nota Técnica      cenário hídrico do estado de Minas Gerais, através de análises referentes
+          42552373_SEI_GOV.     às precipitações, para subsidiar o Instituto de Desenvolvimento do Norte e
+MG         MG 42481815, de      Nordeste de Minas Gerais – IDENE, conforme solicitação recebida por e-
+              18/02/2022.       mail pela Sudene, em 10/02/2022, para reinclusão de municípios mineiros
+            (SEI nº 0419966)    no mapa nacional do semiárido, em razão de exclusão procedida pela
+                                Resolução Condel/Sudene nº 150/2021.
+                                O Governo de Minas Gerais solicita o deferimento deste recurso,
+            Anexo Recurso
+                                mantendo-se os municípios de Bandeira, Felisburgo, Jacinto, Jordânia,
+            IDENE_DG, de
+MG                              Mata Verde, Rubim, Salto da Divisa e Santa Maria do Salto na área de
+             25/02/2022.
+                                demarcação da Sudene do
+           (SEI nº 0419967)
+                                Semiárido brasileiro
+           Parecer Técnico nº   Parecer referente à análise apresentada como recurso pelo Governo de
+               112/2022-        Minas Gerais - Ofício SEC GERAL /GAB Governador nº 50/2022, de
+    -
+              SEI/SUDENE.       25/02/2022.
+            (SEI nº 0419968)
+                Ofício nº       Resposta ao recurso apresentado pelo Governo do Estado de Minas Gerais
+         1262/2022/GAB/SUDE     em defesa da não exclusão de 8 (oito) municípios do Semiárido brasileiro:
+    -
+           NE de 11/05/2022     Bandeira, Felisburgo, Jacinto, Jordânia, Mata Verde, Rubim, Salto da Divisa
+            (SEI nº 0419969)    e Santa Maria do Salto (Ofício SEC GERAL/GAB/Governador nº. 50/2022).
+                                                                                                    Continua
+                                                                                                          38
+
+
+
+
+                                          ANEXOS (Cont.)
+
+     UF/DOCUMENTO                                             EMENTA
+                            Encaminha Informação Complementar ao Recurso IDENE/DG (42844358),
+      E-mail ENC. Ofício
+                            apresentado em 25.02.2022, em face da Resolução Condel/Sudene nº
+        SECGERAL/GAB
+                            150/2021.     Encaminha,       outrossim,   o    Relatório    Técnico  nº
+MG   Gov.MG nº 184/2022,
+                            1/IGAM/GMHEC/2022, de lavra da Gerência de Monitoramento
+        de 29/07/2022.
+                            Hidrometeorológico e Eventos Críticos, do Instituto Mineiro de Gestão das
+       (SEI nº 0419971)
+                            Águas – IGAM, o qual apresenta elementos técnicos acerca do caso.
+     Ofício SECGERAL/GAB    Solicita a não exclusão de 8 (oito) municípios mineiros da delimitação
+     Gov.MG nº 184/2022,    proposta. Encaminha o Relatório Técnico nº 1/IGAM/GMHEC/2022
+MG
+        de 27/07/2022.      (50083027), de lavra da Gerência de Monitoramento Hidrometeorológico e
+       (SEI nº 0419973)     Eventos Críticos, do Instituto Mineiro de Gestão das Águas – IGAM.
+         Anexo Recurso      O presente documento tem o objetivo de somar às informações já
+          IDENE/DG nº       enviadas para a não exclusão dos municípios em questão, justificativas
+MG    50248532/2022, de     técnicas complementares.
+          25/07/2022.
+       (SEI nº 0419974)
+        Anexo Relatório
+           Técnico nº
+MG     1/IGAM/GMHEC/        Relatório Técnico nº 1/IGAM/GMHEC/2022
+     2022, de 15/07/2022.
+       (SEI nº 0419975)
+      Parecer Técnico de
+-     análise da Sudene.    Parecer Técnico nº 424/2022 – Sudene, de 10/11/2022.
+       (SEI nº 0419976)
+                            Encaminha Relatório elaborado pela Embrapa Milho e Sorgo em parceria
+                            com o Instituto de Desenvolvimento do Norte e Nordeste de Minas Gerais
+        Ofício SECGERAL
+                            e a Federação da Agricultura e Pecuária do Estado de Minas Gerais, com o
+MG          63/2023
+                            objetivo de complementar as informações já apresentadas no Recurso
+         (SEI 0474895)
+                            IDENE/DG em 25/02/2022, em face da Resolução Condel/Sudene nº
+                            150/2021.
+      Parecer Técnico 235   Parecer Técnico de resposta da Sudene ao Ofício SECGERAL 63/2023 (SEI
+-
+          (0502942)         0474895).
+                            Encaminhar para análise do Comitê e posterior apreciação e deliberação
+            Ofício nº
+                            do Conselho, Relatório Técnico e Nota Técnica, elaborados pelo Grupo de
+      100/2022/GS-SEDAP,
+                            Trabalho da Paraíba, com chancela do órgão de monitoramento de tempo
+PB         Gov.PB, de
+                            e clima oficial do Estado, os quais apresentamos como recurso à
+          21/07/2022.
+                            delimitação do Semiárido 2021 para a manutenção dos municípios
+        (SEI nº 0419977)
+                            paraibanos objeto deste trabalho.
+       Anexo 01 Ofício nº
+      100/2022/GS-SEDAP,
+                            Recurso do Estado da Paraíba para manutenção de municípios na
+PB         Gov.PB, de
+                            delimitação do semiárido 2021.
+          21/07/2022.
+        (SEI nº 0419979)
+       Anexo 02 Ofício nº
+      100/2022/GS-SEDAP,
+                            Relatório Grupo de Trabalho (GT) do Estado da Paraíba (Recurso à
+PB         Gov.PB, de
+                            Delimitação do Semiárido 2021
+          21/07/2022.
+        (SEI nº 0419980)
+       Parecer Técnico de
+-      análise da Sudene    Parecer Técnico nº 426/2022 – Sudene, de 10/11/2022.
+        (SEI nº 0419981)
+                                                                                               Continua
+                                                                                                      39
+
+
+                                      ANEXOS (Cont.)
+
+     UF/DOCUMENTO                                            EMENTA
+       Ofício 411/2022-GS, Gov.   Reinserção dos municípios pernambucanos de Lagoa do
+PE        PE, de 04/08/2022.      Ouro, Brejão, Correntes e Palmeirina na relação de
+            (SEI nº 0419982)      municípios habilitados na delimitação do Semiárido.
+      Anexo do Ofício 411/2022,   Nota Técnica nº 004/22/ GMMC-APAC. Este documento foi
+      Gov. PE, Nota Técnica, de   datado de 17/03/2022 e apresentado com o Ofício
+PE
+              17/03/2022.         411/2022-GS, de 04/08/2022.
+            (SEI nº 0419984)
+                                  Encaminhamos em anexo, Ofício Seplag nº 411/2022 e Nota
+        E-mail encaminhando
+                                  Técnica, referente à reinserção dos municípios
+         Ofício 411/2022-GS,
+PE                                pernambucanos de Lagoa do Ouro, Brejão, Correntes,
+       Gov.PE, de 04/08/2022.
+                                  Palmeirina e Lagoa do Ouro, na relação de municípios
+          (SEI nº 0419985)
+                                  habilitados na delimitação do Semiárido
+      Ofício nº 2523/2022/GAB/
+-     SUDENE, de 09/09/2022.      Resposta ao Ofício Nº 411/2022 – GS
+           (SEI nº 0419986)
+       Ofício Nº 476/2022-GS,
+                                  Recurso de solicitação da avaliação da Nota Técnica de
+PE     Gov. PE, de 09/09/2022.
+                                  Pernambuco
+           (SEI nº 0419987)
+          E-mail GOV.PE, de       Encaminhamos em anexo, Ofício Seplag nº 476/2022 e Nota
+PE           15/09/2022.          Técnica, referente ao Recurso de solicitação da avaliação da
+           (SEI nº 0419989)       Nota Técnica de Pernambuco
+            Nota Técnica nº       Nota Técnica Nº 004/22/ GMMC-APAC
+      004/22/GMMC-APAC, de        Documento reapresentado com o Ofício nº 476/2022-GS,
+PE
+             17/03/2022.          Gov.PE.
+           (SEI nº 0419990)
+         Ofício nº 3322/GAB/      Resposta ao Ofício Nº 476/2022 – GS, do Governo do Estado
+-     SUDENE, de 03/10/2022.      de Pernambuco.
+           (SEI nº 0419991)
+                                  Ementa Encaminha Nota Técnica para análise de novas e/ou
+         Ofício Nº 001/2023       complementares argumentações técnicas para permanência
+PE
+            (SEI 0472979)         dos municípios de Pernambuco no semiárido: Brejão,
+                                  Correntes, Lagoa do Ouro, Lagos dos Gatos e Palmerina.
+       Parecer Técnico 236        Parecer Técnico de resposta da Sudene ao Ofício Nº
+-          (0502946)              001/2023 (SEI 0472979).
+
+                                  Encaminha Parecer Técnico nº 01/2023, da Coordenação de
+                                  Estudos Cartográficos/Diretoria de Estudos Ambientais da
+             Ofício Nº            Superintendência de Estudos Econômicos e Sociais e
+      378/2023/SEPLAN-PI/GAB      Planejamento Participativo - CEPRO/SEPLAN-PI, com as
+PI         (SEI 0474575)          observações técnicas de delimitação do Semiárido realizado
+                                  pela SUDENE. E que em suma, a Superintendência
+                                  supramencionada se manifesta favorável à metodologia
+                                  utilizada e não tem ressalvas quanto aos dados e análises
+                                  apresentados.
+                                                                                           Continua
+                                                                                                      40
+
+
+                                        ANEXOS (Cont.)
+
+   UF/DOCUMENTO                                               EMENTA
+     Ofício nº 125/2022-GE,      Apresenta argumentação técnica em defesa da permanência
+           Gov. RN, de           dos municípios do estado do Rio Grande do Norte excluídos da
+RN
+           01/08/2022.           subregião semiárida brasileira pela Resolução Condel nº
+        (SEI nº 0419992)         150/2021.
+       Anexo do Ofício nº        Apresenta argumentação técnica elaborada pela EMPARN e
+     125/2022-GE, Gov. RN,       CAERN sobre aspectos climatológicos e hidrológicos dos
+RN
+         de 01/08/2022.          municípios citados como excluídos da seubregião semiárida
+        (SEI nº 0419993)         braseleira pela Resolução Condel nº 150/2021.
+       Parecer Técnico de        Parecer Técnico nº 425/2022 – Sudene, de 10/11/2022.
+ -     análise da Sudene.
+        (SEI nº 0419994)
+                                 Envio de Nota Técnica recorrendo da exclusão de sete
+        Ofício Externo Nº 210-
+                                 municípios sergipanos na nova delimitação do Semiárido
+        2022-GG, Gov. SE, de
+ SE                              Nordestino e solicitação de ampliação de prazo para a sua
+             16/08/2022.
+                                 entrega nos termos do art. 2º da
+           (SEI nº 0419996)
+                                 Resolução Condel nº 150/2021
+             Nota TÉCNICA        Análise climatológica dos sete muicípios sergipanos, em relação
+         SEDURBS- SERHMA,        aos critérios adotados pela Sudene para nova Delimitação do
+ SE
+       Gov. SE, de 01/08/2022.   Semiárido
+            SEI nº 0419997)
+                Ofício nº        Resposta ao Ofício Externo Nº 210/2022-GG, do Governo do
+       2862/2022/GAB/SUDEN       Estado de Sergipe.
+ -
+          E, de 01/09/2022.
+           (SEI nº 0419998)
+                                 Encaminhou os anexos
+                                 I - Nota Técnica SEDURBS/SERHMA recorrendo da exclusão de
+                                 sete municípios sergipanos na nova delimitação do Semiárido
+           Ofício Circular Nº    Nordestino.
+ SE         245/2023-SECC        II - Nota Técnica assinada SEDURBS/SERHMA recorrendo da
+               (0478143)         exclusão de sete municípios sergipanos na nova delimitação do
+                                 Semiárido Nordestino.
+                                 III - Oficio N° 273/2023/GAB/SUDENE.
+                                 IV - Oficio Externo n° i 6/2023-SEMAC
+         Parecer Técnico 238         Parecer Técnico de resposta da Sudene ao Ofício Circular Nº
+ -                                                          245/2023-SECC
+             (0502950)
+                                 Institui, na forma do art. 43 da Constituição Federal, a
+                                 Superintendência do Desenvolvimento do Nordeste - SUDENE;
+Lei Complementar nº 125, de      estabelece sua composição, natureza jurídica, objetivos, áreas
+        03/01/2007               de atuação, instrumentos de ação; altera a Lei no 7.827, de 27
+      (SEI nº 0419999)           de setembro de 1989, e a Medida Provisória no 2.156, de 24 de
+                                 agosto de 2001; revoga a Lei Complementar no 66, de 12 de
+                                 junho de 1991; e dá outras providências.
+ Proposição nº 105/2017 de       Proposta de critérios técnicos e científicos para delimitação do
+        20/06/2017.              Semiárido Brasileiro e procedimentos para revisão de sua
+      (SEI nº 0420000)           abrangência
+Resolução Condel/Sudene nº       Estabelece critérios técnicos e científicos para delimitação do
+    107, de 27/07/2017           Semiárido Brasileiro e procedimentos para revisão de sua
+      (SEI nº 0420001)           abrangência
+                                                                                           Continua
+                                                                                                        41
+
+
+
+
+                                         ANEXOS (Cont.)
+
+       UF/DOCUMENTO                                        EMENTA
+  Documento Relatório do GT       Relatório final do grupo de trabalho para delimitação do
+  Delimitação Semiárido 2017      semiárido constituído pelo então Ministério da Integração
+         (Junho/2017)             Nacional.
+       (SEI nº 0420002)
+                                  Altera o art. 2º da Lei Complementar nº 125, de 3 de janeiro de
+ Lei Complementar nº 185, de
+                                  2007, para incluir Municípios dos Estados de Minas Gerais e do
+         06/10/2021.
+                                  Espírito Santo na área de atuação da Superintendência do
+       (SEI nº 0420004)
+                                  Desenvolvimento do Nordeste (Sudene).
+                                  Revisão da delimitação do Semiárido Brasileiro, segundo
+  Proposição nº 151/2021 de
+                                  critérios técnicos e cientificos definidos em relatório pela
+         06/12/2021.
+                                  Sudene, relação de municípios habilitados na revisão de 2021 e
+      (SEI nº 0420005)
+                                  regra de transição para municípios excluídos.
+                                  Aprova a Proposição n. 151/2021, que trata do Relatório
+ Resolução Condel/Sudene nº       Técnico que apresenta os resultados da revisão da delimitação
+     150, de 13/12/2021.          do Semiárido 2021, inclusive os critérios técnicos e cientificos, a
+       (SEI nº 0420006)           relação de municípios habilitados, e da regra de transição para
+                                  municípios excluídos.
+  Relatório da Delimitação do     Delimitação do semiárido - 2021 relatório final
+        Semiárido 2021
+       (SEI nº 0420007)
+                                  Criação de Comitê Técnico Provisório para análise de
+  Proposição nº 157/2022 de       argumentos técnicos apresentados com vistas a eventual
+         28/03/2022.              revisão de decisão adotada pela Resolução Condel nº 150, de
+      (SEI nº 0420008)            13/12/2021, que delimitou o Semiárido na área de atuação da
+                                  SUDENE, e dá outras providências.
+                                  Aprova, ad referendum do Conselho Deliberativo, a Proposição
+                                  n. 157/2022, que trata da criação de Comitê Técnico Provisório
+Resolução Condel/Sudene nº 155,   responsável pela análise de argumentos técnicos apresentados
+         de 29/04/2022.           pelos interessados, com vistas à eventual revisão da decisão
+        (SEI nº 0420009)          adotada pela Resolução CONDEL/SUDENE n. 150, de 13 de
+                                  dezembro de 2021, que delimitou o Semiárido na Área de
+                                  Atuação da Sudene, e dá outras providências
+                                  Aprova o Regimento Interno do Comitê Técnico Provisório
+                                  responsável pela análise de argumentos técnicos apresentados
+  Resolução Diretoria Colegiada
+                                  pelos interessados, com vistas à eventual revisão da decisão
+ /Sudene nº 720, DE 28/06/2022.
+                                  adotada pela Resolução CONDEL/SUDENE nº 150, de 13 de
+        (SEI nº 0420010)
+                                  dezembro de 2021, que delimitou o Semiárido na Área de
+                                  Atuação da Sudene
+                                  Prorroga o prazo para apresentação de argumentações técnicas
+                                  sobre o resultado da delimitação do semiárido, de acordo com
+Resolução Condel/Sudene nº 163,
+                                  os critérios elencados no inciso I do art. 1º da Resolução
+         de 15/12/2022.
+                                  CONDEL/SUDENE n. 150, de 13 de dezembro de 2021, e o prazo
+        (SEI nº 0449672)
+                                  de vigência do Comitê Técnico Provisório deque trata o art. 2º
+                                  da Resolução CONDEL/SUDENE n. 155, de 29 de abril de 2022.
+Fonte: SUDENE(SEI)/CGEP/COTI
+                                                                                                                            42
+
+
+
+
+7.1 – Minuta de Proposição
+
+
+
+
+                MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL
+                  SUPERINTENDÊNCIA DO DESENVOLVIMENTO DO NORDESTE
+
+                                          Proposição nº ....../2023
+
+
+                                                                Proposta de Relatório Conclusivo elaborado pela
+                                                                equipe técnica do Comitê Provisório do Condel,
+                                                                instituído pela Resolução Condel nº 155/2022, com o
+                                                                apoio da Agência Nacional de Águas e Saneamento
+                                                                Básico (ANA) e do Insituto Nacional de Pesquisas
+                                                                Espaciais (INPE), sobre as irresignações apresentadas
+                                                                por órgãos de clima e tempo oficiais dos Estados,
+                                                                contra a exclusão de municípios do Semiárido
+                                                                brasileiro e outras providências.
+        Senhores Conselheiros
+
+1.      Prevê o inciso VII, art. 4º do anexo I ao Decreto nº 8.276, de 27 de junho de 2014, que compete ao
+Conselho Deliberativo da SUDENE, estabelecer os critérios técnicos e científicos para delimitação do Semiárido na
+área de atuação da Autarquia.
+
+2.      Por meio da Resolução nº 150, de 13 de dezembro de 2021, o Conselho Deliberativo da SUDENE
+aprovou, entre outros, o Relatório Final da delimitação do Semiárido 2021, que estabeleceu os critérios técnicos e
+a nova composição de municípios do Semiárido brasileiro com base no trabalho realizado pela Sudene em
+parceria com a Agência Nacional de Águas e Saneamento Básico (ANA), o Instituto Nacional de Pesquisas
+Espaciais (INPE) e o Instituto Nacional de Meteorologia (INMET), entre outros, tendo como referência o fixado
+pela Portaria Sudene nº 80, de 27 de julho de 2021.
+
+3.     A mesma Resolução também previu dispositivo revisor com o fito de oportunizar a algum estado da área
+de atuação da Autarquia, a apresentação de recurso em decorrência de discordância dos resultados então
+apontados pelo mencionado relatório, da qual extraiu-se os seguintes trechos:
+
+        “Art. 2º Possibilitar aos Estados integrantes da área de atuação da Sudene apresentar recursos à delimitação
+        proposta no Relatório Técnico a que se refere o art. 1º, no prazo de 60 (sessenta) dias, a partir da data de publicação
+        desta Resolução.
+
+        § 1º Os recursos de que trata o caput deverão ser embasados por Relatório Técnico dos órgãos de Clima e Tempo
+        oficiais dos Estados.
+
+        § 2º A Sudene terá 120 (cento e vinte) dias, a partir da publicação desta Resolução, para responder às solicitações,
+        podendo recorrer a especialistas para composição da sua manifestação.
+
+        [...]
+
+        § 4º Concluídos os trabalhos de que trata o § 2º, o Relatório Técnico consolidando as contribuições recebidas deverá
+        ser submetido ao Condel/Sudene para apreciação.
+                                                                                                                          43
+
+        § 5º Até a deliberação pelo Condel/Sudene de que trata o § 4º, permanecem como integrantes da delimitação da
+        região semiárida brasileira os 50 (cinquenta) municípios excluídos na nova delimitação proposta pelo Relatório
+        Técnico que apresenta os resultados da revisão da delimitação do Semiárido 2021.
+
+        Art. 3º Os critérios técnicos e científicos utilizados para delimitação do Semiárido, bem como esta Resolução,
+        poderão ser revistos em 2031 e a cada década a partir de então.”
+
+4.      Em 2022, considerando os diversos pedidos encaminhados à Secretaria Executiva do Conselho
+Deliberativo, solicitando a concessão de novo prazo face ao estabelecido pelo art. 2º da Resolução
+CONDEL/SUDENE n. 150, de 13 de dezembro de 2021, ademais de pareceres técnicos e jurídicos que ampararam
+a referida solicitação, o Conselho Deliberativo sancionou a Resolução Condel nº 155, de 29 de abril de 2022,
+publicada no DOU de 02 de maio de 2022, que trouxe como determinações:
+
+        “Art. 1º Aprovar, ad referendum do Conselho Deliberativo, a possibilidade de apresentação, até o dia 1º de agosto
+        de 2022, de argumentos técnicos acerca da redelimitação do Semiárido 2021, com o objetivo de subsidiar este
+        Órgão, assessorado pelo Comitê Técnico Provisório citado no art. 2º desta Resolução, na eventual revisão do que
+        consta da Resolução CONDEL/SUDENE n. 150, de 13 de dezembro de 2021.
+
+        § 1º Os argumentos de que tratam o caput deverão ser embasados por Relatório Técnico de órgãos de Clima e
+        Tempo oficiais, devendo conter dados sobre o índice de aridez de Thornthwaite, a precipitação pluviométrica
+        média anual e o Percentual Diário de Déficit Hídrico, considerando todos os dias do ano nos últimos 30 anos (1991
+        a 2020).
+
+        § 2º A Sudene, através do Comitê Técnico Provisório a que se refere o art. 2º desta Resolução, apresentará, até o dia
+        30 de novembro de 2022, Relatório Conclusivo sobre o resultado da análise dos argumentos técnicos eventualmente
+        apresentados pelos interessados.
+
+        Art. 2º Aprovar a criação de Comitê Técnico Provisório, composto por representantes indicados pelos conselheiros
+        deste Conselho Deliberativo e coordenado pela Sudene, o qual terá como objetivo analisar e debater, juntamente
+        com o corpo técnico da Autarquia designado para a referida análise, os argumentos técnicos eventualmente
+        apresentados, bem como apresentar Relatório Conclusivo a ser submetido à deliberação final do Conselho
+        Deliberativo na reunião de dezembro de 2022.
+
+        § 1º O Superintendente da Sudene, ou Diretor da Autarquia por ele indicado, presidirá o Comitê Técnico Provisório.
+
+        § 2º Os integrantes deste Conselho Deliberativo terão até 30 (trinta) dias corridos, contados da data de publicação
+        desta Resolução, para apresentar suas indicações para a composição do Comitê Técnico Provisório.
+
+        § 3º As reuniões ordinárias do Comitê Técnico Provisório deverão ocorrer mensalmente, em datas a serem
+        estabelecidas pela Sudene.
+
+        § 4º O Comitê Técnico Provisório será extinto na data da reunião do Conselho Deliberativo que apreciará e
+        deliberará sobre o Relatório Conclusivo a que alude o caput deste artigo.
+
+        Art. 3º Até a deliberação do Conselho Deliberativo da Sudene sobre o Relatório Conclusivo de que trata o artigo
+        anterior, permanecem como integrantes do Semiárido da área de atuação da Sudene os 50 (cinquenta) municípios
+        apontados como passíveis de exclusão no Relatório Técnico que apresentou os resultados da revisão da delimitação
+        do Semiárido 2021.”
+
+5.       Ainda em 2022, acatando pedido dos estados participantes nas reuniões do Comitê Provisório do Condel, decidiu o
+Conselho Deliberativo da Sudene aprovar a Resolução Condel nº 163, de 15 de dezembro de 2022, publicada no DOU de 12
+de janeiro de 2023, que em sua essência, resolveu:
+
+        Art. 1º Prorrogar, até o dia 31 de março de 2023, o prazo previsto no art. 1º da Resolução
+        CONDEL/SUDENE n. 155, de 29 de abril de 2022, referente à possibilidade de apresentação de
+        argumentos técnicos acerca do resultado de redelimitação do Semiárido 2021 de que trata a Resolução
+        CONDEL/SUDENE n. 150, de 13 de dezembro de 2021.
+
+        Art. 2º Prorrogar, até o dia 30 de junho de 2023, a vigência do Comitê Técnico Provisório criado pelo art.
+        2º da Resolução CONDEL/SUDENE n. 155, de 2022, com o objetivo de analisar as novas ou
+        complementares argumentações técnicas apresentadas à Sudene e submeter Proposta de Relatório
+        Conclusivo à apreciação deste Conselho Deliberativo.
+                                                                                                           44
+
+
+       Art. 3º Autorizar que, até a deliberação do Conselho Deliberativo da Sudene sobre o RelatórioConclusivo
+       de que trata o art. 2º desta Resolução, permanecem como integrantes do Semiárido os 50(cinquenta)
+       municípios apontados como passíveis de exclusão no Relatório Técnico que apresentou osresultados da
+       revisão da delimitação do Semiárido 2021 no âmbito da Resolução CONDEL/SUDENE n. 150,de 2021.
+
+6.     Com base nessas três Resoluções alguns estados apresentaram à SUDENE, recurso, e outros, as chamadas
+argumentações técnicas, instrumentalizadas por dados atualizados de seus órgãos oficiais de clima e tempo que,
+após submetidos aos critérios técnicos e consulta aos órgãos federais de clima e tempo (Agência Nacional de
+Águas e Saneamento Básico (ANA) e Instituto Nacional de Pesquisas Espaciais (INPE)), resultaram em
+manifestações técnicas que integram o Relatório Conclusivo.
+
+7.       Assim, com o fito de amparar a presente decisão colegiada, a equipe de análise da Sudene no Comitê
+Provisório do Condel instituído pela Resolução CONDEL nº 155/2022, emitiu Relatório Conclusivo onde apresenta
+o resultado da análise do recurso apresentado pelo Estado de Minas Gerais e pelo município de Arapiraca/AL,
+bem como, o resultado da análise de argumentações técnicas interpostas pelos Estados do Rio Grande do Norte,
+Paraíba e Minas Gerais (reapresentação com complementações), e com base na Resolução CONDEL nº 163/2022,
+o resultado da análise das argumentações técnicas apresentadas pelos Estados de Pernambuco, Sergipe, Bahia e
+Minas Gerais, concluindo pela impossibilidade de aceitação dos argumentos técnicos, cujos documentos integram
+o referido relatório.
+
+7.     Foram apresentadas intempestivamente, argumentações técnicas dos Estados de Pernambuco e Sergipe,
+que, por estarem em desacordo com o prazo estabelecido pelo art. 1º da Resolução Condel nº 155/2022, não
+puderam ser consideradas à época.
+
+PROPOSIÇÃO
+
+8.      Diante do exposto a Secretaria Executiva submete a esse Colegiado, para apreciação e deliberação, a
+presente proposição, acompanhada do Relatório Conclusivo sobre o resultado da análise das irresignações
+apresentadas à SUDENE contra a exclusão de muncípios do Semiárido relacionados no Relatório Final da
+Delimitação do Semiárido 2021 (aprovado pela Resolução Condel nº 150/2021), onde pede a ratificação do
+seu inteiro teor, ao mesmo tempo que ressalta o cumprimento do estabelecido pelas Resoluções
+Condel nº 155/2022 e nº 163/2022.
+
+9.    Recomenda também, a extinção do Comitê Provisório criado pela Resolução Condel nº 155/2022
+conforme estabelece o § 4º, art. 2º do mencionado diploma legal.
+
+
+                                 Recife, ...... de .................... de 2023
+
+                                    Danilo Jorge de Barros Cabral
+                                          Superintendente
+                                                                                                                  45
+
+
+
+
+ 7.2 – Minuta de Resolução
+
+
+
+
+                MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL
+                  SUPERINTENDÊNCIA DO DESENVOLVIMENTO DO NORDESTE
+                                  CONSELHO DELIBERATIVO
+
+                                        RESOLUÇÃO Nº ..../2023
+                                                                  Aprova Relatório Conclusivo elaborado pela equipe
+                                                                  técnica do Comitê Provisório do Condel instituído
+                                                                  pela Resolução Condel nº 155/2022, sobre as
+                                                                  irresignações apresentadas por órgãos de clima e
+                                                                  tempo oficiais dos Estados, contra a exclusão de
+                                                                  municípios do Semiárido brasileiro e dá outras
+                                                                  providências.
+
+
+                O PRESIDENTE DO CONSELHO DELIBERATIVO DA SUPERINTENDÊNCIA DO DESENVOLVIMENTO
+ DO NORDESTE - SUDENE usando da atribuição que lhe confere o § 1º do art. 8º da Lei Complementar nº 125, de
+ 03 de janeiro de 2007, o inciso XVI do art. 11 e art. 60 do Regimento Interno do Conselho Deliberativo da
+ SUDENE, e ainda, o estabelecido pelo art. 2º da resolução Condel nº 155/2022 e Resolução Condel nº 163/2022.
+
+                CONSIDERANDO ademais, relatório conclusivo elaborado pela equipe técnica da Sudene com o
+ apoio da Agência Nacional de Águas e Saneamento Básico (ANA) e Instituto Nacional de Pesquisas Espaciais
+ (INPE) nos termos do mesmo art. 2º, sobre o resultado das análises aos argumentos técnicos apresentados pelos
+ Estados que se habilitaram para interposição junto à Sudene, de suas irresignações.
+
+                CONSIDERANDO ainda, dezembro como prazo para apreciação e deliberação dos resultados do
+ referido Comitê,
+
+
+       R E S O L V E:
+
+       Art. 1º. Ratificar o Relatório Final da delimitação do Semiárido 2021.
+
+        Art. 2º. Aprovar o Relatório Conclusivo que resultou da análise dos recursos administrativos interpostos
+ junto à Sudene em consequência do estabelecido pela Resolução Condel nº 150, de 13 de dezembro de 2021,
+ publicado no DOU de 30/12/202, e das argumentações técnicas apresentadas com base nas Resoluções Condel
+ nº 155, de 29 de abril de 2022, publicada no DOU de 02 de maio de 2022, e nº 163, de 15 de dezembro de 2022,
+ publicada no DOU de 12 de janeiro de 2023.
+
+       Art. 3º. Tornar extinto o Comitê Provisório criado nos termos do art. 2º da Resolução Condel nº
+155/2022.
+
+       Art. 4º. Determinar a publicação no site da Sudene, do relatório Conclusivo de que trata esta Resolução.
+
+       Art. 5º. Esta Resolução entra em vigor na data de sua publicação no Diário Oficial da União.
+
+                                 Brasília, ...... de ........................ de 2023
+
+                                     Antônio Waldez Góes da Silva
+                                   Presidente do Conselho Deliberativo
+

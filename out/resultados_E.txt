@@ -1,0 +1,102 @@
+Municipios: 5561
+Regioes geograficas imediatas: 510
+
+===== renda propria original (renda - T) =====
+
+Municipios, ponderado pela populacao:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.293    0.073   0.152   0.322   0.139
+com transf.   0.242    0.046   0.094   0.187   0.091
+reducao %    17.441   36.338  38.488  41.859  34.187
+
+Municipios, nao ponderado:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.312    0.080   0.161   0.320   0.156
+com transf.   0.225    0.039   0.078   0.150   0.079
+reducao %    27.834   50.439  51.636  53.145  48.958
+
+Regioes imediatas, ponderado:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.235    0.050   0.107   0.236   0.094
+com transf.   0.193    0.032   0.066   0.139   0.061
+reducao %    17.823   37.134  38.786  40.996  35.433
+
+===== renda propria hibrida (trabalho Censo) =====
+
+Municipios, ponderado pela populacao:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.275    0.064   0.132   0.278   0.121
+com transf.   0.227    0.041   0.083   0.167   0.080
+reducao %    17.393   35.700  37.480  39.990  33.849
+
+Municipios, nao ponderado:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.297    0.070   0.141   0.273   0.139
+com transf.   0.215    0.036   0.071   0.137   0.073
+reducao %    27.413   48.845  49.537  49.635  47.820
+
+Regioes imediatas, ponderado:
+                gini  atk_0.5   atk_1   atk_2   theil
+sem transf.   0.226    0.045   0.095   0.205   0.085
+com transf.   0.185    0.028   0.059   0.123   0.055
+reducao %    18.021   36.678  38.035  39.853  35.241
+
+===== Theil-T entre e dentro de UFs (ponderado) =====
+renda propria transferencias  total  entre UFs  dentro UFs  % entre
+     own_orig            sem  0.139      0.061       0.078   43.766
+     own_orig            com  0.091      0.042       0.049   46.102
+      own_hib            sem  0.121      0.056       0.066   45.904
+      own_hib            com  0.080      0.039       0.042   48.048
+own_orig: queda do Theil entre UFs 0.019, dentro 0.029 -> 60.7% da queda vem de dentro das UFs
+own_hib: queda do Theil entre UFs 0.017, dentro 0.024 -> 58.3% da queda vem de dentro das UFs
+
+===== Shapley: contribuicao de cada beneficio para a reducao do Gini (%) =====
+               own_orig pond  own_orig nao pond  own_orig RGI  own_hib pond  own_hib nao pond  own_hib RGI
+apos_Rural            50.200             54.700        54.100        54.100            56.900       56.300
+bolsa                 28.000             32.400        29.700        30.200            34.200       31.400
+bpc                   13.700              8.700        16.000        14.500             8.400       16.700
+apos_Urbano            8.000              4.800         0.200         1.600             1.400       -4.000
+seguro                 0.100             -0.600         0.000        -0.400            -1.000       -0.400
+reducao total          0.051              0.087         0.042         0.048             0.081        0.041
+
+===== Lerman-Yitzhaki (renda total = renda propria + 5 beneficios) =====
+
+own_orig, ponderado (Gini = 0.242; soma das contribuicoes = 100.0%):
+                S_k (parcela)    G_k    R_k  contrib. ao Gini %  efeito marginal (dG/G por 1% de aumento)
+fonte                                                                                                   
+renda propria          0.783  0.293  0.993              94.130                                     0.159
+apos_Rural             0.032  0.642 -0.690              -5.783                                    -0.089
+bolsa                  0.022  0.362 -0.850              -2.796                                    -0.050
+bpc                    0.018  0.258 -0.322              -0.604                                    -0.024
+apos_Urbano            0.137  0.309  0.803              14.044                                     0.004
+seguro                 0.009  0.331  0.799               1.010                                     0.001
+
+own_hib, ponderado (Gini = 0.227; soma das contribuicoes = 100.0%):
+                S_k (parcela)    G_k    R_k  contrib. ao Gini %  efeito marginal (dG/G por 1% de aumento)
+fonte                                                                                                   
+renda propria          0.776  0.275  0.992              93.115                                     0.156
+apos_Rural             0.033  0.642 -0.683              -6.291                                    -0.096
+bolsa                  0.023  0.362 -0.854              -3.091                                    -0.054
+bpc                    0.018  0.258 -0.324              -0.668                                    -0.025
+apos_Urbano            0.141  0.309  0.821              15.798                                     0.017
+seguro                 0.010  0.331  0.817               1.137                                     0.002
+
+===== Bootstrap (1000 reamostragens de municipios, ponderado) =====
+
+own_orig:
+               IC 2,5%  mediana  IC 97,5%
+gini sem        0.276    0.291     0.306
+gini com        0.226    0.241     0.252
+reducao gini    0.044    0.051     0.058
+atk2 sem        0.297    0.321     0.340
+atk2 com        0.164    0.187     0.203
+reducao atk2    0.126    0.135     0.143
+
+own_hib:
+               IC 2,5%  mediana  IC 97,5%
+gini sem        0.258    0.273     0.286
+gini com        0.211    0.225     0.236
+reducao gini    0.041    0.048     0.054
+atk2 sem        0.254    0.277     0.296
+atk2 com        0.146    0.165     0.183
+reducao atk2    0.105    0.111     0.118

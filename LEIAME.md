@@ -97,3 +97,50 @@ Ponderado × não ponderado; regiões geográficas imediatas; deflator espacial 
 - Escrever em português; resultados em tabelas com unidades.
 - Não sobrescrever arquivos originais; gravar saídas em `out/`.
 - Registrar no fim deste arquivo o que foi feito e as decisões tomadas.
+
+## 7. Registro de execução (Claude Code, 24/11/2026)
+
+### Ordem de execução
+```
+./baixar_dados.sh                      # dados brutos do IBGE (não versionados; ~250 MB)
+python3 analise_idade.py               # passo 1
+python3 analise_idade_2.py             # passo 2
+python3 analise_situacao_2022.py       # passo A  -> out/resultados_A.txt
+python3 analise_semiarido.py           # passo B  -> out/resultados_B.txt
+python3 analise_renda_censo.py         # passo C  -> out/resultados_C.txt
+python3 analise_equalizacao_robustez.py  # passo E -> out/resultados_E.txt
+```
+Dependências: pandas, numpy, scikit-learn, openpyxl.
+
+### Correções nos scripts originais
+- `analise_idade_2.py` não rodava: usava `tipo2`, que nenhum script criava. A regra foi reconstruída a partir da saída original: entre os envelhecidos, **atrito** = `mig_jovem < −0,10`; **atração** = `mig_idoso > 0,05` (sem atrito); o resto é **intermediário**.
+- O fator nacional da migração por sexo somava, em 2022, os 4 municípios criados após 2010. Agora usa só os presentes nos dois Censos. Com as duas correções, `resultados_2.txt` é reproduzido byte a byte.
+
+### Passo A — decisões
+- Fonte: **SIDRA 10089** (município × situação × sexo × idade quinquenal, inclusive 55–59), e não os agregados por setor. Motivos: os setores têm idade em faixas de 10 anos acima de 30 e células suprimidas ("X") em ~29% dos setores, concentradas nos pequenos (rurais).
+- Validação: a 10089 bate **célula a célula** com a SIDRA 9514 (116.970 células; o 55–59 recuperado por resíduo também confere). Os totais urbano/rural por município batem exatamente com `v0001` dos setores.
+- Mudança de delimitação: população rural de 15,6% (2010) para 12,6% (2022); 943 municípios perderam mais de 10 p.p. de ruralidade. A reclassificação atinge todas as coortes, por isso também se reporta `mig_jovem_rur_liq = mig_jovem_rur − mig_idoso_rur`.
+- Resultados: (i) a migração jovem rural é negativa em quase todo o país (mediana −0,17), e a urbana é positiva (+0,04). (ii) **Cobertura rural com residentes rurais elegíveis de 2022: 1,74 benefício por residente rural elegível no agregado (mediana municipal 1,71; antes 1,5)**. Isso reforça que muitos aposentados rurais moram em áreas urbanas. (iii) O atrito se divide em **atrito rural** (549; dependência mediana 47,7%) e **atrito urbano** (361; 31,8%), contra 27,8% na atração. Na regressão do resíduo demográfico, a saída de jovens **urbanos**, sobretudo mulheres, pesa mais que a rural.
+- A ruralidade de 2022 quase não melhora o R² do RF (0,619 → 0,621).
+
+### Passo B — semiárido
+- Lista: IBGE `lista_municipios_Semiarido_2022.xlsx` (geoftp) = 1.477 municípios. Conferido: = anexo da Res. Condel/Sudene 150/2021 (1.427) + os 50 da lista de 2017 excluídos em 2021 e mantidos por resoluções posteriores (155/2022, 163/2022, 176/2024). Na base: 1.474 (3 sem dados de aposentadoria).
+- Resultado: o coeficiente da migração jovem é robusto (−0,19 → −0,20 com semiárido). O semiárido explica **menos** que o Nordeste (R² 0,154 contra 0,175). O "Nordeste fora do semiárido" tem prêmio de resíduo **maior** (+0,07) que o semiárido (+0,045), e a interação migração × semiárido é nula. O efeito regional não é climático.
+
+### Passo C — microdados e renda por fonte
+- Microdados da amostra 2022: só **trabalho (P1080)** e **um bloco único "Aposentadoria/Pensão/Bolsa Família/BPC/Aluguel" (P1100)**. Não dá para separar os benefícios. O município (P0080) e a área de ponderação existem só no **acesso restrito** (sala de sigilo do IBGE).
+- Alternativa usada: **SIDRA 10297** (massa de rendimento domiciliar por município: todas as fontes / trabalhos / outras fontes).
+- `renda_pc` da planilha **é** o rendimento domiciliar per capita do Censo 2022 (razão `renda_total`/massa 10297: mediana 1,002).
+- Declarado × administrativo: outras fontes declaradas = 1,12 × benefícios administrativos no Brasil. Mas em **49% dos municípios** o Censo declara menos "outras fontes" (que incluem RPPS, previdência privada e aluguel) do que os 5 benefícios administrativos, chegando a **84% no quintil de maior dependência** (71,6% no Nordeste). Há sub-registro de benefícios no Censo onde eles mais pesam. Por isso `renda_total − T` fica subestimada e a dependência é inflada no topo (máximo de 95,9% → 78,5% com o denominador híbrido).
+- Dependência agregada: 21,7% (original), 22,4% (T/(trabalho Censo + T)), 24,5% (só Censo).
+
+### Passo E — robustez da equalização
+- A redução do Gini pelas transferências é **17,4%** tanto na medida original quanto na híbrida (trabalho do Censo + T). No não ponderado chega a 27–28%; nas 510 regiões imediatas, 17,8–18,0%. No Atkinson ε=2, a redução fica entre 40% e 53%.
+- Bootstrap (1.000): redução do Gini 0,051 [0,044; 0,058] (original); 0,048 [0,041; 0,054] (híbrida).
+- Theil: cerca de 60% da queda ocorre **dentro** das UFs.
+- Shapley reproduz o LEIAME (rural 50%, BF 28%, BPC 14%, urbana 8%, seguro 0%). Com a renda híbrida, a aposentadoria urbana cai para 1,6%. Nas RGIs, para ~0.
+- Lerman-Yitzhaki (efeito de +1% na fonte sobre o Gini): aposentadoria rural −0,09%, BF −0,05%, BPC −0,02%, aposentadoria urbana ≈ 0 (levemente desequalizadora), seguro ≈ 0.
+- **Pendente:** deflator espacial (o aluguel do Censo 2022 não está no SIDRA por município). Usar a tabela de aluguel quando for publicada, ou o acesso restrito.
+
+### Passo D — não executado
+Faltam dados que não estão no pacote: transferências por município de outros anos, RAIS (massa salarial anual), PNAD Contínua por estrato e a série do PIB municipal. Com esses arquivos em `data/`, o passo pode ser montado.
