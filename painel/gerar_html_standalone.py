@@ -9,7 +9,7 @@ pagina = open('painel/index.html', encoding='utf-8').read()
 pagina = re.sub(r'<meta name="dash-[^"]+"[^>]*>\n?', '', pagina)
 dados = {k: json.load(open(f'painel/dados/{k}.json', encoding='utf-8')) for k in ['municipios', 'piramides', 'regressoes', 'ajuste_idade', 'malha']}
 for v in dados.values(): v.pop('meta', None)
-PARAMS = {'nivel': 'uf', 'medida': 'orig', 'pond': '1', 'unidade': 'mun', 'mapvar': 'dep'}
+PARAMS = {'nivel': 'rgint', 'medida': 'orig', 'pond': '1', 'unidade': 'mun', 'mapvar': 'dep'}
 hoje = datetime.date.today().strftime('%d/%m/%Y')
 
 TOKENS = """
