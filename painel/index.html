@@ -185,7 +185,7 @@
       <div class="tm-ctrl">
         <label>Agregar por
           <select class="dash-select" id="p3-nivel" data-param="nivel">
-            <option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option>
+            <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
           </select></label>
         <label>Mostrar
           <select class="dash-select" id="v-modo">
@@ -224,7 +224,7 @@
         </select></label>
       <label>Unidade de análise
         <select class="dash-select" id="p2-unid" data-param="unidade">
-          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option>
+          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option><option value="regiao">Grandes regiões</option>
         </select></label>
       <label>Índice
         <select class="dash-select" id="esc-indice">
@@ -262,7 +262,7 @@
       <div class="tm-ctrl">
         <label>Agregar por
           <select class="dash-select" id="p2-nivel" data-param="nivel">
-            <option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option>
+            <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
           </select></label>
       </div>
       <div class="tm-chart" id="graf-rgrupos" data-draw="r_grupos" data-source="renda_grupos"></div>
@@ -285,7 +285,7 @@
     <div class="tm-ctrl">
       <label>Agregar por
         <select class="dash-select" id="p-nivel" data-param="nivel">
-          <option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option>
+          <option value="regiao">Grande região</option><option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="mun">Município</option>
         </select></label>
       <label>Ordenar por
         <select class="dash-select" id="ord-grupos">
@@ -294,7 +294,7 @@
     </div>
     <div class="tm-card" id="card-peso">
       <h2 id="h-peso">Quanto cada transferência pesa na renda</h2>
-      <p class="tm-muted">Benefício ÷ renda domiciliar total da região (soma dos municípios). Mostra até 30 regiões; a tabela lista todas.</p>
+      <p class="tm-muted">Benefício ÷ renda domiciliar total do grupo (soma dos municípios; em Município, o próprio município). Mostra até 30 grupos; a tabela lista todos.</p>
       <div class="tm-legend" id="leg-benef">
         <span><i class="tm-sw" data-cor="0"></i>Aposentadoria rural</span>
         <span><i class="tm-sw" data-cor="1"></i>Bolsa Família</span>
@@ -371,7 +371,7 @@
         </select></label>
       <label>Unidade de análise
         <select class="dash-select" id="p-unid" data-param="unidade">
-          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option>
+          <option value="mun">Municípios</option><option value="rgi">Regiões imediatas</option><option value="rgint">Regiões intermediárias</option><option value="uf">UFs</option><option value="regiao">Grandes regiões</option>
         </select></label>
     </div>
     <div class="tm-grid2">
@@ -635,8 +635,8 @@ dash.calc('valores', { inputs: ['sel'], title: 'Valores pagos por benefício',
 dash.calc('valores_grupos', { inputs: ['sel'], title: 'Valores pagos por grupo',
   description: 'Soma mensal de cada benefício nos municípios de cada grupo (R$ de 2022), total e total por habitante.',
   fn: (sel) => {
-    const nv = dash.params().nivel; const nivel = nv === 'rgi' ? 'rgi' : 'rgint';
-    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => {
+    const nv = dash.params().nivel; const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(nv) ? nv : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
+    return d3.groups(sel, chave).map(([grupo, ms]) => {
       const s = (k) => d3.sum(ms, (m) => m[k]); const pop = s('pop');
       const o = { grupo, n: ms.length, pop, apos_rural: s('apos_rural'), bolsa: s('bolsa'), bpc: s('bpc'), apos_urbana: s('apos_urbana'), seguro: s('seguro') };
       o.total = o.apos_rural + o.bolsa + o.bpc + o.apos_urbana + o.seguro; o.total_pc = o.total / pop; return o;
@@ -692,13 +692,13 @@ dash.calc('lorenz', { inputs: ['sel'], title: 'Curvas de Lorenz das quatro medid
 dash.calc('renda_grupos', { inputs: ['sel'], title: 'PIB, salários e renda por grupo',
   description: 'Valor por habitante de cada medida no grupo e índice em relação ao recorte (= 100).',
   fn: (sel) => {
-    const p = dash.params(); const nivel = p.nivel === 'rgi' ? 'rgi' : 'rgint';
+    const p = dash.params(); const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(p.nivel) ? p.nivel : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
     const T = (m) => m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro;
     const sem = (m) => (p.medida === 'hib' ? m.trab_censo : m.renda - T(m));
     const tot = (ms) => { const pop = d3.sum(ms, (m) => m.pop); return { pop, pib: d3.sum(ms, (m) => m.pib_mes) / pop, massa: d3.sum(ms, (m) => m.massa_sal) / pop,
       sem: d3.sum(ms, sem) / pop, com: d3.sum(ms, (m) => sem(m) + T(m)) / pop }; };
     const b = tot(sel);
-    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => { const t = tot(ms);
+    return d3.groups(sel, chave).map(([grupo, ms]) => { const t = tot(ms);
       return { grupo, pop: t.pop, pib_pc: t.pib, massa_pc: t.massa, sem_pc: t.sem, com_pc: t.com,
         i_pib: 100 * t.pib / b.pib, i_massa: 100 * t.massa / b.massa, i_sem: 100 * t.sem / b.sem, i_com: 100 * t.com / b.com }; });
   } });
@@ -723,8 +723,8 @@ dash.calc('resumo', { inputs: ['sel'], title: 'Resumo do recorte',
 dash.calc('grupos', { inputs: ['sel'], title: 'Transferências por grupo',
   description: 'Soma dos municípios do recorte por nível de agregação escolhido; peso de cada benefício na renda do grupo e dependência observada e prevista pela idade (médias ponderadas pela população).',
   fn: (sel) => {
-    const nv = dash.params().nivel; const nivel = nv === 'rgi' ? 'rgi' : 'rgint';
-    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => {
+    const nv = dash.params().nivel; const nivel = ['regiao', 'uf', 'rgint', 'rgi', 'mun'].includes(nv) ? nv : 'rgint'; const chave = (m) => (nivel === 'mun' ? `${m.nome} (${m.uf})` : m[nivel]);
+    return d3.groups(sel, chave).map(([grupo, ms]) => {
       const s = (k) => d3.sum(ms, (m) => m[k]); const renda = s('renda'), pop = s('pop');
       const T = s('apos_rural') + s('bolsa') + s('bpc') + s('apos_urbana') + s('seguro');
       return { grupo, n: ms.length, pop, renda_pc: renda / pop, dep: T / renda,
