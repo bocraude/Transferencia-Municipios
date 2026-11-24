@@ -28,7 +28,8 @@ bio = bio.set_index(bio.iloc[:, 0].astype(int))[bio.columns[3]]
 REG = {1: 'Norte', 2: 'Nordeste', 3: 'Sudeste', 4: 'Sul', 5: 'Centro-Oeste'}
 m = pd.DataFrame({
     'cod': d.index, 'nome': d.NM_MUN, 'uf': d.SIGLA_UF, 'regiao': d.reg.map(REG),
-    'rgi': b.NM_RGI.reindex(d.index).values, 'rgint': b.NM_RGINT.reindex(d.index).values,
+    # nome + UF: dois nomes de região imediata se repetem em UFs diferentes (Itabaiana PB/SE, Valença BA/RJ)
+    'rgi': (b.NM_RGI.reindex(d.index) + ' (' + d.SIGLA_UF + ')').values, 'rgint': (b.NM_RGINT.reindex(d.index) + ' (' + d.SIGLA_UF + ')').values,
     'bioma': bio.reindex(d.index).values, 'semiarido': np.where(d.semiarido == 1, 'Semiárido', 'Fora do semiárido'),
     'pop': d.populacao, 'renda': d.renda_total.round(0), 'trab_censo': d.c_trab.round(0),
     'bpc': d.bpc.round(0), 'bolsa': d.bolsa.round(0), 'seguro': d.seguro.round(0),

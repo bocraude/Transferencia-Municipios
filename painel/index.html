@@ -100,6 +100,10 @@
       <select class="dash-select" id="f-uf" data-param="uf">
         <option value="">Todas</option><option>AC</option><option>AL</option><option>AM</option><option>AP</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MG</option><option>MS</option><option>MT</option><option>PA</option><option>PB</option><option>PE</option><option>PI</option><option>PR</option><option>RJ</option><option>RN</option><option>RO</option><option>RR</option><option>RS</option><option>SC</option><option>SE</option><option>SP</option><option>TO</option>
       </select></label>
+    <label>Região intermediária
+      <select class="dash-select" id="f-rgint" data-param="rgint" data-draw="f_rgint" data-source="municipios"></select></label>
+    <label>Região imediata
+      <select class="dash-select" id="f-rgi" data-param="rgi" data-draw="f_rgi" data-source="municipios"></select></label>
     <label>Bioma predominante
       <select class="dash-select" id="f-bioma" data-param="bioma">
         <option value="">Todos</option><option>Amazônia</option><option>Caatinga</option><option>Cerrado</option><option>Mata Atlântica</option><option>Pampa</option><option>Pantanal</option>
@@ -700,10 +704,10 @@ dash.calc('renda_grupos', { inputs: ['sel'], title: 'PIB, salários e renda por 
   } });
 
 dash.calc('sel', { inputs: ['municipios'], title: 'Municípios no recorte',
-  description: 'Municípios que atendem aos filtros de região, UF, bioma, semiárido e tipologia etária.',
+  description: 'Municípios que atendem aos filtros de grande região, UF, região intermediária, região imediata, bioma, semiárido e tipologia etária.',
   fn: (municipios) => {
     const p = dash.params();
-    return municipios.filter((m) => (!p.regiao || m.regiao === p.regiao) && (!p.uf || m.uf === p.uf) && (!p.bioma || m.bioma === p.bioma)
+    return municipios.filter((m) => (!p.regiao || m.regiao === p.regiao) && (!p.uf || m.uf === p.uf) && (!p.rgint || m.rgint === p.rgint) && (!p.rgi || m.rgi === p.rgi) && (!p.bioma || m.bioma === p.bioma)
       && (!p.semi || m.semiarido === p.semi) && (!p.tipo || m.tipo === p.tipo));
   } });
 
@@ -843,7 +847,12 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
 (function () {
   const params = () => dash.params();
   document.querySelectorAll('select[data-param]').forEach((sel) => {
-    sel.addEventListener('change', () => dash.setParams({ [sel.dataset.param]: sel.value || null }));
+    sel.addEventListener('change', () => {
+      const k = sel.dataset.param, mud = { [k]: sel.value || null };
+      if (k === 'regiao' || k === 'uf') { mud.rgint = null; mud.rgi = null; }
+      if (k === 'rgint') mud.rgi = null;
+      dash.setParams(mud);
+    });
   });
   dash.onData(() => {
     const p = params();
@@ -852,7 +861,7 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
       const v = p[sel.dataset.param]; if (v != null && v !== '') sel.value = String(v); else if (sel.options.length) sel.value = sel.options[0].value;
     });
   });
-  document.querySelectorAll('#f-limpar').forEach((b) => b.addEventListener('click', () => dash.setParams({ regiao: null, uf: null, bioma: null, semi: null, tipo: null })));
+  document.querySelectorAll('#f-limpar').forEach((b) => b.addEventListener('click', () => dash.setParams({ regiao: null, uf: null, rgint: null, rgi: null, bioma: null, semi: null, tipo: null })));
   document.querySelectorAll('.tm-sw[data-cor]').forEach((sw) => { sw.style.background = TM.cor(sw.dataset.cor); });
 
   const tabs = [...document.querySelectorAll('.tm-tab')];
@@ -916,6 +925,16 @@ window.um = (fonte, campo, fmt, onde) => (el) => {
   const row = onde ? r.data.find(onde) : r.data[0];
   el.textContent = row ? fmt(row[campo]) : '—';
 };
+const opcoesRegiao = (campo, vazio, cima) => (sel) => {
+  const r = dash.data('municipios'); const p = dash.params();
+  if (r.status !== 'ok') { sel.replaceChildren(new Option(vazio, '')); return; }
+  const nomes = [...new Set(r.data.filter((m) => (!p.regiao || m.regiao === p.regiao) && (!p.uf || m.uf === p.uf) && (!cima || !p[cima] || m[cima] === p[cima])).map((m) => m[campo]))]
+    .sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  sel.replaceChildren(new Option(vazio, ''), ...nomes.map((n) => new Option(n, n)));
+  sel.value = nomes.includes(p[campo]) ? p[campo] : '';
+};
+dash.draw('f_rgint', opcoesRegiao('rgint', 'Todas', null));
+dash.draw('f_rgi', opcoesRegiao('rgi', 'Todas', 'rgint'));
 dash.draw('t_n', um('resumo', 'n', (v) => TM.num(v)));
 dash.draw('t_dep', um('resumo', 'dep', (v) => TM.pct(v)));
 dash.draw('t_g0', um('desig', 'sem', (v) => TM.dec(v), (d) => d.indice === 'gini'));
