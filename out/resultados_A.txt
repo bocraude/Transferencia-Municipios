@@ -1,0 +1,101 @@
+SIDRA 10089: municipios 5570 | populacao 203080756
+
+== Validacao contra SIDRA 9514 ==
+municipios em comum: 5570 | so em 10089: 0 | so em 9514: 0
+total por municipio: max |dif| = 0.0 | total geral 10089 = 203080756 | 9514 = 203080756
+total x idade: celulas com dif = 0 de 116970 | max 0.0
+homens x idade: celulas com dif = 0 de 116970 | max 0.0
+55-59 recuperado por residuo (9514) x 10089: max |dif| = 0.0
+setores por situacao: {'Urbana': 354965, 'Rural': 112031, nan: 1101}
+
+== Validacao da situacao contra setores (v0001, pessoas) ==
+municipios: 5570 | setores sem v0001: 0
+U: municipios com dif = 0, max |dif| = 0, total 10089 = 177508417, setores = 177508417
+R: municipios com dif = 0, max |dif| = 0, total 10089 = 25572339, setores = 25572339
+(o arquivo de demografia por setor tem celulas suprimidas "X" em ~29% dos setores; por isso nao e usado para idade)
+
+== Ruralidade 2010 x 2022 (mudanca de delimitacao + migracao) ==
+populacao rural no Brasil: 2010 0.156 | 2022 0.126
+rural_sh_22 - rural_sh_10 por municipio: quantis {0.05: -0.175, 0.25: -0.077, 0.5: -0.039, 0.75: -0.01, 0.95: 0.025}
+correlacao rural_sh_10 x rural_sh_22: 0.949
+municipios com rural_sh_22 > rural_sh_10 + 0,10: 32 | < -0,10: 943
+
+== (ii) Cobertura rural implicita com residentes rurais elegiveis de 2022 (mulheres 55+, homens 60+) ==
+beneficios rurais estimados (valor/SM) no Brasil: 8665795 | residentes rurais elegiveis: 4981632 | razao agregada: 1.74
+mediana 1.71 | p25-p75 [1.28 2.36] | municipios sem residente rural elegivel: 33
+versao anterior (ruralidade 2010): mediana 1.5
+cobertura ampla (beneficios rurais / todos os elegiveis, urb+rur): mediana 0.56 | p25-p75 [0.3 0.8]
+municipios com cobertura_rural_22 > 1: 4838 de 5528
+
+Quintis de ruralidade 2022:
+                 rural_sh_22    dep  dep_rural  cobertura_rural_22  cobertura_ampla  mig_jovem_rur  mig_jovem_urb
+rural_sh_22                                                                                                     
+Q1 mais urbano        0.055  0.234      0.021               2.651            0.143         -0.195          0.038
+Q2                    0.168  0.278      0.078               2.125            0.394         -0.189          0.022
+Q3                    0.291  0.330      0.129               1.876            0.597         -0.174          0.028
+Q4                    0.424  0.392      0.182               1.637            0.745         -0.175          0.048
+Q5 mais rural         0.594  0.430      0.225               1.330            0.846         -0.146          0.082
+
+== (i) Migracao por coorte por situacao (municipios com populacao rural e urbana nas coortes) ==  N = 5488
+                       mean    25%    50%    75%
+mig_jovem_urb         0.071 -0.050  0.042  0.160
+mig_jovem_rur        -0.199 -0.338 -0.172 -0.024
+mig_idoso_urb         0.121  0.019  0.089  0.184
+mig_idoso_rur        -0.110 -0.212 -0.076  0.039
+mig_jovem_rur_liq    -0.090 -0.212 -0.102  0.015
+mig_jovem_urb_liq    -0.050 -0.128 -0.053  0.022
+mig_jovem_rur_mulher -0.188 -0.327 -0.152  0.000
+mig_jovem_rur_homem  -0.211 -0.358 -0.190 -0.033
+mig_jovem_urb_mulher  0.094 -0.026  0.062  0.182
+mig_jovem_urb_homem   0.049 -0.082  0.020  0.148
+
+Por regiao (medianas):
+              mig_jovem_urb  mig_jovem_rur  mig_idoso_urb  mig_idoso_rur  mig_jovem_rur_liq  mig_jovem_urb_liq
+Norte                 0.035         -0.182          0.074         -0.110             -0.074             -0.050
+Nordeste              0.007         -0.213          0.091         -0.040             -0.162             -0.089
+Sudeste               0.033         -0.174          0.078         -0.076             -0.102             -0.046
+Sul                   0.107         -0.132          0.117         -0.113             -0.022             -0.018
+Centro-Oeste          0.068         -0.088          0.056         -0.111             -0.002              0.008
+
+== (iii) Residuo demografico ~ migracao por situacao (envelhecidos, N = 3467 ) ==
+
+jovem urb + rur:
+                 coef     ep
+const         -0.009  0.002
+mig_jovem_urb -0.089  0.010
+mig_jovem_rur -0.021  0.004
+mig_idoso     -0.085  0.018
+nordeste       0.062  0.004 
+R2 = 0.172
+
+jovem urb + rur (liquido de reclassificacao):
+                     coef     ep
+const             -0.016  0.002
+mig_jovem_urb_liq -0.088  0.012
+mig_jovem_rur_liq -0.047  0.006
+mig_idoso         -0.183  0.017
+nordeste           0.058  0.004 
+R2 = 0.172
+
+por sexo e situacao:
+                        coef     ep
+const                -0.008  0.002
+mig_jovem_urb_mulher -0.061  0.017
+mig_jovem_urb_homem  -0.030  0.015
+mig_jovem_rur_mulher -0.019  0.007
+mig_jovem_rur_homem  -0.002  0.006
+mig_idoso            -0.082  0.019
+nordeste              0.062  0.004 
+R2 = 0.173
+
+Tipologia com origem da saida de jovens (atrito dividido pela parcela rural da perda liquida de 20-29 anos):
+                     n  dep_mediana  dep_rural_mediana  resid_dem  rural_sh_22  mig_jovem_urb  mig_jovem_rur  mig_jovem_rur_liq  sh_perda_rural  cobertura_rural_22  pct_nordeste
+tipo3                                                                                                                                                                           
+atração          1227        0.278              0.103     -0.027        0.286          0.116         -0.087             -0.101             NaN               1.546         0.226
+atrito rural      549        0.477              0.248      0.028        0.440         -0.025         -0.349             -0.231           0.913               1.677         0.486
+atrito urbano     361        0.318              0.105      0.032        0.174         -0.159         -0.212             -0.133           0.225               2.398         0.230
+intermediário    1330        0.272              0.101     -0.009        0.249          0.042         -0.143             -0.035             NaN               1.732         0.118
+não envelhecido  2021        0.339              0.115     -0.009        0.305          0.049         -0.178             -0.109             NaN               1.710         0.491
+
+== R2 fora da amostra (RF), N = 5561 ==
+{'idade + elegib + ruralidade 2010': 0.619, 'idade + elegib + ruralidade 2022': 0.621, 'ap. rural ~ ... ruralidade 2010': 0.717, 'ap. rural ~ ... ruralidade 2022': 0.72}

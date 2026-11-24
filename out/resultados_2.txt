@@ -1,0 +1,46 @@
+checagem rural+urbano mulheres = total mulheres (max dif): 0.0
+N 5561
+
+R2 fora da amostra (RF), dependencia total: {'idade (grupos)': 0.566, 'idade + elegibilidade por sexo': 0.565, '+ ruralidade 2010': 0.619}
+R2 RF, aposentadoria rural: {'aposentadoria rural ~ idade': 0.559, 'aposentadoria rural ~ idade + elegibilidade + ruralidade': 0.717}
+
+Residuo (so idade) ~ migracao:
+             coef     ep
+const     -0.018  0.002
+mig_jovem -0.190  0.015
+mig_idoso  0.021  0.021
+nordeste   0.056  0.004 0.175
+
+Residuo (idade+elegib+ruralidade) ~ migracao:
+             coef     ep
+const     -0.016  0.002
+mig_jovem -0.173  0.014
+mig_idoso -0.012  0.020
+nordeste   0.052  0.004 0.181
+
+Residuo demografico ~ migracao por sexo:
+                    coef     ep
+const            -0.016  0.002
+mig_jovem_mulher -0.114  0.021
+mig_jovem_homem  -0.067  0.018
+mig_idoso        -0.005  0.020
+nordeste          0.051  0.004 0.183
+
+Tipologia:
+                     n  rural_sh_10  eleg_rural_22  resid_idade  resid_dem  mig_mulher  mig_homem  cobertura_rural
+tipo2                                                                                                            
+atração          1239        0.341          0.228       -0.029     -0.027       0.044      0.054            1.404
+atrito            918        0.389          0.223        0.032      0.029      -0.156     -0.168            1.620
+intermediário    1344        0.293          0.228       -0.012     -0.009      -0.016     -0.012            1.521
+não envelhecido  2060        0.369          0.161       -0.010     -0.009      -0.028     -0.030            1.522
+
+Quintis de ruralidade 2010:
+                 rural_sh    dep  dep_rural  cobertura  mig_mulher  mig_homem  resid_idade
+rural_sh_10                                                                              
+Q1 mais urbano     0.073  0.236      0.022      2.281       0.015      0.008       -0.025
+Q2                 0.208  0.280      0.080      1.847      -0.018     -0.019       -0.023
+Q3                 0.353  0.330      0.131      1.627      -0.038     -0.033       -0.012
+Q4                 0.493  0.396      0.182      1.458      -0.045     -0.043        0.010
+Q5 mais rural      0.671  0.418      0.219      1.220      -0.060     -0.053        0.023
+
+Cobertura rural implicita: mediana 1.5 p25-p75 [1.13 2.03]
