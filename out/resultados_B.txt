@@ -1,0 +1,162 @@
+Semiarido: municipios 1474 | no Nordeste 1251 | fora (MG/ES) 223 | Nordeste fora do semiarido 540
+
+Perfil por Nordeste x semiarido:
+                          n     pop_mil  dependencia  dep_mediana  resid_idade_med  mig_jovem_med
+nordeste semiarido                                                                              
+0        0          3547.0  144906.560        0.194        0.254           -0.025          0.002
+         1           223.0    3444.924        0.335        0.427            0.006         -0.096
+1        0           540.0   27061.739        0.259        0.456            0.057         -0.105
+         1          1251.0   27526.116        0.401        0.526            0.033         -0.064
+
+Municipios envelhecidos: N = 3501
+
+residuo idade ~ migracao + nordeste (original):
+             coef     ep
+const     -0.018  0.002
+mig_jovem -0.190  0.015
+mig_idoso  0.021  0.021
+nordeste   0.056  0.004 
+R2 = 0.175
+
+residuo idade ~ migracao + semiarido:
+             coef     ep
+const     -0.017  0.002
+mig_jovem -0.202  0.015
+mig_idoso  0.029  0.021
+semiarido  0.043  0.004 
+R2 = 0.154
+
+residuo idade ~ migracao + semiarido 1.427 (Res. 150):
+                 coef     ep
+const         -0.017  0.002
+mig_jovem     -0.200  0.015
+mig_idoso      0.026  0.021
+semiarido_150  0.045  0.004 
+R2 = 0.157
+
+residuo idade ~ migracao + semiarido + Nordeste fora do SA:
+                    coef     ep
+const            -0.019  0.002
+mig_jovem        -0.181  0.015
+mig_idoso         0.019  0.021
+semiarido         0.047  0.004
+nordeste_fora_sa  0.068  0.012 
+R2 = 0.167
+
+residuo idade ~ migracao por sexo + nordeste:
+                    coef     ep
+const            -0.018  0.002
+mig_jovem_mulher -0.145  0.023
+mig_jovem_homem  -0.055  0.021
+mig_idoso         0.030  0.021
+nordeste          0.055  0.004 
+R2 = 0.177
+
+residuo idade ~ migracao por sexo + semiarido:
+                    coef     ep
+const            -0.017  0.002
+mig_jovem_mulher -0.146  0.023
+mig_jovem_homem  -0.067  0.021
+mig_idoso         0.038  0.021
+semiarido         0.042  0.004 
+R2 = 0.156
+
+residuo idade+elegib+ruralidade ~ migracao + nordeste (original):
+             coef     ep
+const     -0.016  0.002
+mig_jovem -0.173  0.014
+mig_idoso -0.012  0.020
+nordeste   0.052  0.004 
+R2 = 0.181
+
+residuo idade+elegib+ruralidade ~ migracao + semiarido:
+             coef     ep
+const     -0.014  0.002
+mig_jovem -0.186  0.014
+mig_idoso -0.003  0.020
+semiarido  0.039  0.004 
+R2 = 0.159
+
+residuo idade+elegib+ruralidade ~ migracao + semiarido 1.427 (Res. 150):
+                 coef     ep
+const         -0.014  0.002
+mig_jovem     -0.186  0.014
+mig_idoso     -0.004  0.020
+semiarido_150  0.040  0.004 
+R2 = 0.159
+
+residuo idade+elegib+ruralidade ~ migracao + semiarido + Nordeste fora do SA:
+                    coef     ep
+const            -0.016  0.002
+mig_jovem        -0.164  0.014
+mig_idoso        -0.014  0.020
+semiarido         0.043  0.004
+nordeste_fora_sa  0.071  0.011 
+R2 = 0.175
+
+residuo idade+elegib+ruralidade ~ migracao por sexo + nordeste:
+                    coef     ep
+const            -0.016  0.002
+mig_jovem_mulher -0.114  0.021
+mig_jovem_homem  -0.067  0.018
+mig_idoso        -0.005  0.020
+nordeste          0.051  0.004 
+R2 = 0.183
+
+residuo idade+elegib+ruralidade ~ migracao por sexo + semiarido:
+                    coef     ep
+const            -0.014  0.002
+mig_jovem_mulher -0.116  0.022
+mig_jovem_homem  -0.077  0.018
+mig_idoso         0.003  0.020
+semiarido         0.038  0.004 
+R2 = 0.160
+
+residuo demografico ~ migracao por situacao + nordeste (N=3467):
+                 coef     ep
+const         -0.009  0.002
+mig_jovem_urb -0.089  0.010
+mig_jovem_rur -0.021  0.004
+mig_idoso     -0.085  0.018
+nordeste       0.062  0.004 
+R2 = 0.172
+
+residuo demografico ~ migracao por situacao + semiarido (N=3467):
+                 coef     ep
+const         -0.007  0.002
+mig_jovem_urb -0.095  0.010
+mig_jovem_rur -0.021  0.004
+mig_idoso     -0.083  0.019
+semiarido      0.050  0.004 
+R2 = 0.148
+
+residuo demografico ~ mig_jovem x semiarido:
+             coef     ep
+const     -0.014  0.002
+mig_jovem -0.191  0.015
+mj_x_sa    0.026  0.035
+mig_idoso -0.004  0.020
+semiarido  0.041  0.005 
+R2 = 0.159
+
+Resumo (coeficiente de mig_jovem e da dummy regional):
+                               y                        controle  b_mig_jovem    ep  b_regiao    R2
+                  residuo idade             nordeste (original)       -0.190 0.015     0.056 0.175
+                  residuo idade                       semiarido       -0.202 0.015     0.043 0.154
+                  residuo idade      semiarido 1.427 (Res. 150)       -0.200 0.015     0.045 0.157
+                  residuo idade semiarido + Nordeste fora do SA       -0.181 0.015     0.047 0.167
+residuo idade+elegib+ruralidade             nordeste (original)       -0.173 0.014     0.052 0.181
+residuo idade+elegib+ruralidade                       semiarido       -0.186 0.014     0.039 0.159
+residuo idade+elegib+ruralidade      semiarido 1.427 (Res. 150)       -0.186 0.014     0.040 0.159
+residuo idade+elegib+ruralidade semiarido + Nordeste fora do SA       -0.164 0.014     0.043 0.175
+
+Tipologia x semiarido (n municipios):
+                  fora SA  semiarido  total
+tipo3                                     
+atração              920        307   1227
+atrito rural         248        301    549
+atrito urbano        278         83    361
+intermediário       1138        192   1330
+não envelhecido     1430        591   2021
+sem tipo              73          0     73
+All                 4087       1474   5561
