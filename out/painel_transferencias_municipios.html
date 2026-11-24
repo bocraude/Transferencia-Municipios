@@ -163,6 +163,7 @@ html, body { margin:0; background:var(--color-bg); color:var(--color-fg); font-f
     <p class="tm-marca">Transferências federais e renda municipal · Brasil, 2022</p>
     <nav class="tm-tabs" role="tablist" aria-label="Páginas">
     <button class="tm-tab" role="tab" aria-selected="true" data-tab="inicio">Visão geral</button>
+    <button class="tm-tab" role="tab" aria-selected="false" data-tab="valores">Valores</button>
     <button class="tm-tab" role="tab" aria-selected="false" data-tab="renda">PIB × renda</button>
     <button class="tm-tab" role="tab" aria-selected="false" data-tab="regioes">Peso por região</button>
     <button class="tm-tab" role="tab" aria-selected="false" data-tab="mapa">Mapa</button>
@@ -216,6 +217,7 @@ html, body { margin:0; background:var(--color-bg); color:var(--color-fg); font-f
 
     <h2 id="h-paginas">Páginas</h2>
     <div class="tm-paginas" id="paginas">
+      <button type="button" data-goto="valores"><b>Valores das transferências</b><span>Quanto foi pago em reais, por benefício e por grupo, e a distribuição do valor por habitante entre os municípios.</span></button>
       <button type="button" data-goto="renda"><b>PIB × renda</b><span>Do PIB e da massa salarial formal à renda das famílias, sem e com transferências: níveis e desigualdade.</span></button>
       <button type="button" data-goto="regioes"><b>Peso por região</b><span>Quanto cada benefício pesa na renda, por UF, região imediata, intermediária, bioma ou semiárido.</span></button>
       <button type="button" data-goto="mapa"><b>Mapa</b><span>Mapa coroplético dos municípios para cada transferência, renda e indicador demográfico.</span></button>
@@ -223,6 +225,64 @@ html, body { margin:0; background:var(--color-bg); color:var(--color-fg); font-f
       <button type="button" data-goto="atrito"><b>Atrito × atração</b><span>Municípios envelhecidos pela saída de jovens ou pela chegada de idosos, e a lista completa.</span></button>
       <button type="button" data-goto="idade"><b>Estrutura etária</b><span>Quanto a idade explica da dependência e os coeficientes das regressões.</span></button>
       <button type="button" data-goto="piramide"><b>Pirâmides 2010 × 2022</b><span>Pirâmide etária de cada município ou do recorte nos dois Censos.</span></button>
+    </div>
+  </section>
+
+  <!-- ===== Valores das transferências ===== -->
+  <section class="tm-sec" id="valores" role="tabpanel" hidden>
+    <div class="tm-pagehead">
+      <h1 id="t-valores">Valores das transferências</h1>
+      <p>Quanto cada benefício pagou nos municípios do recorte, em reais de 2022: total por mês e por ano, valor por habitante e como esse valor varia entre os municípios.</p>
+    </div>
+    <div class="tm-kpis" id="kpis-valores">
+      <div class="tm-kpi" id="kv-mes"><span class="l">Total pago por mês</span><span class="v" data-draw="kv_mes" data-source="valores" data-field="total_mes" data-where="beneficio=total">—</span><span class="l">5 benefícios, R$ de 2022</span></div>
+      <div class="tm-kpi" id="kv-ano"><span class="l">Total em 12 meses</span><span class="v" data-draw="kv_ano" data-source="valores" data-field="total_ano" data-where="beneficio=total">—</span><span class="l">mensal × 12, sem 13º</span></div>
+      <div class="tm-kpi" id="kv-pc"><span class="l">Por habitante</span><span class="v" data-draw="kv_pc" data-source="valores" data-field="pc_mes" data-where="beneficio=total">—</span><span class="l">R$ por mês</span></div>
+      <div class="tm-kpi" id="kv-med"><span class="l">Mediana entre municípios</span><span class="v" data-draw="kv_med" data-source="valores" data-field="mediana_pc" data-where="beneficio=total">—</span><span class="l">R$ por habitante por mês</span></div>
+    </div>
+    <div class="tm-grid2">
+      <div class="tm-card" id="card-vtotais">
+        <h2 id="h-vtotais">Total pago em 12 meses, por benefício</h2>
+        <div class="tm-chart" id="graf-vtotais" data-draw="v_totais" data-source="valores"></div>
+        <p class="tm-muted">Valor mensal de 2022 × 12. À direita, a parcela de cada benefício no total das transferências.</p>
+      </div>
+      <div class="tm-card" id="card-vdist">
+        <h2 id="h-vdist">Valor por habitante entre os municípios (R$/mês)</h2>
+        <div class="tm-chart" id="graf-vdist" data-draw="v_dist" data-source="valores"></div>
+        <p class="tm-muted">Traço: do 10º ao 90º percentil dos municípios; caixa: do 25º ao 75º; marca escura: mediana. Cada município conta uma vez, qualquer que seja a população.</p>
+      </div>
+    </div>
+    <div class="tm-tablewrap" id="tab-valores-wrap">
+      <table id="tab-valores" data-source="valores" data-row-key="beneficio">
+        <thead><tr><th data-field="rotulo">Benefício</th><th class="n" data-field="total_mes">Total por mês</th><th class="n" data-field="total_ano">Total em 12 meses</th><th class="n" data-field="part_T">% das transferências</th><th class="n" data-field="part_renda">% da renda</th><th class="n" data-field="pc_mes">R$/hab./mês</th><th class="n" data-field="n_com">Municípios com valor &gt; 0</th><th class="n" data-field="media_pc">Média municipal</th><th class="n" data-field="p10_pc">P10</th><th class="n" data-field="mediana_pc">Mediana</th><th class="n" data-field="p90_pc">P90</th><th class="n" data-field="min_pc">Mínimo</th><th class="n" data-field="max_pc">Máximo</th></tr></thead>
+        <tbody data-draw="v_tabela"></tbody>
+      </table>
+    </div>
+    <p class="tm-muted">R$/hab./mês = total do recorte ÷ população do recorte. Média, percentis, mínimo e máximo: valor por habitante de cada município, sem ponderar pela população.</p>
+    <div class="tm-card" id="card-vgrupos">
+      <h2 id="h-vgrupos">Valores por grupo</h2>
+      <div class="tm-ctrl">
+        <label>Agregar por
+          <select class="dash-select" id="p3-nivel" data-param="nivel">
+            <option value="uf">UF</option><option value="rgint">Região geográfica intermediária</option><option value="rgi">Região geográfica imediata</option><option value="regiao">Grande região</option><option value="bioma">Bioma predominante</option><option value="semiarido">Semiárido</option><option value="tipo">Tipologia etária</option>
+          </select></label>
+        <label>Mostrar
+          <select class="dash-select" id="v-modo">
+            <option value="total">Total pago (R$ milhões/mês)</option><option value="pc">Por habitante (R$/mês)</option>
+          </select></label>
+      </div>
+      <div class="tm-legend">
+        <span><i class="tm-sw" data-cor="0"></i>Aposentadoria rural</span><span><i class="tm-sw" data-cor="1"></i>Bolsa Família</span><span><i class="tm-sw" data-cor="2"></i>BPC</span><span><i class="tm-sw" data-cor="3"></i>Aposentadoria urbana</span><span><i class="tm-sw" data-cor="4"></i>Seguro-desemprego</span>
+      </div>
+      <div class="tm-chart" id="graf-vgrupos" data-draw="v_grupos" data-source="valores_grupos"></div>
+      <p class="tm-muted">Mostra até 30 grupos, do maior para o menor; a tabela lista todos.</p>
+      <div class="tm-tablewrap">
+        <table id="tab-vgrupos" data-source="valores_grupos" data-row-key="grupo">
+          <thead><tr><th data-field="grupo">Grupo</th><th class="n" data-field="n">Municípios</th><th class="n" data-field="pop">População</th><th class="n" data-field="apos_rural">Ap. rural</th><th class="n" data-field="bolsa">Bolsa Família</th><th class="n" data-field="bpc">BPC</th><th class="n" data-field="apos_urbana">Ap. urbana</th><th class="n" data-field="seguro">Seguro</th><th class="n" data-field="total">Total</th><th class="n" data-field="total_pc">Total R$/hab.</th></tr></thead>
+          <tbody data-draw="v_tabgrupos"></tbody>
+        </table>
+      </div>
+      <p class="tm-muted">Valores da tabela em R$ milhões por mês, exceto a última coluna.</p>
     </div>
   </section>
 
@@ -564,6 +624,14 @@ html, body { margin:0; background:var(--color-bg); color:var(--color-fg); font-f
     num: (x, d = 0) => (x == null || !isFinite(x)) ? '—' : L.format(`,.${d}f`)(x),
     dec: (x, d = 3) => (x == null || !isFinite(x)) ? '—' : L.format(`.${d}f`)(x),
     sdec: (x, d = 3) => (x == null || !isFinite(x)) ? '—' : L.format(`+.${d}f`)(x),
+    reais(v) {
+      if (v == null || !isFinite(v)) return '—';
+      const a = Math.abs(v);
+      if (a >= 1e9) return 'R$ ' + L.format(',.2f')(v / 1e9) + ' bi';
+      if (a >= 1e6) return 'R$ ' + L.format(',.1f')(v / 1e6) + ' mi';
+      if (a >= 1e3) return 'R$ ' + L.format(',.0f')(v);
+      return 'R$ ' + L.format(',.2f')(v);
+    },
     BEN: ['apos_rural', 'bolsa', 'bpc', 'apos_urbana', 'seguro'],
     BENROT: { apos_rural: 'Aposentadoria rural', bolsa: 'Bolsa Família', bpc: 'BPC', apos_urbana: 'Aposentadoria urbana', seguro: 'Seguro-desemprego' },
     cor(k) {
@@ -626,6 +694,32 @@ dash.calc('mapa_val', { inputs: ['sel'], title: 'Valor de cada município no map
     const valor = (m) => (BEN[v] ? m[BEN[v]] / m.renda : v === 'renda_pc' ? m.renda / m.pop : m[v]);
     const limpo = (x) => (typeof x === 'number' && !isFinite(x) ? null : x ?? null);   // cobertura infinita (sem residente rural elegível) vira sem dado
     return sel.map((m) => ({ cod: m.cod, nome: m.nome, uf: m.uf, valor: limpo(valor(m)) }));
+  } });
+
+dash.calc('valores', { inputs: ['sel'], title: 'Valores pagos por benefício',
+  description: 'Por benefício e no total: soma mensal no recorte (R$ de 2022), soma × 12, parcela nas transferências e na renda, valor por habitante do recorte e distribuição do valor por habitante entre os municípios (média simples, percentis 10, 25, 50, 75 e 90, mínimo e máximo).',
+  fn: (sel) => {
+    const BEN = [['apos_rural', 'Aposentadoria rural'], ['bolsa', 'Bolsa Família'], ['bpc', 'BPC'], ['apos_urbana', 'Aposentadoria urbana'], ['seguro', 'Seguro-desemprego'], ['total', 'Total']];
+    const val = (m, k) => (k === 'total' ? m.apos_rural + m.bolsa + m.bpc + m.apos_urbana + m.seguro : m[k]);
+    const pop = d3.sum(sel, (m) => m.pop), renda = d3.sum(sel, (m) => m.renda), T = d3.sum(sel, (m) => val(m, 'total'));
+    if (!sel.length) return [];
+    return BEN.map(([beneficio, rotulo]) => {
+      const tot = d3.sum(sel, (m) => val(m, beneficio)); const pc = sel.map((m) => val(m, beneficio) / m.pop).sort(d3.ascending);
+      return { beneficio, rotulo, total_mes: tot, total_ano: tot * 12, part_T: tot / T, part_renda: tot / renda, pc_mes: tot / pop,
+        n_com: sel.filter((m) => val(m, beneficio) > 0).length, media_pc: d3.mean(pc), p10_pc: d3.quantileSorted(pc, 0.1), p25_pc: d3.quantileSorted(pc, 0.25),
+        mediana_pc: d3.quantileSorted(pc, 0.5), p75_pc: d3.quantileSorted(pc, 0.75), p90_pc: d3.quantileSorted(pc, 0.9), min_pc: pc[0], max_pc: pc[pc.length - 1] };
+    });
+  } });
+
+dash.calc('valores_grupos', { inputs: ['sel'], title: 'Valores pagos por grupo',
+  description: 'Soma mensal de cada benefício nos municípios de cada grupo (R$ de 2022), total e total por habitante.',
+  fn: (sel) => {
+    const nivel = dash.params().nivel || 'uf';
+    return d3.groups(sel, (m) => m[nivel]).map(([grupo, ms]) => {
+      const s = (k) => d3.sum(ms, (m) => m[k]); const pop = s('pop');
+      const o = { grupo, n: ms.length, pop, apos_rural: s('apos_rural'), bolsa: s('bolsa'), bpc: s('bpc'), apos_urbana: s('apos_urbana'), seguro: s('seguro') };
+      o.total = o.apos_rural + o.bolsa + o.bpc + o.apos_urbana + o.seguro; o.total_pc = o.total / pop; return o;
+    });
   } });
 
 dash.calc('escada', { inputs: ['sel'], title: 'PIB, salários e renda: níveis e desigualdade',
@@ -866,6 +960,7 @@ dash.calc('pirsum_tab', { inputs: ['piramides', 'sel'], title: 'Indicadores etá
   document.querySelectorAll('#busca-mun').forEach((s) => s.addEventListener('input', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#ord-mun').forEach((s) => s.addEventListener('change', () => { dash.draw('a_lista'); dash.draw('a_contagem'); }));
   document.querySelectorAll('#mapa-reenquadrar').forEach((b) => b.addEventListener('click', () => dash.draw('m_mapa')));
+  document.querySelectorAll('#v-modo').forEach((s) => s.addEventListener('change', () => dash.draw('v_grupos')));
   document.querySelectorAll('#esc-indice').forEach((s) => s.addEventListener('change', () => dash.draw('r_escada')));
   document.querySelectorAll('#reg-modelo').forEach((s) => s.addEventListener('change', () => { dash.draw('i_coef'); dash.draw('i_tabcoef'); }));
   const sem = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
@@ -972,6 +1067,111 @@ dash.draw('k_atc', um('resumo', 'n_atracao', (v) => TM.num(v)));
         .forEach(([v, n]) => { const td = document.createElement('td'); td.textContent = v; if (n) td.className = 'n'; tr.appendChild(td); });
       return tr;
     }));
+  });
+})();
+</script>
+
+<script>
+/* ---------- página: valores das transferências ---------- */
+(function () {
+  const IDX = { apos_rural: 0, bolsa: 1, bpc: 2, apos_urbana: 3, seguro: 4, total: 'muted' };
+  const total = (f) => (el) => {
+    const r = dash.data('valores'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+    el.classList.remove('dash-skeleton'); const t = r.data.find((d) => d.beneficio === 'total'); el.textContent = t ? f(t) : '—';
+  };
+  dash.draw('kv_mes', total((t) => TM.reais(t.total_mes)));
+  dash.draw('kv_ano', total((t) => TM.reais(t.total_ano)));
+  dash.draw('kv_pc', total((t) => 'R$ ' + TM.num(t.pc_mes, 2)));
+  dash.draw('kv_med', total((t) => 'R$ ' + TM.num(t.mediana_pc, 2)));
+
+  dash.draw('v_totais', (el) => {
+    const r = dash.data('valores'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+    el.classList.remove('dash-skeleton'); el.replaceChildren();
+    const rows = r.data.filter((d) => d.beneficio !== 'total').sort((a, b) => b.total_ano - a.total_ano);
+    if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+    const W = el.clientWidth || 500, rh = 38;
+    const ml = d3.max(rows, (d) => TM.textW(d.rotulo, el)) + 12, mr = TM.textW('R$ 000,00 bi  00%', el) + 16, H = rows.length * rh + 28;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d.total_ano)]).nice().range([ml, W - mr]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Total pago em 12 meses por benefício');
+    const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 80))); const gr = svg.append('g').attr('class', 'grid');
+    gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+    gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.reais(d));
+    const tip = TM.tip(el);
+    const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 4})`);
+    g.append('text').attr('x', ml - 10).attr('y', (rh - 10) / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.rotulo);
+    g.append('rect').attr('x', x(0)).attr('height', rh - 10).attr('width', (d) => x(d.total_ano) - x(0)).style('fill', (d) => TM.cor(IDX[d.beneficio]))
+      .on('pointermove', (ev, d) => tip.show(ev, [[d.rotulo], ['Por mês', TM.reais(d.total_mes)], ['Em 12 meses', TM.reais(d.total_ano)], ['Por habitante', 'R$ ' + TM.num(d.pc_mes, 2) + '/mês'], ['% das transferências', TM.pct(d.part_T)]]))
+      .on('pointerleave', () => tip.hide());
+    g.append('text').attr('x', (d) => x(d.total_ano) + 6).attr('y', (rh - 10) / 2).attr('dy', '0.35em').attr('class', 'lbl-strong').text((d) => TM.reais(d.total_ano));
+    g.append('text').attr('x', (d) => x(d.total_ano) + 12 + TM.textW(TM.reais(d.total_ano), el)).attr('y', (rh - 10) / 2).attr('dy', '0.35em').text((d) => TM.pct(d.part_T, 0));
+  });
+
+  dash.draw('v_dist', (el) => {
+    const r = dash.data('valores'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+    el.classList.remove('dash-skeleton'); el.replaceChildren();
+    const rows = r.data; if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+    const W = el.clientWidth || 500, rh = 36;
+    const ml = d3.max(rows, (d) => TM.textW(d.rotulo, el)) + 12, mr = 14, H = rows.length * rh + 28;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d.p90_pc)]).nice().range([ml, W - mr]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Distribuição do valor por habitante entre os municípios');
+    const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 70))); const gr = svg.append('g').attr('class', 'grid');
+    gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+    gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => TM.num(d));
+    const tip = TM.tip(el); const c = rh / 2 - 2;
+    const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * rh + 2})`);
+    g.append('text').attr('x', ml - 10).attr('y', c).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.rotulo);
+    g.append('line').attr('x1', (d) => x(d.p10_pc)).attr('x2', (d) => x(d.p90_pc)).attr('y1', c).attr('y2', c).style('stroke', (d) => TM.cor(IDX[d.beneficio])).attr('stroke-width', 2);
+    g.append('rect').attr('x', (d) => x(d.p25_pc)).attr('y', c - 8).attr('height', 16).attr('width', (d) => Math.max(1, x(d.p75_pc) - x(d.p25_pc))).style('fill', (d) => TM.cor(IDX[d.beneficio])).style('opacity', 0.55);
+    g.append('rect').attr('x', (d) => x(d.mediana_pc) - 1.5).attr('y', c - 10).attr('height', 20).attr('width', 3).style('fill', 'var(--color-fg)');
+    g.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', rh).style('fill', 'transparent')
+      .on('pointermove', (ev, d) => tip.show(ev, [[d.rotulo + ' (R$/hab./mês)'], ['P10', TM.num(d.p10_pc, 2)], ['P25', TM.num(d.p25_pc, 2)], ['Mediana', TM.num(d.mediana_pc, 2)], ['P75', TM.num(d.p75_pc, 2)], ['P90', TM.num(d.p90_pc, 2)], ['Máximo', TM.num(d.max_pc, 2)]]))
+      .on('pointerleave', () => tip.hide());
+  });
+
+  dash.draw('v_tabela', (tb) => {
+    const r = dash.data('valores'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+    const n2 = (v) => TM.num(v, 2);
+    tb.replaceChildren(...r.data.map((d) => { const tr = linhaTabela([[d.rotulo], [TM.reais(d.total_mes), 'n'], [TM.reais(d.total_ano), 'n'], [TM.pct(d.part_T), 'n'], [TM.pct(d.part_renda), 'n'],
+      [n2(d.pc_mes), 'n'], [TM.num(d.n_com), 'n'], [n2(d.media_pc), 'n'], [n2(d.p10_pc), 'n'], [n2(d.mediana_pc), 'n'], [n2(d.p90_pc), 'n'], [n2(d.min_pc), 'n'], [n2(d.max_pc), 'n']]);
+      tr.dataset.key = d.beneficio; if (d.beneficio === 'total') tr.style.fontWeight = '600'; return tr; }));
+  });
+
+  const K = ['apos_rural', 'bolsa', 'bpc', 'apos_urbana', 'seguro'];
+  const ROT = { apos_rural: 'Aposentadoria rural', bolsa: 'Bolsa Família', bpc: 'BPC', apos_urbana: 'Aposentadoria urbana', seguro: 'Seguro-desemprego' };
+  dash.draw('v_grupos', (el) => {
+    const r = dash.data('valores_grupos'); if (r.status !== 'ok') { TM.estado(el, r); return; }
+    el.classList.remove('dash-skeleton'); el.replaceChildren();
+    const pc = ((document.querySelector('#v-modo') || {}).value || 'total') === 'pc';
+    const v = (d, k) => (pc ? d[k] / d.pop : d[k] / 1e6);
+    const rows = r.data.slice().sort((a, b) => (pc ? b.total_pc - a.total_pc : b.total - a.total)).slice(0, 30);
+    if (!rows.length) { el.textContent = 'Nenhum município no recorte.'; return; }
+    const W = el.clientWidth || 600, bh = 20, gap = 6, fmt = (x) => (pc ? 'R$ ' + TM.num(x) : TM.num(x, 1));
+    const ml = Math.min(W * 0.4, d3.max(rows, (d) => TM.textW(String(d.grupo), el)) + 10), mr = TM.textW('R$ 0.000,0', el) + 12;
+    const H = rows.length * (bh + gap) + 28;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, (d) => d3.sum(K, (k) => v(d, k)))]).nice().range([ml, W - mr]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', pc ? 'Transferências por habitante por grupo' : 'Total de transferências por grupo');
+    const tk = x.ticks(Math.max(2, Math.floor((W - ml - mr) / 80))); const gr = svg.append('g').attr('class', 'grid');
+    gr.selectAll('line').data(tk).join('line').attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', 0).attr('y2', H - 22);
+    gr.selectAll('text').data(tk).join('text').attr('x', (d) => x(d)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => fmt(d));
+    const tip = TM.tip(el);
+    const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (d, i) => `translate(0,${i * (bh + gap)})`);
+    g.append('text').attr('x', ml - 8).attr('y', bh / 2).attr('dy', '0.35em').attr('text-anchor', 'end').attr('class', 'lbl-strong').text((d) => d.grupo);
+    g.each(function (d) {
+      let acc = 0;
+      K.forEach((k, i) => { const val = v(d, k);
+        d3.select(this).append('rect').attr('x', x(acc)).attr('height', bh).attr('width', Math.max(0, x(acc + val) - x(acc))).style('fill', TM.cor(i))
+          .on('pointermove', (ev) => tip.show(ev, [[String(d.grupo)], [ROT[k], pc ? 'R$ ' + TM.num(val, 2) + '/hab./mês' : TM.reais(d[k]) + '/mês'], ['Total', pc ? 'R$ ' + TM.num(d.total_pc, 2) + '/hab./mês' : TM.reais(d.total) + '/mês']]))
+          .on('pointerleave', () => tip.hide());
+        acc += val; });
+      d3.select(this).append('text').attr('x', x(acc) + 6).attr('y', bh / 2).attr('dy', '0.35em').text(fmt(acc));
+    });
+  });
+
+  dash.draw('v_tabgrupos', (tb) => {
+    const r = dash.data('valores_grupos'); if (r.status !== 'ok') { TM.estado(tb, r); return; }
+    const mi = (v) => TM.num(v / 1e6, 1);
+    tb.replaceChildren(...r.data.slice().sort((a, b) => b.total - a.total).map((d) => { const tr = linhaTabela([[d.grupo], [TM.num(d.n), 'n'], [TM.num(d.pop), 'n'], [mi(d.apos_rural), 'n'], [mi(d.bolsa), 'n'], [mi(d.bpc), 'n'], [mi(d.apos_urbana), 'n'], [mi(d.seguro), 'n'], [mi(d.total), 'n'], [TM.num(d.total_pc, 2), 'n']]);
+      tr.dataset.key = encodeURIComponent(d.grupo); return tr; }));
   });
 })();
 </script>
